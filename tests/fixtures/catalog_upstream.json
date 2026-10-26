@@ -1,0 +1,1313 @@
+{
+ "engine": {
+  "api": "upstream",
+  "version": "17.17",
+  "settings_version": 2.79,
+  "root": "/srv/hub/engine/Wan2GP",
+  "loras_root": "/srv/hub/engine/Wan2GP/loras",
+  "checkpoints": [
+   "/srv/hub/engine/Wan2GP/ckpts",
+   "/srv/hub/engine/Wan2GP"
+  ]
+ },
+ "models": [
+  {
+   "id": "flux",
+   "name": "Flux 1 Dev 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux2_dev",
+   "name": "Flux 2 Dev 32B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux2"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux2_dev_nvfp4",
+   "name": "Flux 2 Dev NVFP4 32B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux2"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux2_klein_4b",
+   "name": "Flux 2 Klein 4B",
+   "family": "Flux 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 1,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": null,
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux2_klein_4b"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux2_klein_9b",
+   "name": "Flux 2 Klein 9B",
+   "family": "Flux 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 1.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": null,
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux2_klein_9b"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux2_klein_base_4b",
+   "name": "Flux 2 Klein Base 4B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 1.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux2_klein_4b"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux2_klein_base_9b",
+   "name": "Flux 2 Klein Base 9B",
+   "family": "Flux 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 1.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux2_klein_9b"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_chroma",
+   "name": "Flux 1 Chroma 1 HD 8.9B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 20,
+    "guidance_scale": 3.0,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 20,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_chroma_radiance",
+   "name": "Flux 1 Chroma Radiance 8.9B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 20,
+    "guidance_scale": 3.0,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 20,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 3.0,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_dev_kontext",
+   "name": "Flux 1 Dev Kontext 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_dev_kontext_dreamomni2",
+   "name": "Flux 1 DreamOmni2 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_dev_umo",
+   "name": "Flux 1 UMO 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "768x768"
+   },
+   "steps": 30,
+   "size": [
+    768,
+    768
+   ],
+   "guidance": 4,
+   "modes": [
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_dev_uso",
+   "name": "Flux 1 USO Dev 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "KI",
+    "KIJ"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_krea",
+   "name": "Flux 1 Dev Krea 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_schnell",
+   "name": "Flux 1 Schnell 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 10,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 10,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_srpo",
+   "name": "Flux 1 Dev SRPO 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "flux_srpo_uso",
+   "name": "Flux 1 USO SRPO 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "KI",
+    "KIJ"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "krea2_raw",
+   "name": "Krea 2 RAW",
+   "family": "Krea 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 52,
+    "guidance_scale": 3.5,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 52,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 3.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/krea2"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "krea2_raw_edit",
+   "name": "Krea 2 RAW Identity Edit v1.2",
+   "family": "Krea 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 20,
+    "guidance_scale": 2,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 20,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 2,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/krea2"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "krea2_turbo",
+   "name": "Krea 2 Turbo",
+   "family": "Krea 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/krea2"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "krea2_turbo_edit",
+   "name": "Krea 2 Turbo Identity Edit v1.2",
+   "family": "Krea 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": null,
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/krea2"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "pi_flux2",
+   "name": "pi-FLUX.2 Dev 32B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux2"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "pi_flux2_nvfp4",
+   "name": "pi-FLUX.2 Dev NVFP4 32B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/flux2"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "qwen_image_20B",
+   "name": "Qwen Image Text2Image 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 4,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/qwen"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "qwen_image_21_7B",
+   "name": "Qwen Image 2.1 TextImage2Image 7B",
+   "family": "Qwen Image 2.1",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 40,
+    "guidance_scale": 4.0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "832x480"
+   },
+   "steps": 40,
+   "size": [
+    832,
+    480
+   ],
+   "guidance": 4.0,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 32,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/qwen21"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "qwen_image_2512_20B",
+   "name": "Qwen Image Text2Image 2512 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 4,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/qwen"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "qwen_image_edit_20B",
+   "name": "Qwen Image Edit 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/qwen"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "qwen_image_edit_plus2_20B",
+   "name": "Qwen Image Edit Plus (2511) 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/qwen"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "qwen_image_edit_plus_20B",
+   "name": "Qwen Image Edit Plus (2509) 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/qwen"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "qwen_image_edit_plus_20B_nunchaku_r128_fp4",
+   "name": "Qwen Image Edit Plus (2509) Nunchaku FP4 r128 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/qwen"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "qwen_image_edit_plus_20B_nunchaku_r128_int4",
+   "name": "Qwen Image Edit Plus (2509) Nunchaku INT4 r128 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/qwen"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "qwen_image_layered_20B",
+   "name": "Qwen Image Layered 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/qwen"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "z_image",
+   "name": "Z-Image Turbo 6B",
+   "family": "Z-Image",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/z_image"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "z_image_base",
+   "name": "Z-Image Base 6B",
+   "family": "Z-Image",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/z_image"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "z_image_control",
+   "name": "Z-Image Turbo Fun ControlNet v1 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 9,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 9,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/z_image"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "z_image_control2",
+   "name": "Z-Image Turbo Fun ControlNet v2 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 9,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 9,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/z_image"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "z_image_control2_1",
+   "name": "Z-Image Turbo Fun ControlNet v2.1 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 9,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1920x1088"
+   },
+   "steps": 9,
+   "size": [
+    1920,
+    1088
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/z_image"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "z_image_nunchaku_r128_fp4",
+   "name": "Z-Image Turbo Nunchaku FP4 (r128) 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/z_image"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "z_image_nunchaku_r256_int4",
+   "name": "Z-Image Turbo Nunchaku INT4 (r256) 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/z_image"
+   ],
+   "lora_recursive": true
+  },
+  {
+   "id": "z_image_twinflow_turbo",
+   "name": "TwinFlow Z-Image Turbo 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 2,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 2,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/hub/engine/Wan2GP/loras/z_image"
+   ],
+   "lora_recursive": true
+  }
+ ]
+}

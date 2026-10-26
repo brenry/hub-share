@@ -1,0 +1,7 @@
+@layer ui {
+  .sw { width: 2rem; height: 1.125rem; flex: none; border-radius: var(--r-pill); position: relative; background: var(--raise); box-shadow: inset 0 0 0 1px var(--line-strong); }
+  .sw::after { content: ''; position: absolute; top: .1875rem; left: .1875rem; width: .75rem; height: .75rem; border-radius: 50%; background: var(--text-2); transition: left .12s; }
+  .on { background: var(--accent); box-shadow: none; }
+  .on::after { left: 1.0625rem; background: var(--accent-ink); }
+  .sw:disabled { opacity: .5; }
+}

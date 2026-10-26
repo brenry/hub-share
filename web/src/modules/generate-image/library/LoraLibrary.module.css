@@ -1,0 +1,30 @@
+@layer screen {
+  .lib { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+  .lib > * { min-width: 0; }
+  /* The bar's margin, so the rows start where the button that raised the sheet sits. */
+  .head { display: grid; gap: var(--sp-2); min-width: 0; padding: var(--sp-5) var(--sp-3) var(--sp-3); }
+  .guidance { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); min-height: var(--gen-bar-h); padding: 0 var(--sp-3); font-size: var(--fs-ctl); color: var(--text-3); }
+  .guidance > span { flex: none; }
+  .encoder { flex: 0 1 auto; min-width: 0; max-width: 100%; text-overflow: ellipsis; }
+  .head > button { width: 100%; min-width: 0; max-width: 100%; }
+  .list { display: grid; align-content: start; gap: .125rem; padding: 0 var(--sp-3) var(--sp-4); }
+
+  /* One row: cover, the file name (wraps at underscores), then the controls flush right. */
+  .row { position: relative; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr) auto auto; column-gap: var(--sp-3); align-items: center; padding: var(--sp-2) var(--sp-1) var(--sp-2) var(--sp-2); border-radius: var(--r-1); cursor: default; }
+  .row:hover { background: var(--panel-2); }
+  .row:focus-visible { outline-offset: calc(var(--rule) * -1); }
+  .sel, .sel:hover { background: var(--select); }
+  .saved { background: var(--panel-2); margin-top: .125rem; box-shadow: var(--edge-light-soft); }
+  .saved:hover { background: var(--raise); }
+  .line { position: absolute; left: 0; top: 0; height: var(--rule); background: var(--line-strong); pointer-events: none; }
+  .cover { width: 2.25rem; height: 2.25rem; }
+  .coverWrap { position: relative; display: block; width: 2.25rem; height: 2.25rem; }
+  .dot { position: absolute; top: -.1875rem; right: -.1875rem; width: .5rem; height: .5rem; border-radius: 50%; background: var(--new); box-shadow: 0 0 0 .125rem var(--panel); }
+  .name { font-weight: 500; line-height: var(--lh-cap); overflow-wrap: anywhere; word-break: normal; }
+  .nameOff { font-weight: 400; color: var(--text-2); }
+  .off, .on { margin-left: calc(var(--sp-2) * -1); color: var(--text-3); }
+  .on { opacity: 0; }
+  .row:hover .on, .row:focus-within .on { opacity: 1; }
+  .rule { width: 6rem; height: 1px; margin: var(--sp-3) auto; border: 0; background: var(--line-strong); }
+  .empty { padding: var(--sp-4) var(--sp-2); color: var(--text-3); }
+}

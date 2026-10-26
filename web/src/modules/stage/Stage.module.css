@@ -1,0 +1,77 @@
+@layer screen {
+  /* The tab, top to bottom: the main band (the sets, the open set's inputs, its plates), the bar. */
+  .tab { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; min-width: 0; background: var(--panel); overflow: clip; }
+  .tab > * { min-width: 0; min-height: 0; }
+  .main { display: grid; grid-template-columns: 14rem minmax(0, 1fr) minmax(0, 1.3fr); min-height: 0; min-width: 0; }
+  .main > * { min-width: 0; min-height: 0; }
+
+  /* The sets, New set above them. */
+  .list { display: flex; flex-direction: column; gap: var(--sp-2); padding: var(--sp-3); border-right: 1px solid var(--line); }
+  .sets { display: flex; flex-direction: column; gap: var(--sp-1); }
+  .set {
+    display: grid; grid-template-columns: 4rem minmax(0, 1fr) auto; align-items: center; gap: var(--sp-2); flex: none;
+    padding: var(--sp-1); border-radius: var(--r-2); color: var(--text-2); text-align: left;
+  }
+  .thumb { width: 4rem; aspect-ratio: 16 / 9; border-radius: var(--r-1); background: var(--hi); overflow: clip; }
+  .thumb img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .set:hover { background: var(--raise); color: var(--text-1); }
+  .on, .on:hover { background: var(--select); color: var(--text-1); outline: var(--rule) solid var(--accent); outline-offset: calc(var(--rule) * -1); }
+  .mark { padding: 0 var(--sp-1); border-radius: var(--r-1); background: var(--accent-soft); color: var(--accent); font-size: var(--fs-ctl); }
+  .mark[data-mark="draft"] { background: var(--hi); color: var(--text-2); }
+  .empty, .none { display: grid; place-items: center; padding: var(--sp-4); color: var(--text-3); font-size: var(--fs-cap); }
+  .none { grid-column: 2 / -1; }
+
+  /* The open set: its inputs at the left, its plates at the right, each its own scroller. */
+  .left, .right { display: flex; flex-direction: column; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); }
+  .right { border-left: 1px solid var(--line); }
+  .who { display: flex; align-items: center; gap: var(--sp-2); margin: 0; font-size: var(--fs-head); color: var(--text-1); }
+  .head { margin: 0; font-size: var(--fs-cap); color: var(--text-2); }
+  .build, .section { display: flex; flex-direction: column; gap: var(--sp-3); }
+  .boxes { display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); gap: var(--sp-2); }
+  .box { display: flex; flex-direction: column; gap: var(--sp-2); padding: var(--sp-2); border-radius: var(--r-2); background: var(--panel-2); outline: var(--rule) solid transparent; outline-offset: calc(var(--rule) * -1); }
+  .over { outline-color: var(--accent); }
+  .pic { position: relative; height: 7rem; border-radius: var(--r-1); background: var(--well); border: 1px dashed var(--line-strong); overflow: clip; }
+  .box[data-filled] .pic { border-style: solid; border-color: var(--line); }
+  .pic img { width: 100%; height: 100%; display: block; object-fit: contain; }
+  .badge { position: absolute; left: 0; bottom: 0; min-width: 1rem; padding: 0 var(--sp-1); border-radius: var(--r-1); background: var(--shade); color: var(--text-2); font-size: var(--fs-ctl); text-align: center; }
+  .remove { position: absolute; right: var(--sp-1); top: var(--sp-1); width: var(--ctl-h-sm); height: var(--ctl-h-sm); display: grid; place-items: center; border-radius: var(--r-1); background: var(--shade); color: var(--text-1); opacity: 0; }
+  .box:hover .remove, .remove:focus-visible { opacity: 1; }
+  .lines, .facts { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-2); }
+  .facts { max-width: 36rem; }
+  .facts .lab { align-self: start; padding-top: var(--sp-1); }
+  .lab { color: var(--text-3); font-size: var(--fs-ctl); }
+  .promptBox { display: flex; flex-direction: column; gap: var(--sp-1); }
+  .prompt {
+    min-width: 0; padding: var(--sp-1) var(--sp-2); resize: vertical; font: inherit; color: var(--text-1);
+    background: var(--well); border: 1px solid var(--line); border-radius: var(--r-2);
+  }
+  .prompt:focus { outline: none; border-color: var(--accent-line); }
+  .area {
+    min-height: 5rem; resize: vertical; padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line); border-radius: var(--r-1);
+    background: var(--well); color: var(--text-1); font: inherit; font-size: var(--fs-cap);
+  }
+  .area:focus-visible { outline: var(--rule) solid var(--accent); outline-offset: calc(var(--rule) * -1); }
+  .row { display: flex; align-items: center; gap: var(--sp-2); min-width: 0; }
+
+  /* The plates: one labelled row, or the approved row above the new one; the pan under them. */
+  .plateRow { display: flex; flex-direction: column; gap: var(--sp-1); }
+  .rowLab { color: var(--text-2); font-size: var(--fs-ctl); }
+  .plates { display: grid; gap: var(--sp-2); }
+  .plate { margin: 0; display: flex; flex-direction: column; gap: var(--sp-1); min-width: 0; }
+  .platePic { aspect-ratio: 16 / 9; border-radius: var(--r-1); background: var(--stage); overflow: clip; }
+  .platePic img { width: 100%; height: 100%; display: block; object-fit: contain; }
+  .cap { color: var(--text-2); font-size: var(--fs-ctl); text-align: center; }
+  .pan { display: block; width: 100%; max-width: 40rem; aspect-ratio: 16 / 9; background: var(--stage); border-radius: var(--r-1); }
+  .job { display: flex; align-items: center; gap: var(--sp-2); color: var(--text-2); font-size: var(--fs-cap); }
+  .jobBar { flex: 1 1 auto; max-width: 16rem; }
+  .presses { display: flex; gap: var(--sp-2); }
+  .problem { color: var(--err); font-size: var(--fs-cap); }
+
+  /* The bar: low and quiet, one line, as the other tabs'. */
+  .bar {
+    display: flex; align-items: center; gap: var(--sp-2); min-width: 0; height: 2rem; padding: 0 var(--sp-3);
+    border-top: 1px solid var(--line); background: var(--panel); color: var(--text-3); font-size: var(--fs-ctl); white-space: nowrap;
+  }
+  .grow { flex: 1 1 0; min-width: 0; }
+  .liveFlat, .liveFlat:hover { height: 1.375rem; border-color: transparent; background: none; box-shadow: none; padding: 0 var(--sp-1); font-size: var(--fs-ctl); color: var(--text-3); }
+}

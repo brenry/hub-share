@@ -1,0 +1,227 @@
+{
+ "inputs": [
+  {},
+  {},
+  {},
+  {
+   "items.0.path": [
+    1,
+    "kept"
+   ],
+   "items.1.path": [
+    2,
+    "kept"
+   ],
+   "items.2.path": [
+    3,
+    "kept"
+   ]
+  }
+ ],
+ "summary": {
+  "count": 1,
+  "frames": 474,
+  "height": 736,
+  "kind": "clip",
+  "loras": [],
+  "mode": "scene",
+  "model": "MiniMax H3 Ref2VA Pruned 20B",
+  "model_id": "minimax_h3_ref2va_pruned",
+  "prompt": "Character 7 faces the audience. Character 7 brings out Character 6. Character 6 answers. Character 7 closes. About 30 seconds.",
+  "seconds": 19.75,
+  "seeds": [
+   41,
+   41,
+   41
+  ],
+  "shots": 3,
+  "step_names": [
+   "Shot 1 \u00b7 Character 7 \u00b7 6.6 s",
+   "Shot 2 \u00b7 Character 6 \u00b7 6.6 s",
+   "Shot 3 \u00b7 Character 7 \u00b7 6.6 s",
+   "Cut"
+  ],
+  "width": 736
+ },
+ "takes": [
+  [
+   [
+    1
+   ]
+  ],
+  [
+   [
+    2
+   ]
+  ],
+  [
+   [
+    3
+   ]
+  ]
+ ],
+ "tasks": [
+  {
+   "detail": null,
+   "encoder": null,
+   "frames": 158,
+   "judge": "cpu",
+   "judge_bar": 0.3,
+   "kind": "video",
+   "loras": [],
+   "model": "minimax_h3_ref2va_pruned",
+   "one_pass": true,
+   "prompt": "subject_definitions: <Subject 1> is Character 7, from <Picture 1>.\nsummary: [reference generation] Character 7 turns to the room.\nretention_analysis: <Subject 1> (appears in [Shot 1]): fully_preserved - Character 7.\ndetailed_description: A brightly lit hall, a blue curtain behind the stage. hot stage lights. [Shot 1] (S1) <Subject 1>, in a grey suit. medium shot. Character 7 turns to the room. (S1) <Subject 1> says <d>Line one, everybody.</d>.\noverall_soundscape: a large hall.\nnon_diegetic_music: N/A",
+   "references": [
+    {
+     "cutout": false,
+     "name": null,
+     "path": "TMP/Characters/Character 7.png",
+     "role": "identity"
+    }
+   ],
+   "seed": 41,
+   "size": [
+    736,
+    736
+   ],
+   "sound": null,
+   "sound_seconds": null,
+   "speaker": "Character 7",
+   "steps": 20,
+   "video": null,
+   "video_seconds": null,
+   "voices": [],
+   "words": "Line one, everybody."
+  },
+  {
+   "detail": null,
+   "encoder": null,
+   "frames": 158,
+   "judge": "cpu",
+   "judge_bar": 0.3,
+   "kind": "video",
+   "loras": [],
+   "model": "minimax_h3_ref2va_pruned",
+   "one_pass": true,
+   "prompt": "subject_definitions: <Subject 1> is Character 6, from <Picture 1>.\nsummary: [reference generation] Character 6 turns to the room.\nretention_analysis: <Subject 1> (appears in [Shot 1]): fully_preserved - Character 6.\ndetailed_description: A brightly lit hall, a blue curtain behind the stage. hot stage lights. [Shot 1] (S1) <Subject 1>, in a red dress. medium shot. Character 6 turns to the room. (S1) <Subject 1> says <d>Thank you, friend. It is good to be here.</d>.\noverall_soundscape: a large hall.\nnon_diegetic_music: N/A",
+   "references": [
+    {
+     "cutout": false,
+     "name": null,
+     "path": "TMP/Characters/Character 6.png",
+     "role": "identity"
+    }
+   ],
+   "seed": 41,
+   "size": [
+    736,
+    736
+   ],
+   "sound": null,
+   "sound_seconds": null,
+   "speaker": "Character 6",
+   "steps": 20,
+   "video": null,
+   "video_seconds": null,
+   "voices": [],
+   "words": "Thank you, friend. It is good to be here."
+  },
+  {
+   "detail": null,
+   "encoder": null,
+   "frames": 158,
+   "judge": "cpu",
+   "judge_bar": 0.3,
+   "kind": "video",
+   "loras": [],
+   "model": "minimax_h3_ref2va_pruned",
+   "one_pass": true,
+   "prompt": "subject_definitions: <Subject 1> is Character 7, from <Picture 1>; <Subject 2> is Character 6, from <Picture 2>.\nsummary: [reference generation] Character 7 turns to the room.\nretention_analysis: <Subject 1> (appears in [Shot 1]): fully_preserved - Character 7.\n<Subject 2> (appears in [Shot 1]): fully_preserved - Character 6.\ndetailed_description: A brightly lit hall, a blue curtain behind the stage. hot stage lights. [Shot 1] (S1) <Subject 1>, in a grey suit. (S2) <Subject 2>, in a red dress. medium shot. Character 7 turns to the room. (S1) <Subject 1> says <d>That is our scene.</d>.\noverall_soundscape: a large hall.\nnon_diegetic_music: N/A",
+   "references": [
+    {
+     "cutout": false,
+     "name": null,
+     "path": "TMP/Characters/Character 7.png",
+     "role": "identity"
+    },
+    {
+     "cutout": false,
+     "name": null,
+     "path": "TMP/Characters/Character 6.png",
+     "role": "identity"
+    }
+   ],
+   "seed": 41,
+   "size": [
+    736,
+    736
+   ],
+   "sound": null,
+   "sound_seconds": null,
+   "speaker": "Character 7",
+   "steps": 20,
+   "video": null,
+   "video_seconds": null,
+   "voices": [],
+   "words": "That is our scene."
+  },
+  {
+   "audio": [],
+   "canvas": {
+    "fps": 24.0,
+    "h": 736,
+    "w": 736
+   },
+   "crf": 18,
+   "duck": {
+    "attack": 50.0,
+    "ratio": 6.0,
+    "release": 400.0,
+    "threshold": 0.05
+   },
+   "items": [
+    {
+     "audio": true,
+     "fps": 24.0,
+     "frames": 158,
+     "h": 736,
+     "in": 0,
+     "out": 158,
+     "path": "",
+     "sound": false,
+     "w": 736
+    },
+    {
+     "audio": true,
+     "fps": 24.0,
+     "frames": 158,
+     "h": 736,
+     "in": 0,
+     "out": 158,
+     "path": "",
+     "sound": false,
+     "w": 736
+    },
+    {
+     "audio": true,
+     "fps": 24.0,
+     "frames": 158,
+     "h": 736,
+     "in": 0,
+     "out": 158,
+     "path": "",
+     "sound": false,
+     "w": 736
+    }
+   ],
+   "kind": "join",
+   "lanes": [],
+   "length_ms": 0,
+   "out_kind": "mp4",
+   "preset": "medium",
+   "solo": null,
+   "target": null
+  }
+ ]
+}

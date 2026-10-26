@@ -1,0 +1,10 @@
+@layer ui {
+  .box { display: inline-flex; align-items: center; height: var(--ctl-h); border: 1px solid var(--line-strong); border-radius: var(--r-1); background: var(--panel-2); box-shadow: var(--edge-light-soft); }
+  .box button { width: var(--ctl-h); height: 100%; display: grid; place-items: center; color: var(--text-2); }
+  .box button:hover:not(:disabled) { color: var(--text-1); }
+  .box button:disabled { color: var(--text-dis); }
+  .box output { width: 1.75rem; text-align: center; font-weight: 600; }
+  .small { height: var(--ctl-h-sm); font-size: var(--fs-ctl); }
+  .small button { width: 1.25rem; }
+  .small output { width: 1.25rem; }
+}

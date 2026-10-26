@@ -1,0 +1,561 @@
+{
+ "architectures": {
+  "flux2_klein_9b": {
+   "architecture": "flux2_klein_9b",
+   "family": "flux2",
+   "image_outputs": true,
+   "image_ref_choices": {
+    "choices": [
+     [
+      "None",
+      ""
+     ],
+     [
+      "Conditional Image is first Main Subject / Landscape and may be followed by People / Objects",
+      "KI"
+     ],
+     [
+      "Conditional Images are People / Objects",
+      "I"
+     ]
+    ],
+    "letters_filter": "KI"
+   }
+  },
+  "krea2_turbo_edit": {
+   "architecture": "krea2_turbo_edit",
+   "family": "krea2",
+   "guidance_max_phases": 0,
+   "image_outputs": true,
+   "image_ref_choices": {
+    "choices": [
+     [
+      "None",
+      ""
+     ],
+     [
+      "Conditional Image is first Main Subject / Landscape and may be followed by People / Objects",
+      "KI"
+     ],
+     [
+      "Conditional Images are People / Objects",
+      "I"
+     ]
+    ],
+    "default": "KI",
+    "letters_filter": "KI"
+   }
+  },
+  "minimax_h3": {
+   "architecture": "minimax_h3",
+   "auto_resolution_budgets": {
+    "auto": 901120,
+    "auto_1080p": 2088960,
+    "auto_480p": 414720,
+    "auto_540p": 522240,
+    "auto_720p": 901120
+   },
+   "block_size": 32,
+   "end_frames_always_enabled": true,
+   "family": "minimax_h3",
+   "fps": 24,
+   "frames_maximum": 345,
+   "frames_minimum": 124,
+   "frames_steps": 17,
+   "guidance_max_phases": 0,
+   "i2v_class": true,
+   "image_prompt_types_allowed": "TSEV",
+   "minimax_h3_text_encoder_default": "nvfp4_awq",
+   "minimax_h3_text_encoder_variants": {
+    "gguf_q2_k": {
+     "URLs": [
+      "https://huggingface.co/fake/resolve/main/qwen3vl-32B-Q2_K.gguf"
+     ],
+     "name": "GGUF Q2_K (Lowest RAM)"
+    },
+    "int8": {
+     "URLs": [
+      "https://huggingface.co/fake/resolve/main/qwen3vl-32B_quanto_bf16_int8.safetensors"
+     ],
+     "name": "Quanto INT8"
+    },
+    "nvfp4_awq": {
+     "URLs": [
+      "https://huggingface.co/fake/resolve/main/qwen3vl_32b_nvfp4_awq.safetensors"
+     ],
+     "name": "NVFP4 AWQ (Recommended)"
+    }
+   },
+   "no_negative_prompt": true,
+   "resolution_preset_order": [
+    "480p",
+    "540p",
+    "720p",
+    "1080p"
+   ],
+   "resolution_presets": {
+    "1080p": {
+     "experimental": true,
+     "label": "1080p",
+     "values": {
+      "16:9": "1920x1088",
+      "1:1": "1088x1088",
+      "21:9": "2528x1088",
+      "3:4": "1088x1440",
+      "4:3": "1440x1088",
+      "9:16": "1088x1920",
+      "auto": "auto_1080p"
+     }
+    },
+    "480p": {
+     "label": "480p",
+     "values": {
+      "16:9": "864x480",
+      "1:1": "640x640",
+      "21:9": "1120x480",
+      "3:4": "480x640",
+      "4:3": "640x480",
+      "9:16": "480x864",
+      "auto": "auto_480p"
+     }
+    },
+    "540p": {
+     "label": "540p",
+     "values": {
+      "16:9": "960x544",
+      "1:1": "736x736",
+      "21:9": "1280x544",
+      "3:4": "544x736",
+      "4:3": "736x544",
+      "9:16": "544x960",
+      "auto": "auto_540p"
+     }
+    },
+    "720p": {
+     "label": "720p",
+     "values": {
+      "16:9": "1280x704",
+      "1:1": "704x704",
+      "21:9": "1632x704",
+      "3:4": "704x928",
+      "4:3": "928x704",
+      "9:16": "704x1280",
+      "auto": "auto_720p"
+     }
+    }
+   },
+   "returns_audio": true,
+   "sliding_window_defaults": {
+    "overlap_default": 18
+   },
+   "t2v_class": true,
+   "text_encoder_folder": "minimax_h3",
+   "vae_block_size": 32
+  },
+  "minimax_h3_legacy": {
+   "architecture": "minimax_h3_legacy",
+   "auto_resolution_budgets": {
+    "auto": 901120,
+    "auto_1080p": 2088960,
+    "auto_480p": 414720,
+    "auto_540p": 522240,
+    "auto_720p": 901120
+   },
+   "block_size": 32,
+   "family": "minimax_h3",
+   "fps": 24,
+   "frames_maximum": 345,
+   "frames_minimum": 124,
+   "frames_steps": 17,
+   "guidance_max_phases": 0,
+   "i2v_class": true,
+   "image_prompt_types_allowed": "TSEV",
+   "inference_steps_max": 50,
+   "inference_steps_min": 1,
+   "minimax_h3_legacy_sidecar": true,
+   "minimax_h3_text_encoder_default": "nvfp4_awq",
+   "minimax_h3_text_encoder_variants": {
+    "gguf_q2_k": {
+     "URLs": [
+      "https://huggingface.co/fake/resolve/main/qwen3vl-32B-Q2_K.gguf"
+     ],
+     "name": "GGUF Q2_K (Lowest RAM)"
+    },
+    "int8": {
+     "URLs": [
+      "https://huggingface.co/fake/resolve/main/qwen3vl-32B_quanto_bf16_int8.safetensors"
+     ],
+     "name": "Quanto INT8"
+    },
+    "nvfp4_awq": {
+     "URLs": [
+      "https://huggingface.co/fake/resolve/main/qwen3vl_32b_nvfp4_awq.safetensors"
+     ],
+     "name": "NVFP4 AWQ (Recommended)"
+    }
+   },
+   "no_negative_prompt": true,
+   "resolution_preset_order": [
+    "480p",
+    "540p",
+    "720p",
+    "1080p"
+   ],
+   "resolution_presets": {
+    "1080p": {
+     "experimental": true,
+     "label": "1080p",
+     "values": {
+      "16:9": "1920x1088",
+      "1:1": "1088x1088",
+      "21:9": "2528x1088",
+      "3:4": "1088x1440",
+      "4:3": "1440x1088",
+      "9:16": "1088x1920",
+      "auto": "auto_1080p"
+     }
+    },
+    "480p": {
+     "label": "480p",
+     "values": {
+      "16:9": "864x480",
+      "1:1": "640x640",
+      "21:9": "1120x480",
+      "3:4": "480x640",
+      "4:3": "640x480",
+      "9:16": "480x864",
+      "auto": "auto_480p"
+     }
+    },
+    "540p": {
+     "label": "540p",
+     "values": {
+      "16:9": "960x544",
+      "1:1": "736x736",
+      "21:9": "1280x544",
+      "3:4": "544x736",
+      "4:3": "736x544",
+      "9:16": "544x960",
+      "auto": "auto_540p"
+     }
+    },
+    "720p": {
+     "label": "720p",
+     "values": {
+      "16:9": "1280x704",
+      "1:1": "704x704",
+      "21:9": "1632x704",
+      "3:4": "704x928",
+      "4:3": "928x704",
+      "9:16": "704x1280",
+      "auto": "auto_720p"
+     }
+    }
+   },
+   "returns_audio": true,
+   "sliding_window_defaults": {
+    "overlap_default": 18
+   },
+   "t2v_class": true,
+   "text_encoder_folder": "minimax_h3",
+   "vae_block_size": 32
+  },
+  "minimax_h3_ref2va": {
+   "architecture": "minimax_h3_ref2va",
+   "auto_resolution_budgets": {
+    "auto": 901120,
+    "auto_1080p": 2088960,
+    "auto_480p": 414720,
+    "auto_540p": 522240,
+    "auto_720p": 901120
+   },
+   "block_size": 32,
+   "family": "minimax_h3",
+   "fps": 24,
+   "frames_maximum": 345,
+   "frames_minimum": 124,
+   "frames_steps": 17,
+   "guidance_max_phases": 0,
+   "i2v_class": false,
+   "image_prompt_types_allowed": "",
+   "inference_steps_max": 50,
+   "inference_steps_min": 1,
+   "minimax_h3_text_encoder_default": "nvfp4_awq",
+   "minimax_h3_text_encoder_variants": {
+    "gguf_q2_k": {
+     "URLs": [
+      "https://huggingface.co/fake/resolve/main/qwen3vl-32B-Q2_K.gguf"
+     ],
+     "name": "GGUF Q2_K (Lowest RAM)"
+    },
+    "int8": {
+     "URLs": [
+      "https://huggingface.co/fake/resolve/main/qwen3vl-32B_quanto_bf16_int8.safetensors"
+     ],
+     "name": "Quanto INT8"
+    },
+    "nvfp4_awq": {
+     "URLs": [
+      "https://huggingface.co/fake/resolve/main/qwen3vl_32b_nvfp4_awq.safetensors"
+     ],
+     "name": "NVFP4 AWQ (Recommended)"
+    }
+   },
+   "no_negative_prompt": true,
+   "omni_reference": true,
+   "omni_reference_detail_choices": [
+    [
+     "Match output (faster)",
+     "match"
+    ],
+    [
+     "High detail (official PDD recipe)",
+     "max"
+    ]
+   ],
+   "omni_reference_detail_default": "match",
+   "omni_reference_limits": {
+    "audio": 3,
+    "image": 9,
+    "total": 12,
+    "video": 3
+   },
+   "resolution_preset_order": [
+    "480p",
+    "540p",
+    "720p",
+    "1080p"
+   ],
+   "resolution_presets": {
+    "1080p": {
+     "experimental": true,
+     "label": "1080p",
+     "values": {
+      "16:9": "1920x1088",
+      "1:1": "1088x1088",
+      "21:9": "2528x1088",
+      "3:4": "1088x1440",
+      "4:3": "1440x1088",
+      "9:16": "1088x1920",
+      "auto": "auto_1080p"
+     }
+    },
+    "480p": {
+     "label": "480p",
+     "values": {
+      "16:9": "864x480",
+      "1:1": "640x640",
+      "21:9": "1120x480",
+      "3:4": "480x640",
+      "4:3": "640x480",
+      "9:16": "480x864",
+      "auto": "auto_480p"
+     }
+    },
+    "540p": {
+     "label": "540p",
+     "values": {
+      "16:9": "960x544",
+      "1:1": "736x736",
+      "21:9": "1280x544",
+      "3:4": "544x736",
+      "4:3": "736x544",
+      "9:16": "544x960",
+      "auto": "auto_540p"
+     }
+    },
+    "720p": {
+     "label": "720p",
+     "values": {
+      "16:9": "1280x704",
+      "1:1": "704x704",
+      "21:9": "1632x704",
+      "3:4": "704x928",
+      "4:3": "928x704",
+      "9:16": "704x1280",
+      "auto": "auto_720p"
+     }
+    }
+   },
+   "returns_audio": true,
+   "sliding_window_defaults": {
+    "overlap_default": 18
+   },
+   "supports_reference_audio": true,
+   "t2v_class": true,
+   "text_encoder_folder": "minimax_h3",
+   "vae_block_size": 32
+  },
+  "qwen_image_21_7B": {
+   "architecture": "qwen_image_21_7B",
+   "family": "qwen_image_2",
+   "guidance_max_phases": 1,
+   "image_outputs": true,
+   "image_ref_choices": {
+    "choices": [
+     [
+      "None",
+      ""
+     ],
+     [
+      "Conditional Image is first Main Subject / Landscape and may be followed by People / Objects",
+      "KI"
+     ],
+     [
+      "Conditional Images are People / Objects",
+      "I"
+     ]
+    ],
+    "letters_filter": "KI"
+   },
+   "vae_block_size": 32
+  },
+  "t2v": {
+   "architecture": "t2v",
+   "family": "wan"
+  },
+  "z_image": {
+   "architecture": "z_image",
+   "family": "z_image",
+   "guidance_max_phases": 0,
+   "image_outputs": true
+  }
+ },
+ "available": [
+  "flux2_klein_9b",
+  "flux2_klein_base_9b",
+  "minimax_h3",
+  "minimax_h3_fused_turbo",
+  "minimax_h3_legacy",
+  "minimax_h3_ref2va",
+  "qwen_image_21_7B",
+  "t2v",
+  "z_image"
+ ],
+ "families": {
+  "flux2": [
+   10,
+   "Flux 2"
+  ],
+  "krea2": [
+   40,
+   "Krea 2"
+  ],
+  "minimax_h3": [
+   60,
+   "MiniMax H3"
+  ],
+  "qwen_image_2": [
+   30,
+   "Qwen Image 2.1"
+  ],
+  "wan": [
+   50,
+   "Wan"
+  ],
+  "z_image": [
+   20,
+   "Z-Image"
+  ]
+ },
+ "flavour": "upstream",
+ "generate_video": [
+  {
+   "default": "<required>",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "task"
+  },
+  {
+   "default": "<required>",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "send_cmd"
+  },
+  {
+   "default": "<required>",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "image_mode"
+  },
+  {
+   "default": "<required>",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "prompt"
+  },
+  {
+   "default": "nvfp4_awq",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "minimax_h3_text_encoder"
+  },
+  {
+   "default": true,
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "minimax_h3_multi_window"
+  }
+ ],
+ "handler_defaults": {
+  "flux2_klein_9b": {
+   "settings_version": 2.79
+  },
+  "krea2_turbo_edit": {
+   "settings_version": 2.79
+  },
+  "minimax_h3": {
+   "audio_prompt_type": "",
+   "settings_version": 2.79,
+   "sliding_window_overlap": 18
+  },
+  "minimax_h3_legacy": {
+   "audio_prompt_type": "",
+   "guidance_scale": 1.0,
+   "image_prompt_type": "",
+   "settings_version": 2.79,
+   "sliding_window_overlap": 18,
+   "sliding_window_size": 345
+  },
+  "minimax_h3_ref2va": {
+   "audio_prompt_type": "",
+   "guidance_scale": 1.0,
+   "image_prompt_type": "",
+   "settings_version": 2.79,
+   "sliding_window_overlap": 18,
+   "sliding_window_size": 345
+  },
+  "qwen_image_21_7B": {
+   "settings_version": 2.79
+  },
+  "t2v": {
+   "settings_version": 2.79
+  },
+  "z_image": {
+   "settings_version": 2.79
+  }
+ },
+ "lora_keys": {
+  "flux2_klein_9b": "flux2_klein_9b",
+  "krea2_turbo_edit": "krea2",
+  "minimax_h3": "minimax_h3",
+  "minimax_h3_legacy": "minimax_h3",
+  "minimax_h3_ref2va": "minimax_h3",
+  "qwen_image_21_7B": "qwen21",
+  "t2v": "wan",
+  "z_image": "z_image"
+ },
+ "primary_settings": {
+  "activated_loras": [],
+  "batch_size": 1,
+  "embedded_guidance_scale": 6.0,
+  "flow_shift": 3,
+  "guidance_scale": 5,
+  "image_mode": 0,
+  "image_refs": null,
+  "loras_multipliers": "",
+  "multi_prompts_gen_type": 0,
+  "num_inference_steps": 30,
+  "prompt": "",
+  "remove_background_images_ref": 1,
+  "resolution": "832x480",
+  "seed": -1,
+  "video_prompt_type": ""
+ },
+ "settings_version": 2.79,
+ "version": "17.17"
+}

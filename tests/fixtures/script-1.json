@@ -1,0 +1,255 @@
+{
+ "version": 2,
+ "context": {
+  "cast": [
+   {
+    "name": "Character 1",
+    "look": "Look 1",
+    "costume": "Costume 1",
+    "ignore": "Ignore 1",
+    "home": 30
+   },
+   {
+    "name": "Character 2",
+    "look": "Look 2",
+    "costume": "Costume 2",
+    "ignore": "Ignore 2",
+    "home": 70
+   }
+  ],
+  "set": {
+   "name": "Set 1",
+   "description": "Description 1",
+   "elements": [
+    "Element 1",
+    "Element 2",
+    "Element 3",
+    "Element 4",
+    "Element 5"
+   ],
+   "props": [
+    {
+     "name": "Prop 1",
+     "owner": "Character 1",
+     "description": "Description 2"
+    },
+    {
+     "name": "Prop 2",
+     "owner": "Character 1",
+     "description": "Description 3"
+    }
+   ],
+   "plate": null
+  },
+  "style": "Style 1"
+ },
+ "scenes": [
+  {
+   "title": "Scene 1",
+   "cast": [
+    "Character 1",
+    "Character 2"
+   ],
+   "shots": [
+    {
+     "start_ms": 0,
+     "end_ms": 9000,
+     "camera": "Wide shot of the stage, Character 1 standing left, Character 2 seated right",
+     "events": [
+      {
+       "id": "c1",
+       "kind": "cue",
+       "start_ms": 0,
+       "end_ms": 2500,
+       "cue": "music",
+       "words": "Word word word word-word word"
+      },
+      {
+       "id": "c2",
+       "kind": "cue",
+       "start_ms": 2500,
+       "end_ms": 3900,
+       "cue": "reaction",
+       "words": "Word word"
+      },
+      {
+       "id": "p1",
+       "kind": "pose",
+       "start_ms": 0,
+       "end_ms": 4000,
+       "character": "Character 1",
+       "pose": "stand"
+      },
+      {
+       "id": "p2",
+       "kind": "pose",
+       "start_ms": 0,
+       "end_ms": 9000,
+       "character": "Character 2",
+       "pose": "sit"
+      },
+      {
+       "id": "l1",
+       "kind": "line",
+       "start_ms": 4000,
+       "end_ms": 7642,
+       "speaker": "Character 1",
+       "words": "Word word, word. Word word word word word word.",
+       "language": "English",
+       "emotion": "Emotion 1",
+       "pace": 2.6
+      },
+      {
+       "id": "p3",
+       "kind": "pose",
+       "start_ms": 4000,
+       "end_ms": 7642,
+       "character": "Character 1",
+       "pose": "arms_raised",
+       "anchor": {
+        "line": "l1",
+        "at": "start"
+       }
+      },
+      {
+       "id": "p4",
+       "kind": "pose",
+       "start_ms": 7642,
+       "end_ms": 9000,
+       "character": "Character 1",
+       "pose": "point",
+       "anchor": {
+        "line": "l1",
+        "at": "end"
+       }
+      }
+     ]
+    },
+    {
+     "start_ms": 9000,
+     "end_ms": 17000,
+     "camera": "Close shot on Character 2",
+     "events": [
+      {
+       "id": "l2",
+       "kind": "line",
+       "start_ms": 9000,
+       "end_ms": 12642,
+       "speaker": "Character 2",
+       "words": "Word word, Word. Word word word word word word.",
+       "language": "English",
+       "emotion": "Emotion 2",
+       "pace": 2.6
+      },
+      {
+       "id": "p5",
+       "kind": "pose",
+       "start_ms": 9000,
+       "end_ms": 12642,
+       "character": "Character 2",
+       "pose": "sit",
+       "anchor": {
+        "line": "l2",
+        "at": "start"
+       }
+      },
+      {
+       "id": "p6",
+       "kind": "pose",
+       "start_ms": 12642,
+       "end_ms": 17000,
+       "character": "Character 2",
+       "pose": "hand_to_face",
+       "anchor": {
+        "line": "l2",
+        "at": "end"
+       }
+      },
+      {
+       "id": "p7",
+       "kind": "pose",
+       "start_ms": 9000,
+       "end_ms": 17000,
+       "character": "Character 1",
+       "pose": "stand"
+      },
+      {
+       "id": "c3",
+       "kind": "cue",
+       "start_ms": 13000,
+       "end_ms": 13800,
+       "cue": "effect",
+       "words": "Word word word word word word word word"
+      }
+     ]
+    },
+    {
+     "start_ms": 17000,
+     "end_ms": 24000,
+     "camera": "Close shot on Character 1",
+     "events": [
+      {
+       "id": "p8",
+       "kind": "pose",
+       "start_ms": 17000,
+       "end_ms": 17500,
+       "character": "Character 1",
+       "pose": "turn"
+      },
+      {
+       "id": "l3",
+       "kind": "line",
+       "start_ms": 17500,
+       "end_ms": 21911,
+       "speaker": "Character 1",
+       "words": "Word word word, Word, word word word word word word word?",
+       "language": "English",
+       "emotion": "Emotion 3",
+       "pace": 2.6
+      },
+      {
+       "id": "p9",
+       "kind": "pose",
+       "start_ms": 17500,
+       "end_ms": 21911,
+       "character": "Character 1",
+       "pose": "stand",
+       "anchor": {
+        "line": "l3",
+        "at": "start"
+       }
+      },
+      {
+       "id": "p10",
+       "kind": "pose",
+       "start_ms": 21911,
+       "end_ms": 24000,
+       "character": "Character 1",
+       "pose": "walk_step",
+       "anchor": {
+        "line": "l3",
+        "at": "end"
+       }
+      },
+      {
+       "id": "p11",
+       "kind": "pose",
+       "start_ms": 17000,
+       "end_ms": 24000,
+       "character": "Character 2",
+       "pose": "sit"
+      },
+      {
+       "id": "c4",
+       "kind": "cue",
+       "start_ms": 22000,
+       "end_ms": 23500,
+       "cue": "reaction",
+       "words": "Word word"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

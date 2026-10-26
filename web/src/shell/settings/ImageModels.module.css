@@ -1,0 +1,6 @@
+@layer screen {
+  .error { color: var(--err); padding-bottom: var(--sp-3); }
+  .files { width: 100%; min-width: 0; }
+  .pick { display: flex; align-items: center; gap: var(--sp-2); min-width: 0; }
+  .pick select { max-width: 18rem; }
+}

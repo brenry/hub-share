@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hub"
+version = "0.1.0"
+description = "Private LAN creative hub: controller, bus, jobs, VRAM manager and MCP endpoint."
+requires-python = ">=3.13"
+dependencies = [
+    "starlette",
+    "uvicorn",
+    "websockets",
+    "nvidia-ml-py",
+    "pillow",
+]
+
+[project.scripts]
+hub = "hub.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hub", "hub.*"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+extend-exclude = ["web", "wheels", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["hub", "tests", "tools"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q --import-mode=importlib"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+# The controller turns Pillow's bomb warning into an error at import (hub/core/files.py); pytest
+# resets warning filters per test, so mirror it here.
+filterwarnings = ["error::PIL.Image.DecompressionBombWarning"]

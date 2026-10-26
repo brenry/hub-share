@@ -1,0 +1,300 @@
+{
+ "version": 2,
+ "context": {
+  "cast": [
+   {
+    "name": "Character 7",
+    "look": "Look 1.",
+    "costume": "Costume 1.",
+    "ignore": "Ignore 1.",
+    "home": 30
+   },
+   {
+    "name": "Character 8",
+    "look": "Look 2.",
+    "costume": "Costume 2.",
+    "ignore": "Ignore 2.",
+    "home": 70
+   }
+  ],
+  "set": {
+   "name": "Set 1",
+   "description": "Description 1.",
+   "elements": [
+    "Element 1",
+    "Element 2",
+    "Element 3",
+    "Element 4",
+    "Element 5"
+   ],
+   "props": [
+    {
+     "name": "Prop 1",
+     "description": "Description 2."
+    },
+    {
+     "name": "Prop 2",
+     "description": "Description 3."
+    },
+    {
+     "name": "Prop 3",
+     "description": "Description 4."
+    },
+    {
+     "name": "Prop 4",
+     "description": "Description 5."
+    }
+   ]
+  },
+  "style": "Style 1."
+ },
+ "scenes": [
+  {
+   "title": "Scene 1",
+   "cast": [
+    "Character 7",
+    "Character 8"
+   ],
+   "shots": [
+    {
+     "id": "s1",
+     "start_ms": 0,
+     "end_ms": 13688,
+     "camera": "Camera 1.",
+     "events": [
+      {
+       "id": "p1",
+       "kind": "pose",
+       "start_ms": 0,
+       "end_ms": 500,
+       "character": "Character 7",
+       "pose": "stand",
+       "auto": true
+      },
+      {
+       "id": "p2",
+       "kind": "pose",
+       "start_ms": 0,
+       "end_ms": 13688,
+       "character": "Character 8",
+       "pose": "stand",
+       "auto": true
+      },
+      {
+       "id": "l1",
+       "kind": "line",
+       "start_ms": 500,
+       "end_ms": 3128,
+       "speaker": "Character 7",
+       "words": "word, word, word word word word?"
+      },
+      {
+       "id": "p3",
+       "kind": "pose",
+       "start_ms": 3128,
+       "end_ms": 10652,
+       "character": "Character 7",
+       "pose": "stand",
+       "anchor": {
+        "line": "l1",
+        "at": "end"
+       },
+       "auto": true
+      },
+      {
+       "id": "l3",
+       "kind": "line",
+       "start_ms": 10652,
+       "end_ms": 13688,
+       "speaker": "Character 7",
+       "words": "word word, word. word word word word."
+      },
+      {
+       "id": "p12",
+       "kind": "pose",
+       "start_ms": 500,
+       "end_ms": 3128,
+       "character": "Character 7",
+       "pose": "stand",
+       "anchor": {
+        "line": "l1",
+        "at": "start"
+       },
+       "auto": true
+      },
+      {
+       "id": "p13",
+       "kind": "pose",
+       "start_ms": 10652,
+       "end_ms": 13688,
+       "character": "Character 7",
+       "pose": "stand",
+       "anchor": {
+        "line": "l3",
+        "at": "start"
+       },
+       "auto": true
+      },
+      {
+       "id": "f1",
+       "kind": "panel",
+       "at_ms": 0,
+       "picture": "out/2026-10-19/223523-552.png",
+       "stale": false
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "start_ms": 13688,
+     "end_ms": 14688,
+     "camera": "Camera 2.",
+     "events": [
+      {
+       "id": "p15",
+       "kind": "pose",
+       "start_ms": 13688,
+       "end_ms": 14688,
+       "character": "Character 7",
+       "pose": "stand",
+       "auto": true
+      },
+      {
+       "id": "p16",
+       "kind": "pose",
+       "start_ms": 13688,
+       "end_ms": 14688,
+       "character": "Character 8",
+       "pose": "stand",
+       "auto": true
+      },
+      {
+       "id": "f4",
+       "kind": "panel",
+       "at_ms": 13688,
+       "picture": "out/2026-10-19/225937-412.png",
+       "stale": false
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "start_ms": 14688,
+     "end_ms": 19356,
+     "camera": "Camera 1.",
+     "events": [
+      {
+       "id": "p10",
+       "kind": "pose",
+       "start_ms": 14688,
+       "end_ms": 19356,
+       "character": "Character 7",
+       "pose": "stand",
+       "auto": true
+      },
+      {
+       "id": "p11",
+       "kind": "pose",
+       "start_ms": 14688,
+       "end_ms": 19356,
+       "character": "Character 8",
+       "pose": "stand",
+       "auto": true
+      },
+      {
+       "id": "l5",
+       "kind": "line",
+       "start_ms": 14688,
+       "end_ms": 19356,
+       "speaker": "Character 7",
+       "words": "word, word word word word. word word word word word word."
+      },
+      {
+       "id": "f3",
+       "kind": "panel",
+       "at_ms": 14688,
+       "picture": "out/2026-10-19/224834-267.png",
+       "stale": false
+      }
+     ]
+    },
+    {
+     "id": "s2",
+     "start_ms": 19356,
+     "end_ms": 32584,
+     "camera": "Camera 3.",
+     "events": [
+      {
+       "id": "p7",
+       "kind": "pose",
+       "start_ms": 19356,
+       "end_ms": 32584,
+       "character": "Character 7",
+       "pose": "stand",
+       "auto": true
+      },
+      {
+       "id": "p8",
+       "kind": "pose",
+       "start_ms": 19356,
+       "end_ms": 26732,
+       "character": "Character 8",
+       "pose": "stand",
+       "auto": true
+      },
+      {
+       "id": "l4",
+       "kind": "line",
+       "start_ms": 26732,
+       "end_ms": 30584,
+       "speaker": "Character 8",
+       "words": "word word word word word! word word word word!"
+      },
+      {
+       "id": "c1",
+       "kind": "cue",
+       "start_ms": 30584,
+       "end_ms": 32584,
+       "cue": "reaction",
+       "words": "word word word word word word word word."
+      },
+      {
+       "id": "p9",
+       "kind": "pose",
+       "start_ms": 30584,
+       "end_ms": 32584,
+       "character": "Character 8",
+       "pose": "stand",
+       "anchor": {
+        "line": "l4",
+        "at": "end"
+       },
+       "auto": true
+      },
+      {
+       "id": "p14",
+       "kind": "pose",
+       "start_ms": 26732,
+       "end_ms": 30584,
+       "character": "Character 8",
+       "pose": "stand",
+       "anchor": {
+        "line": "l4",
+        "at": "start"
+       },
+       "auto": true
+      },
+      {
+       "id": "f2",
+       "kind": "panel",
+       "at_ms": 19356,
+       "picture": "out/2026-10-19/223528-775.png",
+       "stale": false
+      }
+     ]
+    }
+   ],
+   "seconds": 30
+  }
+ ]
+}

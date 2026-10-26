@@ -1,0 +1,165 @@
+@layer screen {
+  /* The tab, top to bottom: the main band (the left column, the Audio panel at its right), the bar. Only the
+     timeline scrolls, and the context beside the stage. */
+  .tab { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; min-width: 0; background: var(--panel); overflow: clip; }
+  .tab > * { min-width: 0; min-height: 0; }
+  .main { display: grid; grid-template-rows: minmax(0, 1fr); min-height: 0; min-width: 0; }
+  /* the left column, the top band over the timeline. The timeline's track grows to its rows' height
+     before the flexible band is sized, so the rows come first and the band takes what is left, at least 8rem; only
+     past that does the timeline scroll. */
+  .left { display: grid; grid-template-rows: minmax(8rem, 1fr) minmax(0, max-content); min-height: 0; min-width: 0; }
+  .left > * { min-width: 0; min-height: 0; }
+  /* The band: the stage at its left (sized from the band, Stage.tsx), the context at its right, its own scroller. */
+  .band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; min-width: 0; }
+  .band > * { min-width: 0; min-height: 0; }
+  .stage { min-width: 0; }
+  .stage canvas { display: block; background: #000; }
+  .rows { position: relative; width: max-content; min-width: 100%; }
+  .playhead { position: absolute; top: 0; bottom: 0; z-index: 1; width: var(--rule); margin-left: calc(var(--rule) / -2); background: var(--accent); pointer-events: none; }
+  .ruler .track { cursor: pointer; }
+  .empty { display: grid; place-items: center; padding: var(--sp-4); color: var(--text-3); font-size: var(--fs-cap); text-align: center; }
+
+  /* The timeline: rows of one width; each row's head stays at the left while the rows scroll sideways. */
+  .scroll { min-height: 0; min-width: 0; padding: var(--sp-3) 0; }
+  .row { display: flex; width: max-content; min-width: 100%; }
+  .head {
+    position: sticky; left: 0; z-index: 2; flex: none; width: var(--head, 7rem); padding: 0 var(--sp-3); display: flex; align-items: center;
+    background: var(--panel); color: var(--text-3); font-size: var(--fs-ctl); white-space: nowrap; overflow: clip;
+  }
+  .track { position: relative; flex: none; }
+  .ruler { height: 1.25rem; }
+  .shots { height: 2.5rem; }
+  .lines { height: 2.5rem; }
+  .cues { height: 2rem; }
+  .poses { height: 5.5rem; }
+  .row + .row .track { border-top: 1px solid var(--line); }
+  .tick, .tickBig { position: absolute; bottom: 0; width: 1px; background: var(--line-strong); color: var(--text-3); font-size: var(--fs-ctl); }
+  .tick { height: .3rem; }
+  .tickBig { width: auto; height: 100%; padding-left: var(--sp-1); background: none; border-left: 1px solid var(--line-strong); line-height: 1; }
+
+  /* A box: as long as its event, its text cut to fit. */
+  .box {
+    position: absolute; top: .25rem; bottom: .25rem; display: flex; align-items: center; min-width: 0; padding: 0 var(--sp-2);
+    border-radius: var(--r-1); background: var(--raise); color: var(--text-1); font-size: var(--fs-ctl); text-align: left; overflow: clip;
+    outline: var(--rule) solid transparent; outline-offset: calc(var(--rule) * -1); border-left: 1px solid var(--panel);
+  }
+  .box:hover { background: var(--raise-hover); }
+  .shots .box { background: var(--panel-2); color: var(--text-2); }
+  /* A line box's take state as a mark (ok none): rendering dashed, flagged and failed the error colour,
+     stale as a stale sketch. A selected box keeps the accent. */
+  .take_rendering { outline-style: dashed; outline-color: var(--text-2); }
+  .take_flagged, .take_failed { outline-color: var(--err); }
+  .take_stale { opacity: .5; border: 1px dashed var(--text-2); }
+  /* the box Track's job is rendering now. */
+  .speaking { outline-style: solid; outline-color: var(--text-1); }
+  .on, .on:hover { outline-color: var(--accent); }
+
+  /* A pose: its figure at its start, a hold line to its end. */
+  .pose { position: absolute; top: .25rem; height: 5rem; padding: 0; background: none; outline: var(--rule) solid transparent; }
+  .pose svg { position: absolute; left: 0; top: 0; display: block; }
+  .pose.on svg { outline: var(--rule) solid var(--accent); }
+  .hold { position: absolute; left: 0; right: 0; top: calc(50% - var(--rule) / 2); height: var(--rule); background: var(--text-3); }
+
+  /* a sketch at its time, 16:9 as the sketch (576×320); a later one over an earlier one it overlaps. */
+  .panels { height: 2.75rem; }
+  .sketch { position: absolute; top: .25rem; width: 4rem; height: 2.25rem; padding: 0; border: 1px solid var(--line-strong); border-radius: var(--r-1); background: var(--raise); overflow: clip; outline: var(--rule) solid transparent; }
+  .sketch img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .sketch[data-stale="true"] { opacity: .5; border-style: dashed; border-color: var(--text-2); }
+  .sketch[data-drawn="false"] { background: none; border-style: dashed; }
+
+  /* a locked script's audio script, the band's right column (stage and timeline at its left), its own scroll. */
+  .withAudio { grid-template-columns: minmax(0, 1fr) minmax(18rem, 26rem); }
+  .withAudio > * { grid-column: 1; }
+  .withAudio > .audio { grid-column: 2; grid-row: 1 / -1; }
+  .audio { display: grid; grid-template-rows: auto minmax(0, 1fr); min-height: 0; border-left: 1px solid var(--line); }
+  .audioHead { margin: 0; padding: var(--sp-2) var(--sp-3); color: var(--text-3); font-size: var(--fs-ctl); font-weight: 400; }
+  .audioRows { min-height: 0; display: grid; align-content: start; gap: var(--sp-1); padding: 0 var(--sp-2) var(--sp-2); }
+  .audioRow {
+    display: grid; gap: var(--sp-1); padding: var(--sp-2); border-radius: var(--r-1); background: var(--raise); color: var(--text-1);
+    font-size: var(--fs-ctl); text-align: left; outline: var(--rule) solid transparent; outline-offset: calc(var(--rule) * -1);
+  }
+  .audioRow:hover { background: var(--raise-hover); }
+  .audioLine, .audioTake { color: var(--text-2); overflow-wrap: anywhere; }
+  .audioText { margin: 0; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .audioProblem { color: var(--err); }
+
+  /* The context: the style line, then cards in a row that wraps (the cast, then the set). */
+  .context { padding: var(--sp-3); border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); display: grid; gap: var(--sp-2); align-content: start; }
+  .style { color: var(--text-2); font-size: var(--fs-ctl); }
+  .cards { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: flex-start; }
+  .card {
+    flex: 0 1 18rem; min-width: 12rem; display: grid; gap: var(--sp-1); padding: var(--sp-2) var(--sp-3);
+    border-radius: var(--r-1); background: var(--panel-2); color: var(--text-1); font-size: var(--fs-ctl);
+  }
+  .setCard { flex-basis: 28rem; }
+  .who { display: flex; align-items: center; gap: var(--sp-2); }
+  .picture { width: 3rem; height: 3rem; flex: none; object-fit: cover; border-radius: var(--r-1); background: var(--raise); }
+  .memberProblem { color: var(--err); }
+  .cardName { font-weight: 600; }
+  .field { min-width: 0; color: var(--text-1); }
+  .label { color: var(--text-3); }
+  .prop { padding-left: var(--sp-2); }
+  .strip { position: relative; height: 2.25rem; margin-top: var(--sp-1); border-bottom: 1px solid var(--line-strong); }
+  .place { position: absolute; bottom: 0; display: flex; flex-direction: column; align-items: center; transform: translateX(-50%); white-space: nowrap; color: var(--text-2); }
+  .placeTick { display: block; width: 1px; height: .4rem; background: var(--text-3); }
+
+  /* The bar: low and quiet, one line, as Edit Video's. */
+  .bar {
+    --seq-ctl: 1.375rem;
+    display: flex; align-items: center; gap: var(--sp-2); min-width: 0; height: 2rem; padding: 0 var(--sp-3);
+    border-top: 1px solid var(--line); background: var(--panel); color: var(--text-2); font-size: var(--fs-ctl); white-space: nowrap;
+  }
+  .bar > * { flex: none; }
+  .name {
+    display: inline-flex; align-items: center; gap: var(--sp-1); max-width: 16rem; min-width: 0; height: var(--seq-ctl); padding: 0 var(--sp-2);
+    border-radius: var(--r-1); color: var(--text-2);
+  }
+  .name:hover { background: var(--raise); color: var(--text-1); }
+  .play { display: inline-grid; place-items: center; width: var(--seq-ctl); height: var(--seq-ctl); border-radius: var(--r-1); color: var(--text-2); }
+  .play:hover { background: var(--raise); color: var(--text-1); }
+  .bar > .grow { flex: 1 1 0; min-width: 0; }
+  /* `Track` is ui/Button small; off it keeps its face, its text quiet and no hover. */
+  .trackBtn[aria-disabled="true"], .trackBtn[aria-disabled="true"]:hover { color: var(--text-3); background: var(--raise); border-color: var(--line); cursor: default; }
+  /* Track's job's progress after it. */
+  .trackProgress { display: inline-flex; align-items: center; gap: var(--sp-2); color: var(--text-2); }
+  .trackBar { width: 6rem; }
+  /* a selected line's take after the event line, and its player. */
+  .bar > .take { flex: 0 1 auto; min-width: 0; max-width: 40%; }
+  /* the track's line on the bar, cut to fit. */
+  .bar > .trackLine { flex: 0 1 auto; min-width: 0; max-width: 30%; color: var(--text-2); }
+  .takePlay { height: var(--seq-ctl); width: 14rem; }
+  .liveFlat, .liveFlat:hover { height: var(--seq-ctl); border-color: transparent; background: none; box-shadow: none; padding: 0 var(--sp-1); font-size: var(--fs-ctl); color: var(--text-3); }
+  .ask { padding: var(--sp-2); min-width: 16rem; }
+  /* the box being dragged over the others; the edit ask at the pointer; the cut's player. */
+  [data-dragging] { z-index: 1; cursor: grabbing; opacity: .85; }
+  .askAt {
+    position: fixed; z-index: 30; display: grid; gap: var(--sp-2); width: 20rem; padding: var(--sp-2);
+    border: 1px solid var(--line-strong); border-radius: var(--r-2); background: var(--panel-2); box-shadow: 0 1rem 3rem rgba(0, 0, 0, .55);
+  }
+  .cutPop { padding: var(--sp-1); }
+  .cutPlay { display: block; width: 32rem; max-width: 80vw; background: #000; }
+}
+
+.field input, .field textarea { width: 100%; box-sizing: border-box; font: inherit; color: var(--text-1); background: transparent; border: 1px solid var(--text-3); border-radius: 0.25rem; padding: 0 0.25rem; resize: vertical; }
+.edge { position: absolute; top: 0; right: 0; bottom: 0; width: 0.5rem; cursor: ew-resize; background: var(--text-3); opacity: 0.5; }
+
+.shotList { display: flex; flex-direction: column; gap: 0.25rem; min-height: 0; height: 100%; padding: 0.25rem; }
+.shotItem { display: block; text-align: left; white-space: normal; padding: 0.25rem 0.5rem; border-radius: 0.25rem; background: var(--raise); color: var(--text-1); outline: 1px solid transparent; }
+
+.withAudio > .shotSide { grid-column: 2; grid-row: 1 / -1; min-height: 0; overflow: clip; border-left: 1px solid var(--line); }
+
+.shotHead { display: block; width: 100%; text-align: left; font-weight: 600; color: var(--text-1); background: transparent; }
+
+.withAudio > .shotSide { display: grid; grid-template-rows: minmax(0, 3fr) minmax(0, 2fr); }
+.loraList { display: flex; flex-direction: column; gap: 0.25rem; min-height: 0; height: 100%; padding: 0.25rem; border-top: 1px solid var(--line); }
+.loraRow { display: grid; grid-template-columns: auto minmax(0, 1fr) 4.5rem; gap: 0.5rem; align-items: center; color: var(--text-1); }
+.loraRow input[type="number"] { width: 100%; box-sizing: border-box; font: inherit; color: var(--text-1); background: transparent; border: 1px solid var(--text-3); border-radius: 0.25rem; }
+
+.lengthBox { width: 5rem; font: inherit; color: var(--text-1); background: transparent; border: 1px solid var(--text-3); border-radius: 0.25rem; padding: 0 0.25rem; }
+
+.shotPics { display: flex; flex-wrap: wrap; gap: 0.25rem; align-items: center; min-height: 3rem; padding: 0.25rem; border: 1px dashed var(--text-3); border-radius: 0.25rem; }
+.shotPic { display: grid; justify-items: center; gap: 0.125rem; background: transparent; color: var(--text-2); font-size: var(--fs-ctl); }
+.shotPic img { width: 3rem; height: 3rem; object-fit: cover; border-radius: 0.25rem; }
+
+.shotPic button { background: transparent; padding: 0; }
+.shotPic input { width: 2.5rem; font: inherit; color: var(--text-1); background: transparent; border: 1px solid var(--text-3); border-radius: 0.25rem; }

@@ -1,0 +1,59 @@
+{
+  "name": "Set 1",
+  "format": {"aspect": "4:3", "height": 480},
+  "audience": "seen",
+  "camera_plan": "three_camera",
+  "floor_plan": {
+    "version": 1,
+    "units": "m",
+    "origin": "centre of the stage's downstage edge, at floor level",
+    "axes": {"x": "camera-left to camera-right, seen from the house", "y": "upstage, away from the house", "z": "up",
+             "angles": "degrees counter-clockwise from +x seen from above; 90 faces upstage, -90 faces the house; tilt positive up"},
+    "sensor": {"height_mm": 9.6, "width_mm_at_4_3": 12.8,
+               "source": "Zettl pp. 34, 42-43: 10:1 zoom 17-170 mm on a 1-inch Plumbicon; at 17 mm a 4.5 m wide view at 6 m (=> 12.8 mm wide image)"},
+    "elements": [
+      {"name": "stage", "kind": "platform", "shape": "rect", "x": 0.0, "y": 2.25, "w": 9.0, "d": 4.5, "z0": 0.0, "height": 0.30, "walkable": true,
+       "source": "height: Zettl pp. 346-347 (chairs on a platform 6-12 in, cameras at eye level), 12 in taken; footprint: assumption"},
+      {"name": "back_flats", "kind": "flat", "shape": "rect", "x": 0.0, "y": 4.6, "w": 10.0, "d": 0.2, "z0": 0.0, "height": 3.05,
+       "source": "height: Zettl p. 189 (average scenery 10 ft); line: Zettl p. 349 (active furniture at least 2 m from the set wall)"},
+      {"name": "chair_1", "kind": "chair", "shape": "rect", "x": 0.2, "y": 2.3, "w": 0.6, "d": 0.6, "rot_deg": 20, "z0": 0.30, "height": 0.85, "seat_z": 0.45,
+       "source": "assumption (Zettl pp. 353-354, 426-427: small chairs placed close together)"},
+      {"name": "chair_2", "kind": "chair", "shape": "rect", "x": 1.5, "y": 2.5, "w": 0.6, "d": 0.6, "rot_deg": 25, "z0": 0.30, "height": 0.85, "seat_z": 0.45,
+       "source": "assumption"},
+      {"name": "low_table", "kind": "table", "shape": "rect", "x": 0.85, "y": 1.6, "w": 0.9, "d": 0.45, "z0": 0.30, "height": 0.40,
+       "source": "assumption"},
+      {"name": "plant", "kind": "prop", "shape": "circle", "x": 3.4, "y": 3.6, "r": 0.3, "z0": 0.30, "height": 1.4,
+       "source": "assumption; kept out of the cameras' shots (Zettl p. 426: the rubber plant 'in the way')"}
+    ],
+    "audience_area": {"shape": "rect", "x": 0.0, "y": -7.25, "w": 10.0, "d": 5.5, "rows": 6, "row_depth": 0.9, "riser_step": 0.2, "seat_z": 0.45,
+                      "source": "assumption (Grindstaff p. 127: the front rows are where reaction shots are taken)"},
+    "marks": [
+      {"name": "lead", "x": -1.3, "y": 1.5, "posture": "stand", "facing_deg": 0},
+      {"name": "seat_1", "x": 0.2, "y": 2.3, "posture": "sit", "facing_deg": 200, "on": "chair_1"},
+      {"name": "seat_2", "x": 1.5, "y": 2.5, "posture": "sit", "facing_deg": 205, "on": "chair_2"}
+    ],
+    "cameras": [
+      {"name": "1", "role": "cross onto seat 1 (CU seat 1; OTS lead->seat 1 from a shoulder place)", "x": -3.2, "y": -2.2, "height": 1.5,
+       "default_lens_mm": 102, "default_aim": {"pan_deg": 53.6, "tilt_deg": -0.5}, "covers": {"framing": "MCU", "on": ["seat_1"]},
+       "source": "Zettl p. 454 (numbered left to right); pp. 426-427 (from the extreme left, the seated speaker); height Zettl p. 62 (pedestal 1.2-2 m)"},
+      {"name": "2", "role": "centre: the cover shot, two- and three-shots", "x": 0.0, "y": -3.6, "height": 1.6,
+       "default_lens_mm": 19.7, "default_aim": {"pan_deg": 90.3, "tilt_deg": -5.0}, "covers": {"framing": "LS", "on": ["lead", "seat_1", "seat_2"]},
+       "source": "Katz p. 133 (the middle camera always obtains the two-shot); Zettl p. 274 fig. 10.20 (three-shot, the lead screen-left)"},
+      {"name": "3", "role": "cross onto the lead (the reverse-angle of the lead)", "x": 3.25, "y": -1.5, "height": 1.5,
+       "default_lens_mm": 103, "default_aim": {"pan_deg": 145.9, "tilt_deg": 3.9}, "covers": {"framing": "MCU", "on": ["lead"]},
+       "source": "Zettl pp. 426-427 (cross-shoot with the other camera: a reverse-angle shot of the lead); p. 274 (the lead's CU, screen-left side kept)"},
+      {"name": "rev", "role": "the reverse onto the house (audience wide; member_in_house)", "x": 3.8, "y": 0.4, "height": 2.0,
+       "default_lens_mm": 17, "default_aim": {"pan_deg": -118, "tilt_deg": -6}, "covers": {"framing": "ELS", "on": ["audience_area"]},
+       "source": "blueprint §16.1, §16.4; Zettl p. 470 (a third camera for audience reactions, a hearing remote)"}
+    ]
+  },
+  "staging": {
+    "scene": 1,
+    "pattern": "three_camera: Speaker 1 standing at one side of the seated speakers (Zettl p. 271; R50 ST-2)",
+    "people": [
+      {"name": "Character 1", "mark": "lead", "x": -1.3, "y": 1.5, "facing_deg": 0, "height_m": 1.78, "posture": "stand"},
+      {"name": "Character 2", "mark": "seat_1", "x": 0.2, "y": 2.3, "facing_deg": 200, "height_m": 1.85, "posture": "sit", "on": "chair_1"},
+      {"name": "Character 3", "mark": "seat_2", "x": 1.5, "y": 2.5, "facing_deg": 205, "height_m": 1.65, "posture": "sit", "on": "chair_2"}
+    ]
+  }
+}

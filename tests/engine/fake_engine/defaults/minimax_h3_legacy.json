@@ -1,0 +1,14 @@
+{
+ "model": {
+  "URLs": [
+   "https://huggingface.co/fake/resolve/main/MiniMax_H3_FL2VA_pruned_int8_convrot.safetensors"
+  ],
+  "architecture": "minimax_h3_legacy",
+  "description": "Isolated sidecar route.",
+  "minimax_h3_legacy_sidecar": true,
+  "name": "H3 Legacy Quality — ConvRot"
+ },
+ "num_inference_steps": 20,
+ "resolution": "960x544",
+ "video_length": 124
+}

@@ -1,0 +1,9 @@
+@layer ui {
+  .stack { position: absolute; left: 50%; bottom: var(--sp-6); transform: translateX(-50%); display: grid; gap: var(--sp-2); justify-items: center; pointer-events: none; z-index: 5; }
+  .toast {
+    pointer-events: auto; display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-2) var(--sp-4); max-width: 40rem;
+    background: var(--panel-2); border: 1px solid var(--line-strong); border-radius: var(--r-3);
+  }
+  .act { color: var(--accent); font-weight: 600; }
+  .act:hover { color: var(--accent-hover); }
+}

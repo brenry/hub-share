@@ -1,0 +1,2154 @@
+{
+ "catalog": {
+  "engine": {
+   "api": "upstream",
+   "settings_version": 2.79,
+   "version": "17.17"
+  },
+  "models": [
+   {
+    "base": null,
+    "block": 16,
+    "defaults": {
+     "embedded_guidance_scale": 6.0,
+     "guidance_scale": 1,
+     "num_inference_steps": 4,
+     "resolution": "1024x1024"
+    },
+    "family": "Flux 2",
+    "guidance_key": null,
+    "id": "flux2_klein_9b",
+    "kind": "image",
+    "lock_steps": false,
+    "lora_recursive": true,
+    "loras": true,
+    "name": "Flux 2 Klein 9B",
+    "ref_choices": [
+     "",
+     "KI",
+     "I"
+    ],
+    "video": null
+   },
+   {
+    "base": null,
+    "block": 16,
+    "defaults": {
+     "embedded_guidance_scale": 6.0,
+     "guidance_scale": 4,
+     "num_inference_steps": 30,
+     "resolution": "1024x1024"
+    },
+    "family": "Flux 2",
+    "guidance_key": "guidance_scale",
+    "id": "flux2_klein_base_9b",
+    "kind": "image",
+    "lock_steps": false,
+    "lora_recursive": true,
+    "loras": true,
+    "name": "Flux 2 Klein Base 9B",
+    "ref_choices": [
+     "",
+     "KI",
+     "I"
+    ],
+    "video": null
+   },
+   {
+    "base": null,
+    "block": 16,
+    "defaults": {
+     "embedded_guidance_scale": 6.0,
+     "guidance_scale": 0,
+     "num_inference_steps": 8,
+     "resolution": "832x480"
+    },
+    "family": "Krea 2",
+    "guidance_key": null,
+    "id": "krea2_turbo_edit",
+    "kind": "image",
+    "lock_steps": false,
+    "lora_recursive": true,
+    "loras": true,
+    "name": "Krea 2 Turbo Identity Edit",
+    "ref_choices": [
+     "",
+     "KI",
+     "I"
+    ],
+    "video": null
+   },
+   {
+    "base": null,
+    "block": 32,
+    "defaults": {
+     "embedded_guidance_scale": 6.0,
+     "guidance_scale": 1.0,
+     "num_inference_steps": 20,
+     "resolution": "864x480"
+    },
+    "family": "MiniMax H3",
+    "guidance_key": null,
+    "id": "minimax_h3",
+    "kind": "video",
+    "lock_steps": false,
+    "lora_recursive": true,
+    "loras": true,
+    "name": "H3 First / Last — Pruned",
+    "ref_choices": [],
+    "steps_range": [
+     1,
+     50
+    ],
+    "video": {
+     "continues": true,
+     "fps": 24,
+     "frames": {
+      "default": 124,
+      "max": 345,
+      "min": 124,
+      "step": 17
+     },
+     "one_pass": {
+      "minimax_h3_multi_window": false
+     },
+     "overlap": 18,
+     "references": {
+      "end": true,
+      "max": 2,
+      "min": 0,
+      "role": "start"
+     },
+     "steps": 20,
+     "text_encoder_default": "nvfp4_awq",
+     "text_encoder_names": {
+      "gguf_q2_k": "GGUF Q2_K (Lowest RAM)",
+      "int8": "Quanto INT8",
+      "nvfp4_awq": "NVFP4 AWQ (Recommended)"
+     },
+     "text_encoders": [
+      "gguf_q2_k",
+      "int8",
+      "nvfp4_awq"
+     ],
+     "tiers": [
+      {
+       "name": "480p",
+       "sizes": {
+        "16:9": [
+         864,
+         480
+        ],
+        "1:1": [
+         640,
+         640
+        ],
+        "21:9": [
+         1120,
+         480
+        ],
+        "2:3": [
+         512,
+         800
+        ],
+        "3:2": [
+         800,
+         512
+        ],
+        "3:4": [
+         480,
+         640
+        ],
+        "4:3": [
+         640,
+         480
+        ],
+        "9:16": [
+         480,
+         864
+        ]
+       }
+      },
+      {
+       "name": "540p",
+       "sizes": {
+        "16:9": [
+         960,
+         544
+        ],
+        "1:1": [
+         736,
+         736
+        ],
+        "21:9": [
+         1280,
+         544
+        ],
+        "2:3": [
+         576,
+         896
+        ],
+        "3:2": [
+         896,
+         576
+        ],
+        "3:4": [
+         544,
+         736
+        ],
+        "4:3": [
+         736,
+         544
+        ],
+        "9:16": [
+         544,
+         960
+        ]
+       }
+      },
+      {
+       "name": "720p",
+       "sizes": {
+        "16:9": [
+         1280,
+         704
+        ],
+        "1:1": [
+         704,
+         704
+        ],
+        "21:9": [
+         1632,
+         704
+        ],
+        "2:3": [
+         768,
+         1152
+        ],
+        "3:2": [
+         1152,
+         768
+        ],
+        "3:4": [
+         704,
+         928
+        ],
+        "4:3": [
+         928,
+         704
+        ],
+        "9:16": [
+         704,
+         1280
+        ]
+       }
+      },
+      {
+       "name": "1080p",
+       "sizes": {
+        "16:9": [
+         1920,
+         1088
+        ],
+        "1:1": [
+         1088,
+         1088
+        ],
+        "21:9": [
+         2528,
+         1088
+        ],
+        "2:3": [
+         1184,
+         1760
+        ],
+        "3:2": [
+         1760,
+         1184
+        ],
+        "3:4": [
+         1088,
+         1440
+        ],
+        "4:3": [
+         1440,
+         1088
+        ],
+        "9:16": [
+         1088,
+         1920
+        ]
+       }
+      }
+     ]
+    },
+    "video_task": {
+     "minimax_h3_text_encoder": "nvfp4_awq"
+    }
+   },
+   {
+    "base": null,
+    "block": 32,
+    "defaults": {
+     "embedded_guidance_scale": 6.0,
+     "guidance_scale": 1.0,
+     "num_inference_steps": 4,
+     "resolution": "1152x640"
+    },
+    "family": "MiniMax H3",
+    "guidance_key": null,
+    "id": "minimax_h3_fused_turbo",
+    "kind": "video",
+    "lock_steps": false,
+    "lora_recursive": true,
+    "loras": false,
+    "name": "H3 Fused 4-Step — Frames (Experimental)",
+    "ref_choices": [],
+    "steps_range": [
+     4,
+     8
+    ],
+    "video": {
+     "continues": true,
+     "fps": 24,
+     "frames": {
+      "default": 243,
+      "max": 345,
+      "min": 124,
+      "step": 17
+     },
+     "one_pass": {
+      "minimax_h3_multi_window": false
+     },
+     "overlap": 18,
+     "references": {
+      "end": true,
+      "max": 2,
+      "min": 0,
+      "role": "start"
+     },
+     "steps": 4,
+     "text_encoder_default": "nvfp4_awq",
+     "text_encoder_names": {
+      "gguf_q2_k": "GGUF Q2_K (Lowest RAM)",
+      "int8": "Quanto INT8",
+      "nvfp4_awq": "NVFP4 AWQ (Recommended)"
+     },
+     "text_encoders": [
+      "gguf_q2_k",
+      "int8",
+      "nvfp4_awq"
+     ],
+     "tiers": [
+      {
+       "name": "480p",
+       "sizes": {
+        "16:9": [
+         864,
+         480
+        ],
+        "1:1": [
+         640,
+         640
+        ],
+        "21:9": [
+         1120,
+         480
+        ],
+        "2:3": [
+         512,
+         800
+        ],
+        "3:2": [
+         800,
+         512
+        ],
+        "3:4": [
+         480,
+         640
+        ],
+        "4:3": [
+         640,
+         480
+        ],
+        "9:16": [
+         480,
+         864
+        ]
+       }
+      },
+      {
+       "name": "540p",
+       "sizes": {
+        "16:9": [
+         960,
+         544
+        ],
+        "1:1": [
+         736,
+         736
+        ],
+        "21:9": [
+         1280,
+         544
+        ],
+        "2:3": [
+         576,
+         896
+        ],
+        "3:2": [
+         896,
+         576
+        ],
+        "3:4": [
+         544,
+         736
+        ],
+        "4:3": [
+         736,
+         544
+        ],
+        "9:16": [
+         544,
+         960
+        ]
+       }
+      },
+      {
+       "name": "720p",
+       "sizes": {
+        "16:9": [
+         1280,
+         704
+        ],
+        "1:1": [
+         704,
+         704
+        ],
+        "21:9": [
+         1632,
+         704
+        ],
+        "2:3": [
+         768,
+         1152
+        ],
+        "3:2": [
+         1152,
+         768
+        ],
+        "3:4": [
+         704,
+         928
+        ],
+        "4:3": [
+         928,
+         704
+        ],
+        "9:16": [
+         704,
+         1280
+        ]
+       }
+      },
+      {
+       "name": "1080p",
+       "sizes": {
+        "16:9": [
+         1920,
+         1088
+        ],
+        "1:1": [
+         1088,
+         1088
+        ],
+        "21:9": [
+         2528,
+         1088
+        ],
+        "2:3": [
+         1184,
+         1760
+        ],
+        "3:2": [
+         1760,
+         1184
+        ],
+        "3:4": [
+         1088,
+         1440
+        ],
+        "4:3": [
+         1440,
+         1088
+        ],
+        "9:16": [
+         1088,
+         1920
+        ]
+       }
+      }
+     ]
+    },
+    "video_task": {
+     "minimax_h3_text_encoder": "nvfp4_awq"
+    }
+   },
+   {
+    "base": null,
+    "block": 32,
+    "defaults": {
+     "embedded_guidance_scale": 6.0,
+     "guidance_scale": 1.0,
+     "num_inference_steps": 20,
+     "resolution": "864x480"
+    },
+    "family": "MiniMax H3",
+    "guidance_key": null,
+    "id": "minimax_h3_ref2va",
+    "kind": "video",
+    "lock_steps": false,
+    "lora_recursive": true,
+    "loras": true,
+    "name": "H3 Omni — Pruned",
+    "ref_choices": [],
+    "steps_range": [
+     1,
+     50
+    ],
+    "video": {
+     "continues": false,
+     "fps": 24,
+     "frames": {
+      "default": 124,
+      "max": 345,
+      "min": 124,
+      "step": 17
+     },
+     "one_pass": {
+      "minimax_h3_multi_window": false
+     },
+     "overlap": null,
+     "references": {
+      "detail": {
+       "choices": [
+        {
+         "label": "Match output (faster)",
+         "value": "match"
+        },
+        {
+         "label": "High detail (official PDD recipe)",
+         "value": "max"
+        }
+       ],
+       "default": "match",
+       "key": "minimax_h3_reference_detail"
+      },
+      "key": "minimax_h3_references",
+      "max": 9,
+      "min": 1,
+      "role": "identity"
+     },
+     "steps": 20,
+     "text_encoder_default": "nvfp4_awq",
+     "text_encoder_names": {
+      "gguf_q2_k": "GGUF Q2_K (Lowest RAM)",
+      "int8": "Quanto INT8",
+      "nvfp4_awq": "NVFP4 AWQ (Recommended)"
+     },
+     "text_encoders": [
+      "gguf_q2_k",
+      "int8",
+      "nvfp4_awq"
+     ],
+     "tiers": [
+      {
+       "name": "480p",
+       "sizes": {
+        "16:9": [
+         864,
+         480
+        ],
+        "1:1": [
+         640,
+         640
+        ],
+        "21:9": [
+         1120,
+         480
+        ],
+        "2:3": [
+         512,
+         800
+        ],
+        "3:2": [
+         800,
+         512
+        ],
+        "3:4": [
+         480,
+         640
+        ],
+        "4:3": [
+         640,
+         480
+        ],
+        "9:16": [
+         480,
+         864
+        ]
+       }
+      },
+      {
+       "name": "540p",
+       "sizes": {
+        "16:9": [
+         960,
+         544
+        ],
+        "1:1": [
+         736,
+         736
+        ],
+        "21:9": [
+         1280,
+         544
+        ],
+        "2:3": [
+         576,
+         896
+        ],
+        "3:2": [
+         896,
+         576
+        ],
+        "3:4": [
+         544,
+         736
+        ],
+        "4:3": [
+         736,
+         544
+        ],
+        "9:16": [
+         544,
+         960
+        ]
+       }
+      },
+      {
+       "name": "720p",
+       "sizes": {
+        "16:9": [
+         1280,
+         704
+        ],
+        "1:1": [
+         704,
+         704
+        ],
+        "21:9": [
+         1632,
+         704
+        ],
+        "2:3": [
+         768,
+         1152
+        ],
+        "3:2": [
+         1152,
+         768
+        ],
+        "3:4": [
+         704,
+         928
+        ],
+        "4:3": [
+         928,
+         704
+        ],
+        "9:16": [
+         704,
+         1280
+        ]
+       }
+      },
+      {
+       "name": "1080p",
+       "sizes": {
+        "16:9": [
+         1920,
+         1088
+        ],
+        "1:1": [
+         1088,
+         1088
+        ],
+        "21:9": [
+         2528,
+         1088
+        ],
+        "2:3": [
+         1184,
+         1760
+        ],
+        "3:2": [
+         1760,
+         1184
+        ],
+        "3:4": [
+         1088,
+         1440
+        ],
+        "4:3": [
+         1440,
+         1088
+        ],
+        "9:16": [
+         1088,
+         1920
+        ]
+       }
+      }
+     ]
+    },
+    "video_task": {
+     "minimax_h3_text_encoder": "nvfp4_awq"
+    }
+   },
+   {
+    "base": null,
+    "block": 32,
+    "defaults": {
+     "embedded_guidance_scale": 6.0,
+     "guidance_scale": 4.0,
+     "num_inference_steps": 40,
+     "resolution": "832x480"
+    },
+    "family": "Qwen Image 2.1",
+    "guidance_key": "guidance_scale",
+    "id": "qwen_image_21_7B",
+    "kind": "image",
+    "lock_steps": false,
+    "lora_recursive": true,
+    "loras": true,
+    "name": "Qwen Image 2.1 7B",
+    "ref_choices": [
+     "",
+     "KI",
+     "I"
+    ],
+    "video": null
+   },
+   {
+    "base": null,
+    "block": 16,
+    "defaults": {
+     "embedded_guidance_scale": 6.0,
+     "guidance_scale": 0,
+     "num_inference_steps": 8,
+     "resolution": "1024x1024"
+    },
+    "family": "Z-Image",
+    "guidance_key": null,
+    "id": "z_image",
+    "kind": "image",
+    "lock_steps": false,
+    "lora_recursive": true,
+    "loras": true,
+    "name": "Z-Image Turbo 6B",
+    "ref_choices": [],
+    "video": null
+   }
+  ]
+ },
+ "classes": {
+  "GenerationError": {
+   "attributes": [
+    "stage",
+    "task_id",
+    "task_index"
+   ],
+   "fields": [
+    "message",
+    "task_index",
+    "task_id",
+    "stage"
+   ]
+  },
+  "GenerationResult": {
+   "attributes": [],
+   "fields": [
+    "success",
+    "generated_files",
+    "errors",
+    "total_tasks",
+    "successful_tasks",
+    "failed_tasks"
+   ]
+  },
+  "ProgressUpdate": {
+   "attributes": [],
+   "fields": [
+    "phase",
+    "status",
+    "progress",
+    "current_step",
+    "total_steps"
+   ]
+  },
+  "SessionEvent": {
+   "attributes": [
+    "data"
+   ],
+   "fields": [
+    "kind",
+    "data",
+    "timestamp"
+   ]
+  },
+  "SessionJob": {
+   "attributes": [
+    "cancel",
+    "cancel_requested",
+    "result"
+   ],
+   "fields": null
+  },
+  "SessionStream": {
+   "attributes": [
+    "close",
+    "iter",
+    "put"
+   ],
+   "fields": null
+  },
+  "WanGPSession": {
+   "attributes": [
+    "close",
+    "ensure_ready",
+    "submit_task"
+   ],
+   "fields": null
+  }
+ },
+ "config_keys": {
+  "file": [
+   "checkpoints_paths",
+   "last_model_type",
+   "services"
+  ],
+  "memory": [
+   "audio_save_path",
+   "checkpoints_paths",
+   "embed_source_images",
+   "enabled_plugins",
+   "enhancer_enabled",
+   "enhancer_mode",
+   "image_output_codec",
+   "image_save_path",
+   "last_model_type",
+   "metadata_type",
+   "save_path",
+   "save_queue_if_crash",
+   "video_container"
+  ]
+ },
+ "engine": {
+  "flavour": "upstream",
+  "settings_version": 2.79,
+  "version": "17.17"
+ },
+ "families": {
+  "flux2": [
+   10,
+   "Flux 2"
+  ],
+  "krea2": [
+   40,
+   "Krea 2"
+  ],
+  "minimax_h3": [
+   60,
+   "MiniMax H3"
+  ],
+  "qwen_image_2": [
+   30,
+   "Qwen Image 2.1"
+  ],
+  "wan": [
+   50,
+   "Wan"
+  ],
+  "z_image": [
+   20,
+   "Z-Image"
+  ]
+ },
+ "format": 1,
+ "generate_video": [
+  {
+   "default": "<required>",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "task"
+  },
+  {
+   "default": "<required>",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "send_cmd"
+  },
+  {
+   "default": "<required>",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "image_mode"
+  },
+  {
+   "default": "<required>",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "prompt"
+  },
+  {
+   "default": "nvfp4_awq",
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "minimax_h3_text_encoder"
+  },
+  {
+   "default": true,
+   "kind": "POSITIONAL_OR_KEYWORD",
+   "name": "minimax_h3_multi_window"
+  }
+ ],
+ "handlers": {
+  "flux2_klein_9b": {
+   "get_lora_dir": [
+    "base_model_type"
+   ],
+   "methods": [
+    "get_lora_dir",
+    "update_default_settings"
+   ]
+  },
+  "krea2_turbo_edit": {
+   "get_lora_dir": [
+    "base_model_type"
+   ],
+   "methods": [
+    "get_lora_dir",
+    "update_default_settings"
+   ]
+  },
+  "minimax_h3": {
+   "get_lora_dir": [
+    "base_model_type"
+   ],
+   "methods": [
+    "get_lora_dir",
+    "update_default_settings"
+   ]
+  },
+  "minimax_h3_legacy": {
+   "get_lora_dir": [
+    "base_model_type"
+   ],
+   "methods": [
+    "get_lora_dir",
+    "update_default_settings"
+   ]
+  },
+  "minimax_h3_ref2va": {
+   "get_lora_dir": [
+    "base_model_type"
+   ],
+   "methods": [
+    "get_lora_dir",
+    "update_default_settings"
+   ]
+  },
+  "qwen_image_21_7B": {
+   "get_lora_dir": [
+    "base_model_type"
+   ],
+   "methods": [
+    "get_lora_dir",
+    "update_default_settings"
+   ]
+  },
+  "t2v": {
+   "get_lora_dir": [
+    "base_model_type"
+   ],
+   "methods": [
+    "get_lora_dir",
+    "update_default_settings"
+   ]
+  },
+  "z_image": {
+   "get_lora_dir": [
+    "base_model_type"
+   ],
+   "methods": [
+    "get_lora_dir",
+    "update_default_settings"
+   ]
+  }
+ },
+ "left_out": {
+  "finetunes": 0,
+  "hub_auto": 0,
+  "unreadable": []
+ },
+ "models": {
+  "flux2_klein_9b": {
+   "architecture": "flux2_klein_9b",
+   "definition": {
+    "URLs": [
+     "flux-2-klein-9b.safetensors"
+    ],
+    "architecture": "flux2_klein_9b",
+    "description": "Distilled 9B image model, 4 steps.",
+    "family": "flux2",
+    "image_outputs": true,
+    "image_ref_choices": {
+     "choices": [
+      [
+       "None",
+       ""
+      ],
+      [
+       "Conditional Image is first Main Subject / Landscape and may be followed by People / Objects",
+       "KI"
+      ],
+      [
+       "Conditional Images are People / Objects",
+       "I"
+      ]
+     ],
+     "letters_filter": "KI"
+    },
+    "name": "Flux 2 Klein 9B",
+    "settings": {
+     "guidance_scale": 1,
+     "num_inference_steps": 4,
+     "resolution": "1024x1024"
+    }
+   },
+   "factory": {
+    "activated_loras": [],
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 1,
+    "image_mode": 0,
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 4,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "1024x1024",
+    "seed": -1,
+    "settings_version": 2.79,
+    "video_prompt_type": ""
+   },
+   "family": "flux2",
+   "lora_key": "flux2_klein_9b",
+   "settings": {
+    "guidance_scale": 1,
+    "num_inference_steps": 4,
+    "resolution": "1024x1024"
+   }
+  },
+  "flux2_klein_base_9b": {
+   "architecture": "flux2_klein_9b",
+   "definition": {
+    "URLs": [
+     "flux-2-klein-base-9b.safetensors"
+    ],
+    "architecture": "flux2_klein_9b",
+    "description": "Undistilled 9B base image model with guidance.",
+    "family": "flux2",
+    "guidance_max_phases": 1,
+    "image_outputs": true,
+    "image_ref_choices": {
+     "choices": [
+      [
+       "None",
+       ""
+      ],
+      [
+       "Conditional Image is first Main Subject / Landscape and may be followed by People / Objects",
+       "KI"
+      ],
+      [
+       "Conditional Images are People / Objects",
+       "I"
+      ]
+     ],
+     "letters_filter": "KI"
+    },
+    "name": "Flux 2 Klein Base 9B",
+    "settings": {
+     "guidance_scale": 4,
+     "num_inference_steps": 30,
+     "resolution": "1024x1024"
+    }
+   },
+   "factory": {
+    "activated_loras": [],
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 4,
+    "image_mode": 0,
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 30,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "1024x1024",
+    "seed": -1,
+    "settings_version": 2.79,
+    "video_prompt_type": ""
+   },
+   "family": "flux2",
+   "lora_key": "flux2_klein_9b",
+   "settings": {
+    "guidance_scale": 4,
+    "num_inference_steps": 30,
+    "resolution": "1024x1024"
+   }
+  },
+  "krea2_hidden": {
+   "architecture": "krea2_turbo_edit",
+   "definition": {
+    "URLs": "krea2_turbo_edit",
+    "architecture": "krea2_turbo_edit",
+    "description": "A hidden variant that borrows another model's weights.",
+    "family": "krea2",
+    "guidance_max_phases": 0,
+    "image_outputs": true,
+    "image_ref_choices": {
+     "choices": [
+      [
+       "None",
+       ""
+      ],
+      [
+       "Conditional Image is first Main Subject / Landscape and may be followed by People / Objects",
+       "KI"
+      ],
+      [
+       "Conditional Images are People / Objects",
+       "I"
+      ]
+     ],
+     "default": "KI",
+     "letters_filter": "KI"
+    },
+    "name": "Krea 2 Hidden",
+    "settings": {},
+    "visible": false
+   },
+   "factory": {
+    "activated_loras": [],
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 5,
+    "image_mode": 0,
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 30,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "832x480",
+    "seed": -1,
+    "settings_version": 2.79,
+    "video_prompt_type": ""
+   },
+   "family": "krea2",
+   "lora_key": "krea2",
+   "settings": {}
+  },
+  "krea2_turbo_edit": {
+   "architecture": "krea2_turbo_edit",
+   "definition": {
+    "URLs": [
+     "krea2_turbo_edit_bf16.safetensors"
+    ],
+    "architecture": "krea2_turbo_edit",
+    "description": "Few-step image editing model.",
+    "family": "krea2",
+    "guidance_max_phases": 0,
+    "image_outputs": true,
+    "image_ref_choices": {
+     "choices": [
+      [
+       "None",
+       ""
+      ],
+      [
+       "Conditional Image is first Main Subject / Landscape and may be followed by People / Objects",
+       "KI"
+      ],
+      [
+       "Conditional Images are People / Objects",
+       "I"
+      ]
+     ],
+     "default": "KI",
+     "letters_filter": "KI"
+    },
+    "name": "Krea 2 Turbo Identity Edit",
+    "settings": {
+     "guidance_scale": 0,
+     "num_inference_steps": 8,
+     "video_prompt_type": "KI"
+    }
+   },
+   "factory": {
+    "activated_loras": [],
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 0,
+    "image_mode": 0,
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 8,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "832x480",
+    "seed": -1,
+    "settings_version": 2.79,
+    "video_prompt_type": "KI"
+   },
+   "family": "krea2",
+   "lora_key": "krea2",
+   "settings": {
+    "guidance_scale": 0,
+    "num_inference_steps": 8,
+    "video_prompt_type": "KI"
+   }
+  },
+  "minimax_h3": {
+   "architecture": "minimax_h3",
+   "definition": {
+    "URLs": [
+     "minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
+    ],
+    "architecture": "minimax_h3",
+    "auto_resolution_budgets": {
+     "auto": 901120,
+     "auto_1080p": 2088960,
+     "auto_480p": 414720,
+     "auto_540p": 522240,
+     "auto_720p": 901120
+    },
+    "block_size": 32,
+    "description": "Text or first/last frame to video with sound.",
+    "end_frames_always_enabled": true,
+    "family": "minimax_h3",
+    "fps": 24,
+    "frames_maximum": 345,
+    "frames_minimum": 124,
+    "frames_steps": 17,
+    "guidance_max_phases": 0,
+    "i2v_class": true,
+    "image_prompt_types_allowed": "TSEV",
+    "inference_steps_max": 50,
+    "inference_steps_min": 1,
+    "minimax_h3_text_encoder_default": "nvfp4_awq",
+    "minimax_h3_text_encoder_variants": {
+     "gguf_q2_k": {
+      "URLs": [
+       "qwen3vl-32B-Q2_K.gguf"
+      ],
+      "name": "GGUF Q2_K (Lowest RAM)"
+     },
+     "int8": {
+      "URLs": [
+       "qwen3vl-32B_quanto_bf16_int8.safetensors"
+      ],
+      "name": "Quanto INT8"
+     },
+     "nvfp4_awq": {
+      "URLs": [
+       "qwen3vl_32b_nvfp4_awq.safetensors"
+      ],
+      "name": "NVFP4 AWQ (Recommended)"
+     }
+    },
+    "name": "H3 First / Last — Pruned",
+    "no_negative_prompt": true,
+    "resolution_preset_order": [
+     "480p",
+     "540p",
+     "720p",
+     "1080p"
+    ],
+    "resolution_presets": {
+     "1080p": {
+      "experimental": true,
+      "label": "1080p",
+      "values": {
+       "16:9": "1920x1088",
+       "1:1": "1088x1088",
+       "21:9": "2528x1088",
+       "3:4": "1088x1440",
+       "4:3": "1440x1088",
+       "9:16": "1088x1920",
+       "auto": "auto_1080p"
+      }
+     },
+     "480p": {
+      "label": "480p",
+      "values": {
+       "16:9": "864x480",
+       "1:1": "640x640",
+       "21:9": "1120x480",
+       "3:4": "480x640",
+       "4:3": "640x480",
+       "9:16": "480x864",
+       "auto": "auto_480p"
+      }
+     },
+     "540p": {
+      "label": "540p",
+      "values": {
+       "16:9": "960x544",
+       "1:1": "736x736",
+       "21:9": "1280x544",
+       "3:4": "544x736",
+       "4:3": "736x544",
+       "9:16": "544x960",
+       "auto": "auto_540p"
+      }
+     },
+     "720p": {
+      "label": "720p",
+      "values": {
+       "16:9": "1280x704",
+       "1:1": "704x704",
+       "21:9": "1632x704",
+       "3:4": "704x928",
+       "4:3": "928x704",
+       "9:16": "704x1280",
+       "auto": "auto_720p"
+      }
+     }
+    },
+    "returns_audio": true,
+    "settings": {
+     "guidance_scale": 1.0,
+     "image_prompt_type": "",
+     "num_inference_steps": 20,
+     "resolution": "864x480",
+     "sliding_window_size": 345,
+     "video_length": 124
+    },
+    "sliding_window_defaults": {
+     "overlap_default": 18
+    },
+    "t2v_class": true,
+    "text_encoder_folder": "minimax_h3",
+    "vae_block_size": 32
+   },
+   "factory": {
+    "activated_loras": [],
+    "audio_prompt_type": "",
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 1.0,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 20,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "864x480",
+    "seed": -1,
+    "settings_version": 2.79,
+    "sliding_window_overlap": 18,
+    "sliding_window_size": 345,
+    "video_length": 124,
+    "video_prompt_type": ""
+   },
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "settings": {
+    "guidance_scale": 1.0,
+    "image_prompt_type": "",
+    "num_inference_steps": 20,
+    "resolution": "864x480",
+    "sliding_window_size": 345,
+    "video_length": 124
+   }
+  },
+  "minimax_h3_fused_turbo": {
+   "architecture": "minimax_h3",
+   "definition": {
+    "URLs": [
+     "minimax_h3_fused_turbo_int8_convrot.safetensors"
+    ],
+    "architecture": "minimax_h3",
+    "auto_resolution_budgets": {
+     "auto": 901120,
+     "auto_1080p": 2088960,
+     "auto_480p": 414720,
+     "auto_540p": 522240,
+     "auto_720p": 901120
+    },
+    "block_size": 32,
+    "description": "Fused turbo text or frames to video with sound.",
+    "end_frames_always_enabled": true,
+    "family": "minimax_h3",
+    "fps": 24,
+    "frames_maximum": 345,
+    "frames_minimum": 124,
+    "frames_steps": 17,
+    "guidance_max_phases": 0,
+    "i2v_class": true,
+    "image_prompt_types_allowed": "TSEV",
+    "inference_steps_max": 8,
+    "inference_steps_min": 4,
+    "loras_disabled": true,
+    "minimax_h3_fused_turbo": true,
+    "minimax_h3_text_encoder_default": "nvfp4_awq",
+    "minimax_h3_text_encoder_variants": {
+     "gguf_q2_k": {
+      "URLs": [
+       "qwen3vl-32B-Q2_K.gguf"
+      ],
+      "name": "GGUF Q2_K (Lowest RAM)"
+     },
+     "int8": {
+      "URLs": [
+       "qwen3vl-32B_quanto_bf16_int8.safetensors"
+      ],
+      "name": "Quanto INT8"
+     },
+     "nvfp4_awq": {
+      "URLs": [
+       "qwen3vl_32b_nvfp4_awq.safetensors"
+      ],
+      "name": "NVFP4 AWQ (Recommended)"
+     }
+    },
+    "name": "H3 Fused 4-Step — Frames (Experimental)",
+    "no_negative_prompt": true,
+    "resolution_preset_order": [
+     "480p",
+     "540p",
+     "720p",
+     "1080p"
+    ],
+    "resolution_presets": {
+     "1080p": {
+      "experimental": true,
+      "label": "1080p",
+      "values": {
+       "16:9": "1920x1088",
+       "1:1": "1088x1088",
+       "21:9": "2528x1088",
+       "3:4": "1088x1440",
+       "4:3": "1440x1088",
+       "9:16": "1088x1920",
+       "auto": "auto_1080p"
+      }
+     },
+     "480p": {
+      "label": "480p",
+      "values": {
+       "16:9": "864x480",
+       "1:1": "640x640",
+       "21:9": "1120x480",
+       "3:4": "480x640",
+       "4:3": "640x480",
+       "9:16": "480x864",
+       "auto": "auto_480p"
+      }
+     },
+     "540p": {
+      "label": "540p",
+      "values": {
+       "16:9": "960x544",
+       "1:1": "736x736",
+       "21:9": "1280x544",
+       "3:4": "544x736",
+       "4:3": "736x544",
+       "9:16": "544x960",
+       "auto": "auto_540p"
+      }
+     },
+     "720p": {
+      "label": "720p",
+      "values": {
+       "16:9": "1280x704",
+       "1:1": "704x704",
+       "21:9": "1632x704",
+       "3:4": "704x928",
+       "4:3": "928x704",
+       "9:16": "704x1280",
+       "auto": "auto_720p"
+      }
+     }
+    },
+    "returns_audio": true,
+    "settings": {
+     "guidance_scale": 1.0,
+     "image_prompt_type": "",
+     "num_inference_steps": 4,
+     "resolution": "1152x640",
+     "sliding_window_size": 243,
+     "video_length": 243
+    },
+    "sliding_window_defaults": {
+     "overlap_default": 18
+    },
+    "t2v_class": true,
+    "text_encoder_folder": "minimax_h3",
+    "vae_block_size": 32
+   },
+   "factory": {
+    "activated_loras": [],
+    "audio_prompt_type": "",
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 1.0,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 4,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "1152x640",
+    "seed": -1,
+    "settings_version": 2.79,
+    "sliding_window_overlap": 18,
+    "sliding_window_size": 243,
+    "video_length": 243,
+    "video_prompt_type": ""
+   },
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "settings": {
+    "guidance_scale": 1.0,
+    "image_prompt_type": "",
+    "num_inference_steps": 4,
+    "resolution": "1152x640",
+    "sliding_window_size": 243,
+    "video_length": 243
+   }
+  },
+  "minimax_h3_legacy": {
+   "architecture": "minimax_h3_legacy",
+   "definition": {
+    "URLs": [
+     "MiniMax_H3_FL2VA_pruned_int8_convrot.safetensors"
+    ],
+    "architecture": "minimax_h3_legacy",
+    "auto_resolution_budgets": {
+     "auto": 901120,
+     "auto_1080p": 2088960,
+     "auto_480p": 414720,
+     "auto_540p": 522240,
+     "auto_720p": 901120
+    },
+    "block_size": 32,
+    "description": "Isolated sidecar route.",
+    "family": "minimax_h3",
+    "fps": 24,
+    "frames_maximum": 345,
+    "frames_minimum": 124,
+    "frames_steps": 17,
+    "guidance_max_phases": 0,
+    "i2v_class": true,
+    "image_prompt_types_allowed": "TSEV",
+    "inference_steps_max": 50,
+    "inference_steps_min": 1,
+    "minimax_h3_legacy_sidecar": true,
+    "minimax_h3_text_encoder_default": "nvfp4_awq",
+    "minimax_h3_text_encoder_variants": {
+     "gguf_q2_k": {
+      "URLs": [
+       "qwen3vl-32B-Q2_K.gguf"
+      ],
+      "name": "GGUF Q2_K (Lowest RAM)"
+     },
+     "int8": {
+      "URLs": [
+       "qwen3vl-32B_quanto_bf16_int8.safetensors"
+      ],
+      "name": "Quanto INT8"
+     },
+     "nvfp4_awq": {
+      "URLs": [
+       "qwen3vl_32b_nvfp4_awq.safetensors"
+      ],
+      "name": "NVFP4 AWQ (Recommended)"
+     }
+    },
+    "name": "H3 Legacy Quality — ConvRot",
+    "no_negative_prompt": true,
+    "resolution_preset_order": [
+     "480p",
+     "540p",
+     "720p",
+     "1080p"
+    ],
+    "resolution_presets": {
+     "1080p": {
+      "experimental": true,
+      "label": "1080p",
+      "values": {
+       "16:9": "1920x1088",
+       "1:1": "1088x1088",
+       "21:9": "2528x1088",
+       "3:4": "1088x1440",
+       "4:3": "1440x1088",
+       "9:16": "1088x1920",
+       "auto": "auto_1080p"
+      }
+     },
+     "480p": {
+      "label": "480p",
+      "values": {
+       "16:9": "864x480",
+       "1:1": "640x640",
+       "21:9": "1120x480",
+       "3:4": "480x640",
+       "4:3": "640x480",
+       "9:16": "480x864",
+       "auto": "auto_480p"
+      }
+     },
+     "540p": {
+      "label": "540p",
+      "values": {
+       "16:9": "960x544",
+       "1:1": "736x736",
+       "21:9": "1280x544",
+       "3:4": "544x736",
+       "4:3": "736x544",
+       "9:16": "544x960",
+       "auto": "auto_540p"
+      }
+     },
+     "720p": {
+      "label": "720p",
+      "values": {
+       "16:9": "1280x704",
+       "1:1": "704x704",
+       "21:9": "1632x704",
+       "3:4": "704x928",
+       "4:3": "928x704",
+       "9:16": "704x1280",
+       "auto": "auto_720p"
+      }
+     }
+    },
+    "returns_audio": true,
+    "settings": {
+     "num_inference_steps": 20,
+     "resolution": "960x544",
+     "video_length": 124
+    },
+    "sliding_window_defaults": {
+     "overlap_default": 18
+    },
+    "t2v_class": true,
+    "text_encoder_folder": "minimax_h3",
+    "vae_block_size": 32
+   },
+   "factory": {
+    "activated_loras": [],
+    "audio_prompt_type": "",
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 1.0,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 20,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "960x544",
+    "seed": -1,
+    "settings_version": 2.79,
+    "sliding_window_overlap": 18,
+    "sliding_window_size": 345,
+    "video_length": 124,
+    "video_prompt_type": ""
+   },
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "settings": {
+    "num_inference_steps": 20,
+    "resolution": "960x544",
+    "video_length": 124
+   }
+  },
+  "minimax_h3_ref2va": {
+   "architecture": "minimax_h3_ref2va",
+   "definition": {
+    "URLs": [
+     "minimax_h3_ref2va_pruned_fp8_scaled.safetensors"
+    ],
+    "architecture": "minimax_h3_ref2va",
+    "auto_resolution_budgets": {
+     "auto": 901120,
+     "auto_1080p": 2088960,
+     "auto_480p": 414720,
+     "auto_540p": 522240,
+     "auto_720p": 901120
+    },
+    "block_size": 32,
+    "description": "Ordered references to video with sound.",
+    "family": "minimax_h3",
+    "fps": 24,
+    "frames_maximum": 345,
+    "frames_minimum": 124,
+    "frames_steps": 17,
+    "guidance_max_phases": 0,
+    "i2v_class": false,
+    "image_prompt_types_allowed": "",
+    "inference_steps_max": 50,
+    "inference_steps_min": 1,
+    "minimax_h3_text_encoder_default": "nvfp4_awq",
+    "minimax_h3_text_encoder_variants": {
+     "gguf_q2_k": {
+      "URLs": [
+       "qwen3vl-32B-Q2_K.gguf"
+      ],
+      "name": "GGUF Q2_K (Lowest RAM)"
+     },
+     "int8": {
+      "URLs": [
+       "qwen3vl-32B_quanto_bf16_int8.safetensors"
+      ],
+      "name": "Quanto INT8"
+     },
+     "nvfp4_awq": {
+      "URLs": [
+       "qwen3vl_32b_nvfp4_awq.safetensors"
+      ],
+      "name": "NVFP4 AWQ (Recommended)"
+     }
+    },
+    "name": "H3 Omni — Pruned",
+    "no_negative_prompt": true,
+    "omni_reference": true,
+    "omni_reference_detail_choices": [
+     [
+      "Match output (faster)",
+      "match"
+     ],
+     [
+      "High detail (official PDD recipe)",
+      "max"
+     ]
+    ],
+    "omni_reference_detail_default": "match",
+    "omni_reference_limits": {
+     "audio": 3,
+     "image": 9,
+     "total": 12,
+     "video": 3
+    },
+    "resolution_preset_order": [
+     "480p",
+     "540p",
+     "720p",
+     "1080p"
+    ],
+    "resolution_presets": {
+     "1080p": {
+      "experimental": true,
+      "label": "1080p",
+      "values": {
+       "16:9": "1920x1088",
+       "1:1": "1088x1088",
+       "21:9": "2528x1088",
+       "3:4": "1088x1440",
+       "4:3": "1440x1088",
+       "9:16": "1088x1920",
+       "auto": "auto_1080p"
+      }
+     },
+     "480p": {
+      "label": "480p",
+      "values": {
+       "16:9": "864x480",
+       "1:1": "640x640",
+       "21:9": "1120x480",
+       "3:4": "480x640",
+       "4:3": "640x480",
+       "9:16": "480x864",
+       "auto": "auto_480p"
+      }
+     },
+     "540p": {
+      "label": "540p",
+      "values": {
+       "16:9": "960x544",
+       "1:1": "736x736",
+       "21:9": "1280x544",
+       "3:4": "544x736",
+       "4:3": "736x544",
+       "9:16": "544x960",
+       "auto": "auto_540p"
+      }
+     },
+     "720p": {
+      "label": "720p",
+      "values": {
+       "16:9": "1280x704",
+       "1:1": "704x704",
+       "21:9": "1632x704",
+       "3:4": "704x928",
+       "4:3": "928x704",
+       "9:16": "704x1280",
+       "auto": "auto_720p"
+      }
+     }
+    },
+    "returns_audio": true,
+    "settings": {
+     "minimax_h3_reference_detail": "match",
+     "minimax_h3_references": [],
+     "num_inference_steps": 20,
+     "resolution": "864x480",
+     "video_length": 124
+    },
+    "sliding_window_defaults": {
+     "overlap_default": 18
+    },
+    "supports_reference_audio": true,
+    "t2v_class": true,
+    "text_encoder_folder": "minimax_h3",
+    "vae_block_size": 32
+   },
+   "factory": {
+    "activated_loras": [],
+    "audio_prompt_type": "",
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 1.0,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "loras_multipliers": "",
+    "minimax_h3_reference_detail": "match",
+    "minimax_h3_references": [],
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 20,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "864x480",
+    "seed": -1,
+    "settings_version": 2.79,
+    "sliding_window_overlap": 18,
+    "sliding_window_size": 345,
+    "video_length": 124,
+    "video_prompt_type": ""
+   },
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "settings": {
+    "minimax_h3_reference_detail": "match",
+    "minimax_h3_references": [],
+    "num_inference_steps": 20,
+    "resolution": "864x480",
+    "video_length": 124
+   }
+  },
+  "qwen_image_21_7B": {
+   "architecture": "qwen_image_21_7B",
+   "definition": {
+    "URLs": [
+     "qwen_image_21_7B_bf16.safetensors"
+    ],
+    "architecture": "qwen_image_21_7B",
+    "description": "7B image model.",
+    "family": "qwen_image_2",
+    "guidance_max_phases": 1,
+    "image_outputs": true,
+    "image_ref_choices": {
+     "choices": [
+      [
+       "None",
+       ""
+      ],
+      [
+       "Conditional Image is first Main Subject / Landscape and may be followed by People / Objects",
+       "KI"
+      ],
+      [
+       "Conditional Images are People / Objects",
+       "I"
+      ]
+     ],
+     "letters_filter": "KI"
+    },
+    "name": "Qwen Image 2.1 7B",
+    "settings": {
+     "guidance_scale": 4.0,
+     "image_mode": 1,
+     "num_inference_steps": 40
+    },
+    "vae_block_size": 32
+   },
+   "factory": {
+    "activated_loras": [],
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 4.0,
+    "image_mode": 1,
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 40,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "832x480",
+    "seed": -1,
+    "settings_version": 2.79,
+    "video_prompt_type": ""
+   },
+   "family": "qwen_image_2",
+   "lora_key": "qwen21",
+   "settings": {
+    "guidance_scale": 4.0,
+    "image_mode": 1,
+    "num_inference_steps": 40
+   }
+  },
+  "t2v": {
+   "architecture": "t2v",
+   "definition": {
+    "URLs": [
+     "wan2.1_text2video_14B_bf16.safetensors"
+    ],
+    "architecture": "t2v",
+    "description": "Text to video model.",
+    "family": "wan",
+    "name": "Wan 2.1 Text2Video 14B",
+    "settings": {
+     "num_inference_steps": 30
+    }
+   },
+   "factory": {
+    "activated_loras": [],
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 5,
+    "image_mode": 0,
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 30,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "832x480",
+    "seed": -1,
+    "settings_version": 2.79,
+    "video_prompt_type": ""
+   },
+   "family": "wan",
+   "lora_key": "wan",
+   "settings": {
+    "num_inference_steps": 30
+   }
+  },
+  "z_image": {
+   "architecture": "z_image",
+   "definition": {
+    "URLs": [
+     "ZImageTurbo_bf16.safetensors"
+    ],
+    "architecture": "z_image",
+    "description": "Turbo 6B image model, 8 steps.",
+    "family": "z_image",
+    "guidance_max_phases": 0,
+    "image_outputs": true,
+    "name": "Z-Image Turbo 6B",
+    "settings": {
+     "guidance_scale": 0,
+     "num_inference_steps": 8,
+     "resolution": "1024x1024"
+    }
+   },
+   "factory": {
+    "activated_loras": [],
+    "batch_size": 1,
+    "embedded_guidance_scale": 6.0,
+    "flow_shift": 3,
+    "guidance_scale": 0,
+    "image_mode": 0,
+    "image_refs": null,
+    "loras_multipliers": "",
+    "multi_prompts_gen_type": 0,
+    "num_inference_steps": 8,
+    "prompt": "",
+    "remove_background_images_ref": 1,
+    "resolution": "1024x1024",
+    "seed": -1,
+    "settings_version": 2.79,
+    "video_prompt_type": ""
+   },
+   "family": "z_image",
+   "lora_key": "z_image",
+   "settings": {
+    "guidance_scale": 0,
+    "num_inference_steps": 8,
+    "resolution": "1024x1024"
+   }
+  }
+ },
+ "names": {
+  "dropdown_deps": [
+   "get_local_model_filename",
+   "get_lora_dir"
+  ],
+  "probe": {
+   "DEFAULT_LORA_ROOT": true,
+   "WanGP_version": true,
+   "_get_dropdown_deps": true,
+   "args": true,
+   "families_infos": true,
+   "generate_video": true,
+   "get_base_model_type": true,
+   "get_factory_settings": true,
+   "get_local_model_filename": true,
+   "get_lora_dir": true,
+   "get_lora_root": true,
+   "get_lora_search_dirs": false,
+   "get_model_def": true,
+   "get_model_download_status": true,
+   "get_model_family": true,
+   "get_model_handler": true,
+   "get_model_recursive_prop": true,
+   "init": true,
+   "list_model_defs": true,
+   "model_dropdowns": true,
+   "models_def": true,
+   "primary_settings": true,
+   "server_config": true,
+   "settings_version": true,
+   "submit_task": true,
+   "transformer_type": true,
+   "wan_model": true
+  },
+  "session": [
+   "close",
+   "ensure_ready",
+   "list_model_defs",
+   "submit_task"
+  ],
+  "shared.api": [
+   "Any",
+   "GenerationError",
+   "GenerationResult",
+   "Iterator",
+   "ProgressUpdate",
+   "Sequence",
+   "SessionEvent",
+   "SessionJob",
+   "SessionStream",
+   "WanGPSession",
+   "annotations",
+   "contextlib",
+   "dataclass",
+   "field",
+   "importlib",
+   "init",
+   "os",
+   "queue",
+   "sys",
+   "threading",
+   "time"
+  ],
+  "wgp": [
+   "CONFIG",
+   "DEFAULT_LORA_ROOT",
+   "FAKE",
+   "FLAVOUR",
+   "HANDLER",
+   "LegacyHandler",
+   "UpstreamHandler",
+   "WanGP_version",
+   "annotations",
+   "argparse",
+   "args",
+   "copy",
+   "download_models",
+   "f",
+   "fake_clip",
+   "fake_gpu",
+   "fake_manifest",
+   "fake_png",
+   "families_infos",
+   "generate",
+   "generate_video",
+   "get_base_model_type",
+   "get_factory_settings",
+   "get_local_model_filename",
+   "get_lora_dir",
+   "get_lora_root",
+   "get_model_def",
+   "get_model_family",
+   "get_model_handler",
+   "get_model_name",
+   "get_model_recursive_prop",
+   "glob",
+   "init_model_def",
+   "inspect",
+   "json",
+   "load_model_definitions",
+   "model_dropdowns",
+   "models_def",
+   "os",
+   "primary_settings",
+   "release_model",
+   "server_config",
+   "settings_version",
+   "time",
+   "transformer_type",
+   "validate_task",
+   "wan_model"
+  ]
+ },
+ "primary_settings": {
+  "activated_loras": [],
+  "batch_size": 1,
+  "embedded_guidance_scale": 6.0,
+  "flow_shift": 3,
+  "guidance_scale": 5,
+  "image_mode": 0,
+  "image_refs": null,
+  "loras_multipliers": "",
+  "multi_prompts_gen_type": 0,
+  "num_inference_steps": 30,
+  "prompt": "",
+  "remove_background_images_ref": 1,
+  "resolution": "832x480",
+  "seed": -1,
+  "video_prompt_type": ""
+ }
+}

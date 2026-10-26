@@ -1,0 +1,5818 @@
+{
+ "source": "The capture of upstream WanGP 18.05 (af2ed29) as the test fake carries it: tests/fixtures/contract/upstream-18.05/engine.json, the `--dump-engine` of a fresh checkout on the server. Per model: architecture, family, LoRA folder, factory settings and definition (its own `settings` whole; descriptive texts over 400 characters, callables and `metadata` left out: the Hub reads none of them). The engine's version, families and accepted settings as captured. Written from the capture by `HUB_WRITE_GOLDEN=1 pytest tests/engine/test_upstream_capture.py`, which checks that the two agree; `server_config` alone is transcribed, since a capture holds no config value: the text encoder quantization wgp.py falls back to (2687, 3462).",
+ "engine": {
+  "flavour": "upstream",
+  "version": "18.05",
+  "commit": "af2ed29",
+  "settings_version": 2.8
+ },
+ "server_config": {
+  "text_encoder_quantization": "int8"
+ },
+ "families": {
+  "animate_any_mesh": [
+   3040,
+   "AnimateAnyMesh"
+  ],
+  "flux": [
+   1100,
+   "Flux 1"
+  ],
+  "flux2": [
+   1101,
+   "Flux 2"
+  ],
+  "hidream": [
+   1130,
+   "HiDream"
+  ],
+  "hunyuan": [
+   20,
+   "Hunyuan Video"
+  ],
+  "hunyuan3d": [
+   1300,
+   "Hunyuan3D"
+  ],
+  "hunyuan_1_5": [
+   21,
+   "Hunyuan Video 1.5"
+  ],
+  "ideogram4": [
+   1140,
+   "Ideogram"
+  ],
+  "kandinsky5": [
+   50,
+   "Kandinsky 5"
+  ],
+  "kandinsky6": [
+   51,
+   "Kandinsky 6"
+  ],
+  "krea2": [
+   1150,
+   "Krea 2"
+  ],
+  "longcat": [
+   60,
+   "LongCat"
+  ],
+  "ltx2": [
+   40,
+   "LTX-2"
+  ],
+  "ltxv": [
+   30,
+   "LTX Video"
+  ],
+  "magi_human": [
+   62,
+   "Magi Human"
+  ],
+  "ming_image": [
+   1160,
+   "Ming Image 0.1"
+  ],
+  "minimax_h3": [
+   70,
+   "MiniMax H3"
+  ],
+  "music": [
+   2195,
+   "Music"
+  ],
+  "qwen": [
+   1110,
+   "Qwen Image"
+  ],
+  "qwen_image_2": [
+   1111,
+   "Qwen Image 2.1"
+  ],
+  "recon3d": [
+   3030,
+   "3D Reconstruction"
+  ],
+  "sensenova": [
+   1160,
+   "SenseNova"
+  ],
+  "trellis2": [
+   3020,
+   "TRELLIS.2"
+  ],
+  "triposg": [
+   3030,
+   "TripoSG"
+  ],
+  "triposplat": [
+   3030,
+   "TripoSplat"
+  ],
+  "tts": [
+   2200,
+   "TTS"
+  ],
+  "unknown": [
+   100,
+   "Unknown"
+  ],
+  "wan": [
+   0,
+   "Wan2.1"
+  ],
+  "wan2_2": [
+   1,
+   "Wan2.2"
+  ],
+  "worldmirror": [
+   3040,
+   "WorldMirror"
+  ],
+  "z_image": [
+   1120,
+   "Z-Image"
+  ]
+ },
+ "accepted_settings": [
+  "MMAudio_neg_prompt",
+  "MMAudio_prompt",
+  "MMAudio_setting",
+  "NAG_alpha",
+  "NAG_scale",
+  "NAG_tau",
+  "RIFLEx_setting",
+  "_settings_bundle_task_count",
+  "activated_loras",
+  "adaptive_switch",
+  "alt_guidance_scale",
+  "alt_prompt",
+  "alt_scale",
+  "apg_switch",
+  "attention_sparsity",
+  "audio_cfg_scale",
+  "audio_guidance_scale",
+  "audio_guide",
+  "audio_guide2",
+  "audio_guide3",
+  "audio_postprocess",
+  "audio_prompt_type",
+  "audio_scale",
+  "audio_source",
+  "base_model_type",
+  "batch_size",
+  "cfg_star_switch",
+  "cfg_zero_step",
+  "client_id",
+  "config",
+  "control_net_weight",
+  "control_net_weight2",
+  "control_net_weight_alt",
+  "creation_date",
+  "creation_timestamp",
+  "custom_guide",
+  "custom_guide_used",
+  "custom_settings",
+  "deepy_media_fingerprint",
+  "deepy_media_id",
+  "deepy_session_id",
+  "denoising_strength",
+  "duration_seconds",
+  "embedded_guidance_scale",
+  "enhanced_alt_prompt",
+  "enhanced_prompt",
+  "exaggeration",
+  "film_grain_intensity",
+  "film_grain_saturation",
+  "flow_shift",
+  "force_fps",
+  "fps",
+  "frame_scheduler",
+  "frames_positions",
+  "gallery_media_ids",
+  "generation_time",
+  "guidance2_scale",
+  "guidance3_scale",
+  "guidance_phases",
+  "guidance_scale",
+  "hdr",
+  "hdr_video_crf",
+  "help",
+  "image_end",
+  "image_guide",
+  "image_mask",
+  "image_mask_guide",
+  "image_mode",
+  "image_prompt_type",
+  "image_quality",
+  "image_refs",
+  "image_refs_relative_size",
+  "image_start",
+  "input_video_strength",
+  "is_image",
+  "keep_frames_video_guide",
+  "keep_frames_video_source",
+  "loras_choices",
+  "loras_multipliers",
+  "lset_name",
+  "mask_expand",
+  "masking_strength",
+  "min_frames_if_references",
+  "mode",
+  "model_filename",
+  "model_mode",
+  "model_switch_phase",
+  "model_type",
+  "modules",
+  "motion_amplitude",
+  "multi_images_gen_type",
+  "multi_prompts_gen_type",
+  "negative_prompt",
+  "num_inference_steps",
+  "num_inference_steps2",
+  "output_filename",
+  "override_attention",
+  "override_compile",
+  "override_profile",
+  "pace",
+  "pause_seconds",
+  "perturbation_end_perc",
+  "perturbation_layers",
+  "perturbation_start_perc",
+  "perturbation_switch",
+  "plugin_data",
+  "postprocess_audio",
+  "postprocess_audio_neg_prompt",
+  "postprocess_audio_prompt",
+  "priority",
+  "profile_priority",
+  "prompt",
+  "prompt_enhancer",
+  "prompts",
+  "remove_background_images_ref",
+  "repeat_generation",
+  "replace_voice_method",
+  "replace_voice_sample",
+  "replace_voice_sample2",
+  "resolution",
+  "sample_solver",
+  "sample_solvers",
+  "sampler_solver",
+  "sampling_steps",
+  "scheduler_type",
+  "seed",
+  "seedvc_voice_sample",
+  "seedvc_voice_sample2",
+  "self_refiner_certain_percentage",
+  "self_refiner_f_uncertainty",
+  "self_refiner_plan",
+  "self_refiner_setting",
+  "send_cmd",
+  "settings_version",
+  "shift",
+  "skip_steps_cache_type",
+  "skip_steps_multiplier",
+  "skip_steps_start_step_perc",
+  "slg_end_perc",
+  "slg_layers",
+  "slg_start_perc",
+  "slg_switch",
+  "sliding_window_color_correction_strength",
+  "sliding_window_discard_last_frames",
+  "sliding_window_overlap",
+  "sliding_window_overlap_noise",
+  "sliding_window_size",
+  "sliding_window_trim_first_frames",
+  "spatial_upsampler_face_count",
+  "spatial_upsampler_param",
+  "spatial_upsampler_param2",
+  "spatial_upsampler_parameters",
+  "spatial_upsampler_prompt",
+  "spatial_upsampler_reference_images",
+  "spatial_upsampling",
+  "speakers_locations",
+  "state",
+  "sub_parallel_window_overlap",
+  "sub_parallel_window_size",
+  "switch_threshold",
+  "switch_threshold2",
+  "target",
+  "task",
+  "tea_cache_setting",
+  "tea_cache_start_step_perc",
+  "temperature",
+  "temporal_upsampling",
+  "top_k",
+  "top_p",
+  "transformer_loras_filenames",
+  "transformer_loras_multipliers",
+  "type",
+  "video_guide",
+  "video_guide2",
+  "video_guide3",
+  "video_guide_outpainting",
+  "video_guide_outpainting_ratio",
+  "video_length",
+  "video_mask",
+  "video_prompt_type",
+  "video_quality",
+  "video_source",
+  "window_no"
+ ],
+ "models": {
+  "minimax_h3_fl2va": {
+   "architecture": "minimax_h3_fl2va",
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "definition": {
+    "URLs": [
+     "MiniMax-H3-FL2VA_bf16.safetensors",
+     "MiniMax-H3-FL2VA_int8_convrot.safetensors"
+    ],
+    "_profile_roots": [
+     "profiles"
+    ],
+    "any_audio_prompt": true,
+    "architecture": "minimax_h3_fl2va",
+    "attention": null,
+    "attention_sparsity": {
+     "end": 4.0,
+     "inc": 0.05,
+     "label": "Start Tau (higher = more sparse/faster; lower = more faithful; End Tau = 0.8)",
+     "start": 0.0
+    },
+    "audio_guide_label": "Source Audio / Soundtrack",
+    "audio_guide_window_slicing": true,
+    "audio_overlap_repair_ms": 25,
+    "audio_prompt_choices": true,
+    "audio_prompt_type_sources": {
+     "default": "",
+     "label": "Audio Source",
+     "labels": {
+      "": "Generate Video and Audio from Text Prompt",
+      "2": "Generate Audio based on Control Video and Text Prompt",
+      "A": "Generate Video based on Soundtrack and Text Prompt (Soundtrack Kept)",
+      "K": "Generate Video based on Control Video + its Audio Track and Text Prompt (Soundtrack Kept)"
+     },
+     "letters_filter": "AK2",
+     "selection": [
+      "",
+      "A",
+      "K",
+      "2"
+     ],
+     "show_label": true
+    },
+    "audio_window_alignment": true,
+    "block_size": 32,
+    "control_video_trim_disabled": true,
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_attention_modes": {
+     "sol": {
+      "label": "Sol sparse attention, requires Triton and RTX 30xx or newer",
+      "supports_sparsity": true
+     }
+    },
+    "custom_frames_injection": true,
+    "custom_settings": [
+     {
+      "choices": [
+       [
+        "Grouped Rows [conditioning timestep for fixed rows; denoising timestep for editable rows]",
+        "grouped_rows"
+       ],
+       [
+        "Shared Timestep [same denoising timestep for fixed and editable latent rows]",
+        "shared_timestep"
+       ]
+      ],
+      "default": "grouped_rows",
+      "id": "h3_mask_mode",
+      "label": "Mask Denoising Mode",
+      "name": "Mask Denoising Mode",
+      "type": "dropdown",
+      "video_prompt_type": "G"
+     },
+     {
+      "audio_prompt_type_not": "AK",
+      "choices": [
+       [
+        "None",
+        "none"
+       ],
+       [
+        "Enabled (6 extra steps, denoising 0.5)",
+        "enabled"
+       ]
+      ],
+      "default": "none",
+      "id": "audio_refinement",
+      "label": "Audio Refinement Extra Phase",
+      "name": "Audio Refinement",
+      "type": "dropdown"
+     }
+    ],
+    "default_attention_modes_supported": true,
+    "description": "First/Last-Frame-to-Video-and-Audio: generate synchronized video and stereo audio from text alone, a first frame, a last frame, or both.",
+    "device_explicit": true,
+    "dtype": "bf16",
+    "end_frames_always_enabled": true,
+    "extract_guide_from_window_start": true,
+    "finetune_custom_urls": [
+     "video_vae_file",
+     "audio_vae_file"
+    ],
+    "finetunes_infos": "### H3 finetune QKV layout\n\nMost H3 checkpoints use the official **Interleaved** QKV layout. Select **Grouped** only when the checkpoint stores all Q rows, then K rows, then V rows. INT8 ConvRot uses its own layout metadata.\n",
+    "finetunes_params": {
+     "qkv_layout": {
+      "choices": [
+       [
+        "Interleaved (official H3)",
+        "interleaved"
+       ],
+       [
+        "Grouped Q / K / V",
+        "grouped"
+       ]
+      ],
+      "default": "interleaved",
+      "description": "Physical row order of fused QKV tensors in the finetune checkpoint. This does not enable or disable QKV splitting.",
+      "label": "QKV Layout"
+     }
+    },
+    "first_block_cache": true,
+    "first_block_cache_thresholds": [
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14
+    ],
+    "flow_shift": true,
+    "fps": 24,
+    "frames_minimum": 107,
+    "frames_offset": 5,
+    "frames_steps": 17,
+    "guidance_max_phases": 2,
+    "guide_custom_choices": {
+     "choices": [
+      [
+       "Generate without using a Control Video",
+       ""
+      ],
+      [
+       "Use Control Video as In-Context Guide",
+       "VU"
+      ],
+      [
+       "Denoise Control Video (Video-to-Video Edit)",
+       "GV"
+      ],
+      [
+       "Inject Frames",
+       "KFI"
+      ]
+     ],
+     "default": "",
+     "label": "Control Video / Frames Injection",
+     "letters_filter": "GVUKFI"
+    },
+    "image_batch_size_max": 1,
+    "image_end_frame_position": true,
+    "image_prompt_enhancer_max_tokens1": 1024,
+    "image_prompt_types_allowed": "TSEVL",
+    "inference_steps": true,
+    "inference_steps2": true,
+    "keep_frames_video_guide_not_supported": true,
+    "lock_guidance_phases": false,
+    "lock_inference_steps": false,
+    "lora_multiplier_phases": 2,
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A",
+      "NA"
+     ]
+    },
+    "minimax_h3_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_fl2v_turbo_4step_alpha16_v0.1.safetensors",
+    "minimax_h3_ref_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+    "multimedia_generation": true,
+    "name": "MiniMax H3 FL2VA 33B",
+    "no_background_removal": true,
+    "no_negative_prompt": true,
+    "one_image_ref_only": true,
+    "outpainting_quantize_margins": 32,
+    "output_audio_is_input_audio": true,
+    "phase_2_spatial_tiling": true,
+    "profiles_dir": [
+     "minimax_h3",
+     "minimax_h3_fl2va"
+    ],
+    "prompt_enhancer_button_label": "Write",
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T1P": "An H3 Image Prompt from Text",
+      "TI1P": "An H3 Image Prompt from Text + {image_inputs}",
+      "TIV": "An H3 Prompt from Text + {image_inputs}",
+      "TV": "An H3 Prompt from Text"
+     },
+     "selection": [
+      "T",
+      "TI",
+      "T1",
+      "TI1"
+     ]
+    },
+    "prompt_enhancer_picture_labels": true,
+    "prompt_enhancer_video_duration": true,
+    "qkv_layout": "interleaved",
+    "qkv_splitting": true,
+    "resolution_budget": "2048x2048",
+    "resolution_budget_tiled": "3840x2176",
+    "returns_audio": true,
+    "sample_solvers": [
+     [
+      "Euler",
+      "euler"
+     ],
+     [
+      "RES Multistep",
+      "res_multistep"
+     ],
+     [
+      "Ralston 2S (~2x slower)",
+      "ralston_2s"
+     ]
+    ],
+    "settings": {
+     "prompt": "integrated_multimodal_description: [Shot 1] A five-second cinematic single take inside a rain-lashed glass observatory at midnight. A radio astronomer sits before an antique brass receiver while electric-blue constellations drift across a translucent star map behind her. The camera makes a slow push from medium shot to close-up as the receiver emits three precise tones. She leans toward its microphone, looks up with sudden hope, and says clearly (S1) <d>[English] If you can hear me, follow this signal.</d> While finishing the line, she presses the transmit key; one brilliant blue pulse races across the star map and lights her restrained smile. Her speech completes naturally within the shot with precise lip synchronization.\noverall_soundscape: Rain rattling across the observatory dome, a low electrical hum, three clean receiver tones, a brass switch clicking, the astronomer's synchronized voice, and a short stereo transmission pulse.\nnon_diegetic_music: One quiet bowed-glass chord rising beneath the transmission and fading at the end."
+    },
+    "size": "large",
+    "skip_steps_multiplier_choices": [
+     [
+      "Low (0.06)",
+      0.06
+     ],
+     [
+      "Balanced (0.08, upstream default)",
+      0.08
+     ],
+     [
+      "High (0.10)",
+      0.1
+     ],
+     [
+      "Very High (0.12)",
+      0.12
+     ],
+     [
+      "Maximum (0.14)",
+      0.14
+     ]
+    ],
+    "skip_steps_multiplier_label": "First Block Cache Threshold",
+    "sliding_window": true,
+    "sliding_window_defaults": {
+     "overlap_default": 18,
+     "overlap_max": 120,
+     "overlap_min": 1,
+     "overlap_offset": 1,
+     "overlap_step": 17,
+     "window_default": 362,
+     "window_max": 481,
+     "window_min": 124,
+     "window_step": 17
+    },
+    "spectrum_cache": true,
+    "switch_threshold": {
+     "label": "Phase 2 Noise Level Start",
+     "max": 1.0,
+     "min": 0.7,
+     "step": 0.0001,
+     "type": "number"
+    },
+    "system_configs": {
+     "_name": "Text Encoder",
+     "bf16": {
+      "name": "Qwen3-VL BF16",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors"
+      ]
+     },
+     "gguf_q2_k": {
+      "name": "Qwen3-VL GGUF Q2_K",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q2_K.gguf"
+      ]
+     },
+     "gguf_q4_k_m": {
+      "name": "Qwen3-VL GGUF Q4_K_M",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf"
+      ]
+     },
+     "int8": {
+      "name": "Qwen3-VL Quanto INT8",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+      ]
+     },
+     "nvfp4_awq": {
+      "name": "Qwen3-VL NVFP4 AWQ",
+      "text_encoder_URLs": [
+       "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      ]
+     }
+    },
+    "system_configs2": {
+     "_default_label": "Auto",
+     "_name": "Video VAE",
+     "bf16": {
+      "name": "BF16",
+      "video_vae_file": "MiniMax-H3-video_vae_fp16.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "fp8mix": {
+      "name": "FP8 Mixed Precision",
+      "video_vae_file": "minimax_h3_video_vae_fp8mix.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "int8_convrot": {
+      "name": "INT8 ConvRot Decoder",
+      "video_vae_file": "minimax_h3/minimax_h3_video_vae_int8_convrot.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1_int8_convrot.safetensors"
+     }
+    },
+    "system_configs3": {
+     "_default_label": "Lower VRAM",
+     "_name": "DiT Denoising Priority",
+     "lower_ram": {
+      "name": "Lower RAM",
+      "qkv_splitting": false
+     }
+    },
+    "text_encoder_URLs": [
+     "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors",
+     "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-32B-Instruct",
+    "text_prompt_enhancer_max_tokens": 1024,
+    "text_prompt_enhancer_max_tokens1": 1024,
+    "tiny_vae_architecture": "minimax_h3_ref2va",
+    "v2i_switch_supported": true,
+    "vae_block_size": 32,
+    "vae_upsamplers": {
+     "h3_vae": [
+      0,
+      1,
+      2
+     ]
+    },
+    "video_continuation": true,
+    "video_guide_label": "Control Video",
+    "video_guide_outpainting": [
+     0
+    ],
+    "video_guide_outpainting_label": "Enable Spatial Outpainting on the H3 Control Video",
+    "video_length_not_limited_by_audio": true,
+    "video_prompt_enhancer_max_tokens": 1024,
+    "visible_phases": 0
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.3,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": {
+     "audio_refinement": "none",
+     "h3_mask_mode": "grouped_rows"
+    },
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 12.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 50,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": null,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": "",
+    "num_inference_steps": 20,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "integrated_multimodal_description: [Shot 1] A five-second cinematic single take inside a rain-lashed glass observatory at midnight. A radio astronomer sits before an antique brass receiver while electric-blue constellations drift across a translucent star map behind her. The camera makes a slow push from medium shot to close-up as the receiver emits three precise tones. She leans toward its microphone, looks up with sudden hope, and says clearly (S1) <d>[English] If you can hear me, follow this signal.</d> While finishing the line, she presses the transmit key; one brilliant blue pulse races across the star map and lights her restrained smile. Her speech completes naturally within the shot with precise lip synchronization.\noverall_soundscape: Rain rattling across the observatory dome, a low electrical hum, three clean receiver tones, a brass switch clicking, the astronomer's synchronized voice, and a short stereo transmission pulse.\nnon_diegetic_music: One quiet bowed-glass chord rising beneath the transmission and fading at the end.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 1,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "euler",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 0.08,
+    "skip_steps_start_step_perc": 25,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 18,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 362,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0.9035,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 124,
+    "video_mask": null,
+    "video_prompt_type": "",
+    "video_source": null
+   }
+  },
+  "minimax_h3_fl2va_pruned": {
+   "architecture": "minimax_h3_fl2va_pruned",
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "definition": {
+    "URLs": [
+     "MiniMax-H3-FL2VA-pruned_rank8_bf16.safetensors",
+     "MiniMax-H3-FL2VA-pruned_rank8_int8_convrot.safetensors"
+    ],
+    "_profile_roots": [
+     "profiles"
+    ],
+    "any_audio_prompt": true,
+    "architecture": "minimax_h3_fl2va_pruned",
+    "attention": null,
+    "attention_sparsity": {
+     "end": 4.0,
+     "inc": 0.05,
+     "label": "Start Tau (higher = more sparse/faster; lower = more faithful; End Tau = 0.8)",
+     "start": 0.0
+    },
+    "audio_guide_label": "Source Audio / Soundtrack",
+    "audio_guide_window_slicing": true,
+    "audio_overlap_repair_ms": 25,
+    "audio_prompt_choices": true,
+    "audio_prompt_type_sources": {
+     "default": "",
+     "label": "Audio Source",
+     "labels": {
+      "": "Generate Video and Audio from Text Prompt",
+      "2": "Generate Audio based on Control Video and Text Prompt",
+      "A": "Generate Video based on Soundtrack and Text Prompt (Soundtrack Kept)",
+      "K": "Generate Video based on Control Video + its Audio Track and Text Prompt (Soundtrack Kept)"
+     },
+     "letters_filter": "AK2",
+     "selection": [
+      "",
+      "A",
+      "K",
+      "2"
+     ],
+     "show_label": true
+    },
+    "audio_window_alignment": true,
+    "block_size": 32,
+    "control_video_trim_disabled": true,
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_attention_modes": {
+     "sol": {
+      "label": "Sol sparse attention, requires Triton and RTX 30xx or newer",
+      "supports_sparsity": true
+     }
+    },
+    "custom_frames_injection": true,
+    "custom_settings": [
+     {
+      "choices": [
+       [
+        "Grouped Rows [conditioning timestep for fixed rows; denoising timestep for editable rows]",
+        "grouped_rows"
+       ],
+       [
+        "Shared Timestep [same denoising timestep for fixed and editable latent rows]",
+        "shared_timestep"
+       ]
+      ],
+      "default": "grouped_rows",
+      "id": "h3_mask_mode",
+      "label": "Mask Denoising Mode",
+      "name": "Mask Denoising Mode",
+      "type": "dropdown",
+      "video_prompt_type": "G"
+     },
+     {
+      "audio_prompt_type_not": "AK",
+      "choices": [
+       [
+        "None",
+        "none"
+       ],
+       [
+        "Enabled (6 extra steps, denoising 0.5)",
+        "enabled"
+       ]
+      ],
+      "default": "none",
+      "id": "audio_refinement",
+      "label": "Audio Refinement Extra Phase",
+      "name": "Audio Refinement",
+      "type": "dropdown"
+     }
+    ],
+    "default_attention_modes_supported": true,
+    "description": "Pruned First/Last-Frame-to-Video-and-Audio: generate synchronized video and stereo audio from text alone, a first frame, a last frame, or both.",
+    "device_explicit": true,
+    "dtype": "bf16",
+    "end_frames_always_enabled": true,
+    "extract_guide_from_window_start": true,
+    "finetune_custom_urls": [
+     "video_vae_file",
+     "audio_vae_file"
+    ],
+    "finetunes_infos": "### H3 finetune QKV layout\n\nMost H3 checkpoints use the official **Interleaved** QKV layout. Select **Grouped** only when the checkpoint stores all Q rows, then K rows, then V rows. INT8 ConvRot uses its own layout metadata.\n",
+    "finetunes_params": {
+     "qkv_layout": {
+      "choices": [
+       [
+        "Interleaved (official H3)",
+        "interleaved"
+       ],
+       [
+        "Grouped Q / K / V",
+        "grouped"
+       ]
+      ],
+      "default": "interleaved",
+      "description": "Physical row order of fused QKV tensors in the finetune checkpoint. This does not enable or disable QKV splitting.",
+      "label": "QKV Layout"
+     }
+    },
+    "first_block_cache": true,
+    "first_block_cache_thresholds": [
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14
+    ],
+    "flow_shift": true,
+    "fps": 24,
+    "frames_minimum": 107,
+    "frames_offset": 5,
+    "frames_steps": 17,
+    "guidance_max_phases": 2,
+    "guide_custom_choices": {
+     "choices": [
+      [
+       "Generate without using a Control Video",
+       ""
+      ],
+      [
+       "Use Control Video as In-Context Guide",
+       "VU"
+      ],
+      [
+       "Denoise Control Video (Video-to-Video Edit)",
+       "GV"
+      ],
+      [
+       "Inject Frames",
+       "KFI"
+      ]
+     ],
+     "default": "",
+     "label": "Control Video / Frames Injection",
+     "letters_filter": "GVUKFI"
+    },
+    "image_batch_size_max": 1,
+    "image_end_frame_position": true,
+    "image_prompt_enhancer_max_tokens1": 1024,
+    "image_prompt_types_allowed": "TSEVL",
+    "inference_steps": true,
+    "inference_steps2": true,
+    "keep_frames_video_guide_not_supported": true,
+    "lock_guidance_phases": false,
+    "lock_inference_steps": false,
+    "lora_multiplier_phases": 2,
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A",
+      "NA"
+     ]
+    },
+    "minimax_h3_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_fl2v_turbo_4step_alpha16_v0.1.safetensors",
+    "minimax_h3_ref_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+    "multimedia_generation": true,
+    "name": "MiniMax H3 FL2VA Pruned 20B",
+    "no_background_removal": true,
+    "no_negative_prompt": true,
+    "one_image_ref_only": true,
+    "outpainting_quantize_margins": 32,
+    "output_audio_is_input_audio": true,
+    "phase_2_spatial_tiling": true,
+    "profiles_dir": [
+     "minimax_h3",
+     "minimax_h3_fl2va"
+    ],
+    "prompt_enhancer_button_label": "Write",
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T1P": "An H3 Image Prompt from Text",
+      "TI1P": "An H3 Image Prompt from Text + {image_inputs}",
+      "TIV": "An H3 Prompt from Text + {image_inputs}",
+      "TV": "An H3 Prompt from Text"
+     },
+     "selection": [
+      "T",
+      "TI",
+      "T1",
+      "TI1"
+     ]
+    },
+    "prompt_enhancer_picture_labels": true,
+    "prompt_enhancer_video_duration": true,
+    "qkv_layout": "interleaved",
+    "qkv_splitting": true,
+    "resolution_budget": "2048x2048",
+    "resolution_budget_tiled": "3840x2176",
+    "returns_audio": true,
+    "sample_solvers": [
+     [
+      "Euler",
+      "euler"
+     ],
+     [
+      "RES Multistep",
+      "res_multistep"
+     ],
+     [
+      "Ralston 2S (~2x slower)",
+      "ralston_2s"
+     ]
+    ],
+    "settings": {
+     "prompt": "integrated_multimodal_description: [Shot 1] A five-second cinematic single take inside a rain-lashed glass observatory at midnight. A radio astronomer sits before an antique brass receiver while electric-blue constellations drift across a translucent star map behind her. The camera makes a slow push from medium shot to close-up as the receiver emits three precise tones. She leans toward its microphone, looks up with sudden hope, and says clearly (S1) <d>[English] If you can hear me, follow this signal.</d> While finishing the line, she presses the transmit key; one brilliant blue pulse races across the star map and lights her restrained smile. Her speech completes naturally within the shot with precise lip synchronization.\noverall_soundscape: Rain rattling across the observatory dome, a low electrical hum, three clean receiver tones, a brass switch clicking, the astronomer's synchronized voice, and a short stereo transmission pulse.\nnon_diegetic_music: One quiet bowed-glass chord rising beneath the transmission and fading at the end."
+    },
+    "size": "lighter",
+    "skip_steps_multiplier_choices": [
+     [
+      "Low (0.06)",
+      0.06
+     ],
+     [
+      "Balanced (0.08, upstream default)",
+      0.08
+     ],
+     [
+      "High (0.10)",
+      0.1
+     ],
+     [
+      "Very High (0.12)",
+      0.12
+     ],
+     [
+      "Maximum (0.14)",
+      0.14
+     ]
+    ],
+    "skip_steps_multiplier_label": "First Block Cache Threshold",
+    "sliding_window": true,
+    "sliding_window_defaults": {
+     "overlap_default": 18,
+     "overlap_max": 120,
+     "overlap_min": 1,
+     "overlap_offset": 1,
+     "overlap_step": 17,
+     "window_default": 362,
+     "window_max": 481,
+     "window_min": 124,
+     "window_step": 17
+    },
+    "spectrum_cache": true,
+    "switch_threshold": {
+     "label": "Phase 2 Noise Level Start",
+     "max": 1.0,
+     "min": 0.7,
+     "step": 0.0001,
+     "type": "number"
+    },
+    "system_configs": {
+     "_name": "Text Encoder",
+     "bf16": {
+      "name": "Qwen3-VL BF16",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors"
+      ]
+     },
+     "gguf_q2_k": {
+      "name": "Qwen3-VL GGUF Q2_K",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q2_K.gguf"
+      ]
+     },
+     "gguf_q4_k_m": {
+      "name": "Qwen3-VL GGUF Q4_K_M",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf"
+      ]
+     },
+     "int8": {
+      "name": "Qwen3-VL Quanto INT8",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+      ]
+     },
+     "nvfp4_awq": {
+      "name": "Qwen3-VL NVFP4 AWQ",
+      "text_encoder_URLs": [
+       "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      ]
+     }
+    },
+    "system_configs2": {
+     "_default_label": "Auto",
+     "_name": "Video VAE",
+     "bf16": {
+      "name": "BF16",
+      "video_vae_file": "MiniMax-H3-video_vae_fp16.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "fp8mix": {
+      "name": "FP8 Mixed Precision",
+      "video_vae_file": "minimax_h3_video_vae_fp8mix.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "int8_convrot": {
+      "name": "INT8 ConvRot Decoder",
+      "video_vae_file": "minimax_h3/minimax_h3_video_vae_int8_convrot.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1_int8_convrot.safetensors"
+     }
+    },
+    "system_configs3": {
+     "_default_label": "Lower VRAM",
+     "_name": "DiT Denoising Priority",
+     "lower_ram": {
+      "name": "Lower RAM",
+      "qkv_splitting": false
+     }
+    },
+    "text_encoder_URLs": [
+     "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors",
+     "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-32B-Instruct",
+    "text_prompt_enhancer_max_tokens": 1024,
+    "text_prompt_enhancer_max_tokens1": 1024,
+    "tiny_vae_architecture": "minimax_h3_ref2va",
+    "v2i_switch_supported": true,
+    "vae_block_size": 32,
+    "vae_upsamplers": {
+     "h3_vae": [
+      0,
+      1,
+      2
+     ]
+    },
+    "video_continuation": true,
+    "video_guide_label": "Control Video",
+    "video_guide_outpainting": [
+     0
+    ],
+    "video_guide_outpainting_label": "Enable Spatial Outpainting on the H3 Control Video",
+    "video_length_not_limited_by_audio": true,
+    "video_prompt_enhancer_max_tokens": 1024,
+    "visible_phases": 0
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.3,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": {
+     "audio_refinement": "none",
+     "h3_mask_mode": "grouped_rows"
+    },
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 12.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 50,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": null,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": "",
+    "num_inference_steps": 20,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "integrated_multimodal_description: [Shot 1] A five-second cinematic single take inside a rain-lashed glass observatory at midnight. A radio astronomer sits before an antique brass receiver while electric-blue constellations drift across a translucent star map behind her. The camera makes a slow push from medium shot to close-up as the receiver emits three precise tones. She leans toward its microphone, looks up with sudden hope, and says clearly (S1) <d>[English] If you can hear me, follow this signal.</d> While finishing the line, she presses the transmit key; one brilliant blue pulse races across the star map and lights her restrained smile. Her speech completes naturally within the shot with precise lip synchronization.\noverall_soundscape: Rain rattling across the observatory dome, a low electrical hum, three clean receiver tones, a brass switch clicking, the astronomer's synchronized voice, and a short stereo transmission pulse.\nnon_diegetic_music: One quiet bowed-glass chord rising beneath the transmission and fading at the end.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 1,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "euler",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 0.08,
+    "skip_steps_start_step_perc": 25,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 18,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 362,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0.9035,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 124,
+    "video_mask": null,
+    "video_prompt_type": "",
+    "video_source": null
+   }
+  },
+  "minimax_h3_fl2va_pdd": {
+   "architecture": "minimax_h3_fl2va",
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "definition": {
+    "URLs": "minimax_h3_fl2va",
+    "_profile_roots": [
+     "profiles"
+    ],
+    "accelerated": "native",
+    "any_audio_prompt": true,
+    "architecture": "minimax_h3_fl2va",
+    "attention": null,
+    "attention_sparsity": {
+     "end": 4.0,
+     "inc": 0.05,
+     "label": "Start Tau (higher = more sparse/faster; lower = more faithful; End Tau = 0.8)",
+     "start": 0.0
+    },
+    "audio_guide_label": "Source Audio / Soundtrack",
+    "audio_guide_window_slicing": true,
+    "audio_overlap_repair_ms": 25,
+    "audio_prompt_choices": true,
+    "audio_prompt_type_sources": {
+     "default": "",
+     "label": "Audio Source",
+     "labels": {
+      "": "Generate Video and Audio from Text Prompt",
+      "2": "Generate Audio based on Control Video and Text Prompt",
+      "A": "Generate Video based on Soundtrack and Text Prompt (Soundtrack Kept)",
+      "K": "Generate Video based on Control Video + its Audio Track and Text Prompt (Soundtrack Kept)"
+     },
+     "letters_filter": "AK2",
+     "selection": [
+      "",
+      "A",
+      "K",
+      "2"
+     ],
+     "show_label": true
+    },
+    "audio_window_alignment": true,
+    "block_size": 32,
+    "control_video_trim_disabled": true,
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_attention_modes": {
+     "sol": {
+      "label": "Sol sparse attention, requires Triton and RTX 30xx or newer",
+      "supports_sparsity": true
+     }
+    },
+    "custom_frames_injection": true,
+    "custom_settings": [
+     {
+      "choices": [
+       [
+        "Grouped Rows [conditioning timestep for fixed rows; denoising timestep for editable rows]",
+        "grouped_rows"
+       ],
+       [
+        "Shared Timestep [same denoising timestep for fixed and editable latent rows]",
+        "shared_timestep"
+       ]
+      ],
+      "default": "grouped_rows",
+      "id": "h3_mask_mode",
+      "label": "Mask Denoising Mode",
+      "name": "Mask Denoising Mode",
+      "type": "dropdown",
+      "video_prompt_type": "G"
+     }
+    ],
+    "default_attention_modes_supported": true,
+    "description": "Generates synchronized video and audio from text and optional first/last frames. Each PDD step merges four learned denoising-interval outputs, covering 32 intervals in only 8 model evaluations.",
+    "device_explicit": true,
+    "dtype": "bf16",
+    "end_frames_always_enabled": true,
+    "extract_guide_from_window_start": true,
+    "finetune_custom_urls": [
+     "video_vae_file",
+     "audio_vae_file"
+    ],
+    "finetunes_infos": "### H3 finetune QKV layout\n\nMost H3 checkpoints use the official **Interleaved** QKV layout. Select **Grouped** only when the checkpoint stores all Q rows, then K rows, then V rows. INT8 ConvRot uses its own layout metadata.\n",
+    "finetunes_params": {
+     "qkv_layout": {
+      "choices": [
+       [
+        "Interleaved (official H3)",
+        "interleaved"
+       ],
+       [
+        "Grouped Q / K / V",
+        "grouped"
+       ]
+      ],
+      "default": "interleaved",
+      "description": "Physical row order of fused QKV tensors in the finetune checkpoint. This does not enable or disable QKV splitting.",
+      "label": "QKV Layout"
+     }
+    },
+    "first_block_cache": true,
+    "first_block_cache_thresholds": [
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14
+    ],
+    "flow_shift": true,
+    "fps": 24,
+    "frames_minimum": 107,
+    "frames_offset": 5,
+    "frames_steps": 17,
+    "guidance_max_phases": 1,
+    "guide_custom_choices": {
+     "choices": [
+      [
+       "Generate without using a Control Video",
+       ""
+      ],
+      [
+       "Use Control Video as In-Context Guide",
+       "VU"
+      ],
+      [
+       "Denoise Control Video (Video-to-Video Edit)",
+       "GV"
+      ],
+      [
+       "Inject Frames",
+       "KFI"
+      ]
+     ],
+     "default": "",
+     "label": "Control Video / Frames Injection",
+     "letters_filter": "GVUKFI"
+    },
+    "image_batch_size_max": 1,
+    "image_end_frame_position": true,
+    "image_prompt_enhancer_max_tokens1": 1024,
+    "image_prompt_types_allowed": "TSEVL",
+    "inference_steps": true,
+    "inference_steps2": false,
+    "keep_frames_video_guide_not_supported": true,
+    "lock_guidance_phases": true,
+    "lock_inference_steps": true,
+    "lora_multiplier_phases": 1,
+    "loras": [
+     "minimax_h3_fl2va_pdd_8step_lora_bf16.safetensors"
+    ],
+    "loras_multipliers": [
+     "1"
+    ],
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A",
+      "NA"
+     ]
+    },
+    "minimax_h3_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_fl2v_turbo_4step_alpha16_v0.1.safetensors",
+    "minimax_h3_ref_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+    "modules": [
+     [
+      "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/minimax_h3_fl2va_pdd_8step_heads_bf16.safetensors"
+     ]
+    ],
+    "multimedia_generation": true,
+    "name": "MiniMax H3 FL2VA PDD 8-Step 33B",
+    "no_background_removal": true,
+    "no_negative_prompt": true,
+    "one_image_ref_only": true,
+    "outpainting_quantize_margins": 32,
+    "output_audio_is_input_audio": true,
+    "pdd": true,
+    "phase_2_spatial_tiling": false,
+    "profiles_dir": [],
+    "prompt_enhancer_button_label": "Write",
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T1P": "An H3 Image Prompt from Text",
+      "TI1P": "An H3 Image Prompt from Text + {image_inputs}",
+      "TIV": "An H3 Prompt from Text + {image_inputs}",
+      "TV": "An H3 Prompt from Text"
+     },
+     "selection": [
+      "T",
+      "TI",
+      "T1",
+      "TI1"
+     ]
+    },
+    "prompt_enhancer_picture_labels": true,
+    "prompt_enhancer_video_duration": true,
+    "qkv_layout": "interleaved",
+    "qkv_splitting": true,
+    "resolution_budget": "2048x2048",
+    "returns_audio": true,
+    "sample_solvers": [
+     [
+      "Euler",
+      "euler"
+     ]
+    ],
+    "settings": {
+     "guidance_phases": 1,
+     "num_inference_steps": 8,
+     "prompt": "integrated_multimodal_description: [Shot 1] A five-second cinematic single take inside a rain-lashed glass observatory at midnight. A radio astronomer presses an antique transmitter and says clearly (S1) <d>[English] If you can hear me, follow this signal.</d> One brilliant blue pulse races across a translucent star map as the camera slowly pushes closer.\noverall_soundscape: Rain on glass, a low electrical hum, three receiver tones, the synchronized voice, and a short stereo transmission pulse.",
+     "sample_solver": "euler"
+    },
+    "size": "large",
+    "skip_steps_multiplier_choices": [
+     [
+      "Low (0.06)",
+      0.06
+     ],
+     [
+      "Balanced (0.08, upstream default)",
+      0.08
+     ],
+     [
+      "High (0.10)",
+      0.1
+     ],
+     [
+      "Very High (0.12)",
+      0.12
+     ],
+     [
+      "Maximum (0.14)",
+      0.14
+     ]
+    ],
+    "skip_steps_multiplier_label": "First Block Cache Threshold",
+    "sliding_window": true,
+    "sliding_window_defaults": {
+     "overlap_default": 18,
+     "overlap_max": 120,
+     "overlap_min": 1,
+     "overlap_offset": 1,
+     "overlap_step": 17,
+     "window_default": 362,
+     "window_max": 481,
+     "window_min": 124,
+     "window_step": 17
+    },
+    "spectrum_cache": true,
+    "switch_threshold": {
+     "label": "Phase 2 Noise Level Start",
+     "max": 1.0,
+     "min": 0.7,
+     "step": 0.0001,
+     "type": "number"
+    },
+    "system_configs": {
+     "_name": "Text Encoder",
+     "bf16": {
+      "name": "Qwen3-VL BF16",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors"
+      ]
+     },
+     "gguf_q2_k": {
+      "name": "Qwen3-VL GGUF Q2_K",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q2_K.gguf"
+      ]
+     },
+     "gguf_q4_k_m": {
+      "name": "Qwen3-VL GGUF Q4_K_M",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf"
+      ]
+     },
+     "int8": {
+      "name": "Qwen3-VL Quanto INT8",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+      ]
+     },
+     "nvfp4_awq": {
+      "name": "Qwen3-VL NVFP4 AWQ",
+      "text_encoder_URLs": [
+       "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      ]
+     }
+    },
+    "system_configs2": {
+     "_default_label": "Auto",
+     "_name": "Video VAE",
+     "bf16": {
+      "name": "BF16",
+      "video_vae_file": "MiniMax-H3-video_vae_fp16.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "fp8mix": {
+      "name": "FP8 Mixed Precision",
+      "video_vae_file": "minimax_h3_video_vae_fp8mix.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "int8_convrot": {
+      "name": "INT8 ConvRot Decoder",
+      "video_vae_file": "minimax_h3/minimax_h3_video_vae_int8_convrot.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1_int8_convrot.safetensors"
+     }
+    },
+    "system_configs3": {
+     "_default_label": "Lower VRAM",
+     "_name": "DiT Denoising Priority",
+     "lower_ram": {
+      "name": "Lower RAM",
+      "qkv_splitting": false
+     }
+    },
+    "text_encoder_URLs": [
+     "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors",
+     "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-32B-Instruct",
+    "text_prompt_enhancer_max_tokens": 1024,
+    "text_prompt_enhancer_max_tokens1": 1024,
+    "tiny_vae_architecture": "minimax_h3_ref2va",
+    "v2i_switch_supported": true,
+    "vae_block_size": 32,
+    "vae_upsamplers": {
+     "h3_vae": [
+      0,
+      1,
+      2
+     ]
+    },
+    "video_continuation": true,
+    "video_guide_label": "Control Video",
+    "video_guide_outpainting": [
+     0
+    ],
+    "video_guide_outpainting_label": "Enable Spatial Outpainting on the H3 Control Video",
+    "video_length_not_limited_by_audio": true,
+    "video_prompt_enhancer_max_tokens": 1024,
+    "visible_phases": 0
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.3,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": {
+     "h3_mask_mode": "grouped_rows"
+    },
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 12.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 50,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": null,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": "",
+    "num_inference_steps": 8,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "integrated_multimodal_description: [Shot 1] A five-second cinematic single take inside a rain-lashed glass observatory at midnight. A radio astronomer presses an antique transmitter and says clearly (S1) <d>[English] If you can hear me, follow this signal.</d> One brilliant blue pulse races across a translucent star map as the camera slowly pushes closer.\noverall_soundscape: Rain on glass, a low electrical hum, three receiver tones, the synchronized voice, and a short stereo transmission pulse.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 1,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "euler",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 0.08,
+    "skip_steps_start_step_perc": 25,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 18,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 362,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0.9035,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 124,
+    "video_mask": null,
+    "video_prompt_type": "",
+    "video_source": null
+   }
+  },
+  "minimax_h3_ref2va": {
+   "architecture": "minimax_h3_ref2va",
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "definition": {
+    "URLs": [
+     "MiniMax-H3-Ref2VA_bf16.safetensors",
+     "MiniMax-H3-Ref2VA_int8_convrot.safetensors"
+    ],
+    "_profile_roots": [
+     "profiles"
+    ],
+    "any_audio_prompt": true,
+    "any_image_refs_relative_size": true,
+    "architecture": "minimax_h3_ref2va",
+    "attention": null,
+    "attention_sparsity": {
+     "end": 4.0,
+     "inc": 0.05,
+     "label": "Start Tau (higher = more sparse/faster; lower = more faithful; End Tau = 0.8)",
+     "start": 0.0
+    },
+    "audio_guide2_label": "Audio Reference 2",
+    "audio_guide3_label": "Audio Reference 3",
+    "audio_guide_label": "Audio Reference 1",
+    "audio_guide_window_slicing": true,
+    "audio_overlap_repair_ms": 25,
+    "audio_prompt_choices": true,
+    "audio_prompt_type_sources": {
+     "default": "",
+     "label": "Audio References",
+     "labels": {
+      "": "Generate without an Audio Reference",
+      "A": "Use One Audio Reference",
+      "AB": "Use Two Audio References",
+      "ABD": "Use Three Audio References",
+      "AS": "Generate Video based on Soundtrack and Text Prompt (Soundtrack Kept)",
+      "K": "Use Reference Videos Soundtrack(s) as Audio References",
+      "K1": "Use Up to 3 Excerpts from Reference-Video Soundtrack",
+      "KS": "Generate Video based on Reference / Control Video + its Audio Track and Text Prompt (Soundtrack Kept)"
+     },
+     "letters_filter": "ABDKS1",
+     "selection": [
+      "",
+      "A",
+      "AB",
+      "ABD",
+      "K",
+      "K1",
+      "AS",
+      "KS"
+     ],
+     "show_label": true
+    },
+    "audio_reference_max_total_duration": 15,
+    "audio_window_alignment": true,
+    "block_size": 32,
+    "control_video_trim_disabled": true,
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_attention_modes": {
+     "sol": {
+      "label": "Sol sparse attention, requires Triton and RTX 30xx or newer",
+      "supports_sparsity": true
+     }
+    },
+    "custom_frames_injection": true,
+    "custom_settings": [
+     {
+      "choices": [
+       [
+        "Grouped Rows [conditioning timestep for fixed rows; denoising timestep for editable rows]",
+        "grouped_rows"
+       ],
+       [
+        "Shared Timestep [same denoising timestep for fixed and editable latent rows]",
+        "shared_timestep"
+       ]
+      ],
+      "default": "grouped_rows",
+      "id": "h3_mask_mode",
+      "label": "Mask Denoising Mode",
+      "name": "Mask Denoising Mode",
+      "type": "dropdown",
+      "video_prompt_type": "G"
+     },
+     {
+      "audio_prompt_type_not": "S",
+      "choices": [
+       [
+        "None",
+        "none"
+       ],
+       [
+        "Enabled (6 extra steps, denoising 0.5)",
+        "enabled"
+       ]
+      ],
+      "default": "none",
+      "id": "audio_refinement",
+      "label": "Audio Refinement Extra Phase",
+      "name": "Audio Refinement",
+      "type": "dropdown"
+     },
+     {
+      "default": "",
+      "id": "h3_video_excerpt_positions",
+      "label": "Reference Positions from Control Video (frames or seconds, optional /duration, e.g. 3 5.2s/4s 12s)",
+      "name": "Reference Video Excerpt Positions",
+      "type": "text",
+      "video_prompt_type": "1"
+     },
+     {
+      "audio_prompt_type": "1",
+      "default": "",
+      "id": "h3_audio_excerpt_positions",
+      "label": "Audio Reference Positions from Reference-Video Soundtrack (frames or seconds, optional /duration, e.g. 3 5.2s/4s 12s)",
+      "name": "Soundtrack Excerpt Positions",
+      "type": "text"
+     }
+    ],
+    "default_attention_modes_supported": true,
+    "description": "Reference-to-Video-and-Audio: generate synchronized video and stereo audio from text plus reference images, video, and/or audio.",
+    "device_explicit": true,
+    "dtype": "bf16",
+    "end_frames_always_enabled": true,
+    "extract_guide_from_window_start": true,
+    "finetune_custom_urls": [
+     "video_vae_file",
+     "audio_vae_file"
+    ],
+    "finetunes_infos": "### H3 finetune QKV layout\n\nMost H3 checkpoints use the official **Interleaved** QKV layout. Select **Grouped** only when the checkpoint stores all Q rows, then K rows, then V rows. INT8 ConvRot uses its own layout metadata.\n",
+    "finetunes_params": {
+     "qkv_layout": {
+      "choices": [
+       [
+        "Interleaved (official H3)",
+        "interleaved"
+       ],
+       [
+        "Grouped Q / K / V",
+        "grouped"
+       ]
+      ],
+      "default": "interleaved",
+      "description": "Physical row order of fused QKV tensors in the finetune checkpoint. This does not enable or disable QKV splitting.",
+      "label": "QKV Layout"
+     }
+    },
+    "first_block_cache": true,
+    "first_block_cache_thresholds": [
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14
+    ],
+    "fit_into_canvas_image_refs": 0,
+    "flow_shift": true,
+    "fps": 24,
+    "frames_minimum": 107,
+    "frames_offset": 5,
+    "frames_selection_maximum": 737,
+    "frames_steps": 17,
+    "guidance_max_phases": 2,
+    "guide_custom_choices": {
+     "choices": [
+      [
+       "Generate without a Reference or Control Video",
+       ""
+      ],
+      [
+       "Use One Reference Video",
+       "V-U"
+      ],
+      [
+       "Use Two Reference Videos",
+       "V+-U"
+      ],
+      [
+       "Use Three Reference Videos",
+       "V+*-U"
+      ],
+      [
+       "Use Up to 3 Excerpts from same Reference Video",
+       "V1-U"
+      ],
+      [
+       "Denoise Control Video (Video-to-Video Edit)",
+       "GV"
+      ],
+      [
+       "Use Control Video as In-Context Guide",
+       "VU"
+      ]
+     ],
+     "default": "",
+     "label": "Reference / Control Video",
+     "letters_filter": "GPDEV+*-U1"
+    },
+    "image_batch_size_max": 1,
+    "image_end_frame_position": true,
+    "image_prompt_enhancer_max_tokens1": 1024,
+    "image_prompt_types_allowed": "TSEVL",
+    "image_ref_choices": {
+     "choices": [
+      [
+       "Generate without Reference Images",
+       ""
+      ],
+      [
+       "First Reference Image is the Main Subject / Landscape, defines Output Dimensions, and may be followed by other Reference Images",
+       "KI"
+      ],
+      [
+       "Use Reference Images",
+       "I"
+      ],
+      [
+       "Inject Frames at chosen Positions, any Images beyond the Positions are Reference Images",
+       "FI"
+      ]
+     ],
+     "default": "",
+     "label": "Reference Images",
+     "letters_filter": "KFI"
+    },
+    "image_refs_relative_size": {
+     "max": 400,
+     "min": 50,
+     "step": 1
+    },
+    "inference_steps": true,
+    "inference_steps2": true,
+    "keep_frames_video_guide_not_supported": true,
+    "lock_guidance_phases": false,
+    "lock_inference_steps": false,
+    "lora_multiplier_phases": 2,
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A",
+      "NA"
+     ]
+    },
+    "minimax_h3_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_fl2v_turbo_4step_alpha16_v0.1.safetensors",
+    "minimax_h3_ref_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+    "multimedia_generation": true,
+    "name": "MiniMax H3 Ref2VA 33B",
+    "no_negative_prompt": true,
+    "phase_2_spatial_tiling": true,
+    "preprocess_video_guide2": true,
+    "profiles_dir": [
+     "minimax_h3",
+     "minimax_h3_ref2va"
+    ],
+    "prompt_enhancer_button_label": "Write",
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T1P": "An H3 Image Prompt from Text",
+      "TI1P": "An H3 Image Prompt from Text + {image_inputs}",
+      "TIV": "An H3 Reference Prompt from Text + {image_inputs}",
+      "TV": "An H3 Reference Prompt from Text"
+     },
+     "selection": [
+      "T",
+      "TI",
+      "T1",
+      "TI1"
+     ]
+    },
+    "prompt_enhancer_picture_labels": true,
+    "prompt_enhancer_video_duration": true,
+    "qkv_layout": "interleaved",
+    "qkv_splitting": true,
+    "reference_audio_enabled": true,
+    "reference_image_enabled": true,
+    "reference_video_enabled": true,
+    "reference_video_max_frames": 362,
+    "reference_video_max_size": [
+     768,
+     1344
+    ],
+    "resolution_budget": "2048x2048",
+    "resolution_budget_tiled": "3840x2176",
+    "return_image_refs_tensor": false,
+    "returns_audio": true,
+    "sample_solvers": [
+     [
+      "Euler",
+      "euler"
+     ],
+     [
+      "RES Multistep",
+      "res_multistep"
+     ],
+     [
+      "Ralston 2S (~2x slower)",
+      "ralston_2s"
+     ]
+    ],
+    "settings": {
+     "prompt": "subject_definitions:\n<Subject 1> is the person in <Picture 1>, preserving their exact identity, facial features, skin tone, hairstyle, body proportions, clothing, footwear, and distinctive accessories.\nsummary:\n[reference generation] Place <Subject 1> on a deserted midnight railway platform where a paper bird awakens the station clock during one five-second shot.\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - their identity, face, hair, proportions, clothing, footwear, and visible accessories remain recognizable and unchanged; only the location, lighting, action, and paper-bird prop are new.\ndetailed_description:\nThe target video is a five-second cinematic magical-realist single take on an abandoned railway platform before dawn. [Shot 1] <Subject 1> stands beneath a monumental stopped clock, framed in a steady medium close-up that keeps their recognizable face and exact appearance from <Picture 1> clearly visible. Cold blue light outlines the iron platform while a warm lamp illuminates their natural skin texture, hair, clothing, and accessories without changing them. A tiny folded paper bird rests on their raised palm. As its paper wings open, the camera gently pushes closer and <Subject 1> watches it with quiet resolve, saying clearly (S1) <d>[English] Some journeys begin when the map runs out.</d> During the final words, the bird lifts a few inches, lands on the clock's minute hand, and the mechanism advances with one solid click. <Subject 1> follows it with their eyes and gives a small hopeful smile. The spoken line and simple transformation complete naturally within the five-second shot; identity, lip motion, gaze, hand position, posture, and paper movement remain stable and physically coherent.\noverall_soundscape: Spacious nighttime station ambience, faint wind through ironwork, a soft paper-wing flutter crossing the stereo field, the synchronized spoken line, one heavy clockwork click, and a distant rail hum.\nnon_diegetic_music: A minimal celesta phrase of three notes, resolving softly as the clock moves."
+    },
+    "size": "large",
+    "skip_steps_multiplier_choices": [
+     [
+      "Low (0.06)",
+      0.06
+     ],
+     [
+      "Balanced (0.08, upstream default)",
+      0.08
+     ],
+     [
+      "High (0.10)",
+      0.1
+     ],
+     [
+      "Very High (0.12)",
+      0.12
+     ],
+     [
+      "Maximum (0.14)",
+      0.14
+     ]
+    ],
+    "skip_steps_multiplier_label": "First Block Cache Threshold",
+    "skip_video_guide_preprocess": "1",
+    "sliding_window": true,
+    "sliding_window_defaults": {
+     "overlap_default": 18,
+     "overlap_max": 120,
+     "overlap_min": 1,
+     "overlap_offset": 1,
+     "overlap_step": 17,
+     "window_default": 362,
+     "window_max": 481,
+     "window_min": 124,
+     "window_step": 17
+    },
+    "specialities": [
+     {
+      "aliases": [
+       "character consistency",
+       "identity-preserving edits",
+       "subject consistency"
+      ],
+      "name": "identity preservation"
+     },
+     {
+      "aliases": [
+       "pose transfer",
+       "dance animation",
+       "human animation"
+      ],
+      "description": "Transfer motion or camera from reference videos to image-reference characters.",
+      "name": "motion transfer"
+     }
+    ],
+    "spectrum_cache": true,
+    "switch_threshold": {
+     "label": "Phase 2 Noise Level Start",
+     "max": 1.0,
+     "min": 0.7,
+     "step": 0.0001,
+     "type": "number"
+    },
+    "system_configs": {
+     "_name": "Text Encoder",
+     "bf16": {
+      "name": "Qwen3-VL BF16",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors"
+      ]
+     },
+     "gguf_q2_k": {
+      "name": "Qwen3-VL GGUF Q2_K",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q2_K.gguf"
+      ]
+     },
+     "gguf_q4_k_m": {
+      "name": "Qwen3-VL GGUF Q4_K_M",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf"
+      ]
+     },
+     "int8": {
+      "name": "Qwen3-VL Quanto INT8",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+      ]
+     },
+     "nvfp4_awq": {
+      "name": "Qwen3-VL NVFP4 AWQ",
+      "text_encoder_URLs": [
+       "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      ]
+     }
+    },
+    "system_configs2": {
+     "_default_label": "Auto",
+     "_name": "Video VAE",
+     "bf16": {
+      "name": "BF16",
+      "video_vae_file": "MiniMax-H3-video_vae_fp16.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "fp8mix": {
+      "name": "FP8 Mixed Precision",
+      "video_vae_file": "minimax_h3_video_vae_fp8mix.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "int8_convrot": {
+      "name": "INT8 ConvRot Decoder",
+      "video_vae_file": "minimax_h3/minimax_h3_video_vae_int8_convrot.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1_int8_convrot.safetensors"
+     }
+    },
+    "system_configs3": {
+     "_default_label": "Lower VRAM",
+     "_name": "DiT Denoising Priority",
+     "lower_ram": {
+      "name": "Lower RAM",
+      "qkv_splitting": false
+     }
+    },
+    "text_encoder_URLs": [
+     "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors",
+     "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-32B-Instruct",
+    "text_prompt_enhancer_max_tokens": 2048,
+    "text_prompt_enhancer_max_tokens1": 1024,
+    "tiny_vae_architecture": "minimax_h3_ref2va",
+    "v2i_switch_supported": true,
+    "vae_block_size": 32,
+    "vae_upsamplers": {
+     "h3_vae": [
+      0,
+      1,
+      2
+     ]
+    },
+    "video_continuation": true,
+    "video_guide2_label": "Reference Video 2",
+    "video_guide3_label": "Reference Video 3",
+    "video_guide_label": "Reference / Control Video 1",
+    "video_length_not_limited_by_audio": true,
+    "video_prompt_enhancer_max_tokens": 2048,
+    "visible_phases": 0
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.3,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": {
+     "audio_refinement": "none",
+     "h3_audio_excerpt_positions": "",
+     "h3_mask_mode": "grouped_rows",
+     "h3_video_excerpt_positions": ""
+    },
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 12.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 100,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": null,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": "",
+    "num_inference_steps": 20,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "subject_definitions:\n<Subject 1> is the person in <Picture 1>, preserving their exact identity, facial features, skin tone, hairstyle, body proportions, clothing, footwear, and distinctive accessories.\nsummary:\n[reference generation] Place <Subject 1> on a deserted midnight railway platform where a paper bird awakens the station clock during one five-second shot.\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - their identity, face, hair, proportions, clothing, footwear, and visible accessories remain recognizable and unchanged; only the location, lighting, action, and paper-bird prop are new.\ndetailed_description:\nThe target video is a five-second cinematic magical-realist single take on an abandoned railway platform before dawn. [Shot 1] <Subject 1> stands beneath a monumental stopped clock, framed in a steady medium close-up that keeps their recognizable face and exact appearance from <Picture 1> clearly visible. Cold blue light outlines the iron platform while a warm lamp illuminates their natural skin texture, hair, clothing, and accessories without changing them. A tiny folded paper bird rests on their raised palm. As its paper wings open, the camera gently pushes closer and <Subject 1> watches it with quiet resolve, saying clearly (S1) <d>[English] Some journeys begin when the map runs out.</d> During the final words, the bird lifts a few inches, lands on the clock's minute hand, and the mechanism advances with one solid click. <Subject 1> follows it with their eyes and gives a small hopeful smile. The spoken line and simple transformation complete naturally within the five-second shot; identity, lip motion, gaze, hand position, posture, and paper movement remain stable and physically coherent.\noverall_soundscape: Spacious nighttime station ambience, faint wind through ironwork, a soft paper-wing flutter crossing the stereo field, the synchronized spoken line, one heavy clockwork click, and a distant rail hum.\nnon_diegetic_music: A minimal celesta phrase of three notes, resolving softly as the clock moves.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 0,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "euler",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 0.08,
+    "skip_steps_start_step_perc": 25,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 18,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 362,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0.9035,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 124,
+    "video_mask": null,
+    "video_prompt_type": "",
+    "video_source": null
+   }
+  },
+  "minimax_h3_ref2va_pruned": {
+   "architecture": "minimax_h3_ref2va_pruned",
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "definition": {
+    "URLs": [
+     "MiniMax-H3-Ref2VA-pruned_rank8_bf16.safetensors",
+     "MiniMax-H3-Ref2VA-pruned_rank8_int8_convrot.safetensors"
+    ],
+    "_profile_roots": [
+     "profiles"
+    ],
+    "any_audio_prompt": true,
+    "any_image_refs_relative_size": true,
+    "architecture": "minimax_h3_ref2va_pruned",
+    "attention": null,
+    "attention_sparsity": {
+     "end": 4.0,
+     "inc": 0.05,
+     "label": "Start Tau (higher = more sparse/faster; lower = more faithful; End Tau = 0.8)",
+     "start": 0.0
+    },
+    "audio_guide2_label": "Audio Reference 2",
+    "audio_guide3_label": "Audio Reference 3",
+    "audio_guide_label": "Audio Reference 1",
+    "audio_guide_window_slicing": true,
+    "audio_overlap_repair_ms": 25,
+    "audio_prompt_choices": true,
+    "audio_prompt_type_sources": {
+     "default": "",
+     "label": "Audio References",
+     "labels": {
+      "": "Generate without an Audio Reference",
+      "A": "Use One Audio Reference",
+      "AB": "Use Two Audio References",
+      "ABD": "Use Three Audio References",
+      "AS": "Generate Video based on Soundtrack and Text Prompt (Soundtrack Kept)",
+      "K": "Use Reference Videos Soundtrack(s) as Audio References",
+      "K1": "Use Up to 3 Excerpts from Reference-Video Soundtrack",
+      "KS": "Generate Video based on Reference / Control Video + its Audio Track and Text Prompt (Soundtrack Kept)"
+     },
+     "letters_filter": "ABDKS1",
+     "selection": [
+      "",
+      "A",
+      "AB",
+      "ABD",
+      "K",
+      "K1",
+      "AS",
+      "KS"
+     ],
+     "show_label": true
+    },
+    "audio_reference_max_total_duration": 15,
+    "audio_window_alignment": true,
+    "block_size": 32,
+    "control_video_trim_disabled": true,
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_attention_modes": {
+     "sol": {
+      "label": "Sol sparse attention, requires Triton and RTX 30xx or newer",
+      "supports_sparsity": true
+     }
+    },
+    "custom_frames_injection": true,
+    "custom_settings": [
+     {
+      "choices": [
+       [
+        "Grouped Rows [conditioning timestep for fixed rows; denoising timestep for editable rows]",
+        "grouped_rows"
+       ],
+       [
+        "Shared Timestep [same denoising timestep for fixed and editable latent rows]",
+        "shared_timestep"
+       ]
+      ],
+      "default": "grouped_rows",
+      "id": "h3_mask_mode",
+      "label": "Mask Denoising Mode",
+      "name": "Mask Denoising Mode",
+      "type": "dropdown",
+      "video_prompt_type": "G"
+     },
+     {
+      "audio_prompt_type_not": "S",
+      "choices": [
+       [
+        "None",
+        "none"
+       ],
+       [
+        "Enabled (6 extra steps, denoising 0.5)",
+        "enabled"
+       ]
+      ],
+      "default": "none",
+      "id": "audio_refinement",
+      "label": "Audio Refinement Extra Phase",
+      "name": "Audio Refinement",
+      "type": "dropdown"
+     },
+     {
+      "default": "",
+      "id": "h3_video_excerpt_positions",
+      "label": "Reference Positions from Control Video (frames or seconds, optional /duration, e.g. 3 5.2s/4s 12s)",
+      "name": "Reference Video Excerpt Positions",
+      "type": "text",
+      "video_prompt_type": "1"
+     },
+     {
+      "audio_prompt_type": "1",
+      "default": "",
+      "id": "h3_audio_excerpt_positions",
+      "label": "Audio Reference Positions from Reference-Video Soundtrack (frames or seconds, optional /duration, e.g. 3 5.2s/4s 12s)",
+      "name": "Soundtrack Excerpt Positions",
+      "type": "text"
+     }
+    ],
+    "default_attention_modes_supported": true,
+    "description": "Pruned Reference-to-Video-and-Audio: generate synchronized video and stereo audio from text plus reference images, video, and/or audio.",
+    "device_explicit": true,
+    "dtype": "bf16",
+    "end_frames_always_enabled": true,
+    "extract_guide_from_window_start": true,
+    "finetune_custom_urls": [
+     "video_vae_file",
+     "audio_vae_file"
+    ],
+    "finetunes_infos": "### H3 finetune QKV layout\n\nMost H3 checkpoints use the official **Interleaved** QKV layout. Select **Grouped** only when the checkpoint stores all Q rows, then K rows, then V rows. INT8 ConvRot uses its own layout metadata.\n",
+    "finetunes_params": {
+     "qkv_layout": {
+      "choices": [
+       [
+        "Interleaved (official H3)",
+        "interleaved"
+       ],
+       [
+        "Grouped Q / K / V",
+        "grouped"
+       ]
+      ],
+      "default": "interleaved",
+      "description": "Physical row order of fused QKV tensors in the finetune checkpoint. This does not enable or disable QKV splitting.",
+      "label": "QKV Layout"
+     }
+    },
+    "first_block_cache": true,
+    "first_block_cache_thresholds": [
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14
+    ],
+    "fit_into_canvas_image_refs": 0,
+    "flow_shift": true,
+    "fps": 24,
+    "frames_minimum": 107,
+    "frames_offset": 5,
+    "frames_selection_maximum": 737,
+    "frames_steps": 17,
+    "guidance_max_phases": 2,
+    "guide_custom_choices": {
+     "choices": [
+      [
+       "Generate without a Reference or Control Video",
+       ""
+      ],
+      [
+       "Use One Reference Video",
+       "V-U"
+      ],
+      [
+       "Use Two Reference Videos",
+       "V+-U"
+      ],
+      [
+       "Use Three Reference Videos",
+       "V+*-U"
+      ],
+      [
+       "Use Up to 3 Excerpts from same Reference Video",
+       "V1-U"
+      ],
+      [
+       "Denoise Control Video (Video-to-Video Edit)",
+       "GV"
+      ],
+      [
+       "Use Control Video as In-Context Guide",
+       "VU"
+      ]
+     ],
+     "default": "",
+     "label": "Reference / Control Video",
+     "letters_filter": "GPDEV+*-U1"
+    },
+    "image_batch_size_max": 1,
+    "image_end_frame_position": true,
+    "image_prompt_enhancer_max_tokens1": 1024,
+    "image_prompt_types_allowed": "TSEVL",
+    "image_ref_choices": {
+     "choices": [
+      [
+       "Generate without Reference Images",
+       ""
+      ],
+      [
+       "First Reference Image is the Main Subject / Landscape, defines Output Dimensions, and may be followed by other Reference Images",
+       "KI"
+      ],
+      [
+       "Use Reference Images",
+       "I"
+      ],
+      [
+       "Inject Frames at chosen Positions, any Images beyond the Positions are Reference Images",
+       "FI"
+      ]
+     ],
+     "default": "",
+     "label": "Reference Images",
+     "letters_filter": "KFI"
+    },
+    "image_refs_relative_size": {
+     "max": 400,
+     "min": 50,
+     "step": 1
+    },
+    "inference_steps": true,
+    "inference_steps2": true,
+    "keep_frames_video_guide_not_supported": true,
+    "lock_guidance_phases": false,
+    "lock_inference_steps": false,
+    "lora_multiplier_phases": 2,
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A",
+      "NA"
+     ]
+    },
+    "minimax_h3_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_fl2v_turbo_4step_alpha16_v0.1.safetensors",
+    "minimax_h3_ref_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+    "multimedia_generation": true,
+    "name": "MiniMax H3 Ref2VA Pruned 20B",
+    "no_negative_prompt": true,
+    "phase_2_spatial_tiling": true,
+    "preprocess_video_guide2": true,
+    "profiles_dir": [
+     "minimax_h3",
+     "minimax_h3_ref2va"
+    ],
+    "prompt_enhancer_button_label": "Write",
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T1P": "An H3 Image Prompt from Text",
+      "TI1P": "An H3 Image Prompt from Text + {image_inputs}",
+      "TIV": "An H3 Reference Prompt from Text + {image_inputs}",
+      "TV": "An H3 Reference Prompt from Text"
+     },
+     "selection": [
+      "T",
+      "TI",
+      "T1",
+      "TI1"
+     ]
+    },
+    "prompt_enhancer_picture_labels": true,
+    "prompt_enhancer_video_duration": true,
+    "qkv_layout": "interleaved",
+    "qkv_splitting": true,
+    "reference_audio_enabled": true,
+    "reference_image_enabled": true,
+    "reference_video_enabled": true,
+    "reference_video_max_frames": 362,
+    "reference_video_max_size": [
+     768,
+     1344
+    ],
+    "resolution_budget": "2048x2048",
+    "resolution_budget_tiled": "3840x2176",
+    "return_image_refs_tensor": false,
+    "returns_audio": true,
+    "sample_solvers": [
+     [
+      "Euler",
+      "euler"
+     ],
+     [
+      "RES Multistep",
+      "res_multistep"
+     ],
+     [
+      "Ralston 2S (~2x slower)",
+      "ralston_2s"
+     ]
+    ],
+    "settings": {
+     "prompt": "subject_definitions:\n<Subject 1> is the person in <Picture 1>, preserving their exact identity, facial features, skin tone, hairstyle, body proportions, clothing, footwear, and distinctive accessories.\nsummary:\n[reference generation] Place <Subject 1> on a deserted midnight railway platform where a paper bird awakens the station clock during one five-second shot.\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - their identity, face, hair, proportions, clothing, footwear, and visible accessories remain recognizable and unchanged; only the location, lighting, action, and paper-bird prop are new.\ndetailed_description:\nThe target video is a five-second cinematic magical-realist single take on an abandoned railway platform before dawn. [Shot 1] <Subject 1> stands beneath a monumental stopped clock, framed in a steady medium close-up that keeps their recognizable face and exact appearance from <Picture 1> clearly visible. Cold blue light outlines the iron platform while a warm lamp illuminates their natural skin texture, hair, clothing, and accessories without changing them. A tiny folded paper bird rests on their raised palm. As its paper wings open, the camera gently pushes closer and <Subject 1> watches it with quiet resolve, saying clearly (S1) <d>[English] Some journeys begin when the map runs out.</d> During the final words, the bird lifts a few inches, lands on the clock's minute hand, and the mechanism advances with one solid click. <Subject 1> follows it with their eyes and gives a small hopeful smile. The spoken line and simple transformation complete naturally within the five-second shot; identity, lip motion, gaze, hand position, posture, and paper movement remain stable and physically coherent.\noverall_soundscape: Spacious nighttime station ambience, faint wind through ironwork, a soft paper-wing flutter crossing the stereo field, the synchronized spoken line, one heavy clockwork click, and a distant rail hum.\nnon_diegetic_music: A minimal celesta phrase of three notes, resolving softly as the clock moves."
+    },
+    "size": "lighter",
+    "skip_steps_multiplier_choices": [
+     [
+      "Low (0.06)",
+      0.06
+     ],
+     [
+      "Balanced (0.08, upstream default)",
+      0.08
+     ],
+     [
+      "High (0.10)",
+      0.1
+     ],
+     [
+      "Very High (0.12)",
+      0.12
+     ],
+     [
+      "Maximum (0.14)",
+      0.14
+     ]
+    ],
+    "skip_steps_multiplier_label": "First Block Cache Threshold",
+    "skip_video_guide_preprocess": "1",
+    "sliding_window": true,
+    "sliding_window_defaults": {
+     "overlap_default": 18,
+     "overlap_max": 120,
+     "overlap_min": 1,
+     "overlap_offset": 1,
+     "overlap_step": 17,
+     "window_default": 362,
+     "window_max": 481,
+     "window_min": 124,
+     "window_step": 17
+    },
+    "specialities": [
+     {
+      "aliases": [
+       "character consistency",
+       "identity-preserving edits",
+       "subject consistency"
+      ],
+      "name": "identity preservation"
+     },
+     {
+      "aliases": [
+       "pose transfer",
+       "dance animation",
+       "human animation"
+      ],
+      "description": "Transfer motion or camera from reference videos to image-reference characters.",
+      "name": "motion transfer"
+     }
+    ],
+    "spectrum_cache": true,
+    "switch_threshold": {
+     "label": "Phase 2 Noise Level Start",
+     "max": 1.0,
+     "min": 0.7,
+     "step": 0.0001,
+     "type": "number"
+    },
+    "system_configs": {
+     "_name": "Text Encoder",
+     "bf16": {
+      "name": "Qwen3-VL BF16",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors"
+      ]
+     },
+     "gguf_q2_k": {
+      "name": "Qwen3-VL GGUF Q2_K",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q2_K.gguf"
+      ]
+     },
+     "gguf_q4_k_m": {
+      "name": "Qwen3-VL GGUF Q4_K_M",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf"
+      ]
+     },
+     "int8": {
+      "name": "Qwen3-VL Quanto INT8",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+      ]
+     },
+     "nvfp4_awq": {
+      "name": "Qwen3-VL NVFP4 AWQ",
+      "text_encoder_URLs": [
+       "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      ]
+     }
+    },
+    "system_configs2": {
+     "_default_label": "Auto",
+     "_name": "Video VAE",
+     "bf16": {
+      "name": "BF16",
+      "video_vae_file": "MiniMax-H3-video_vae_fp16.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "fp8mix": {
+      "name": "FP8 Mixed Precision",
+      "video_vae_file": "minimax_h3_video_vae_fp8mix.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "int8_convrot": {
+      "name": "INT8 ConvRot Decoder",
+      "video_vae_file": "minimax_h3/minimax_h3_video_vae_int8_convrot.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1_int8_convrot.safetensors"
+     }
+    },
+    "system_configs3": {
+     "_default_label": "Lower VRAM",
+     "_name": "DiT Denoising Priority",
+     "lower_ram": {
+      "name": "Lower RAM",
+      "qkv_splitting": false
+     }
+    },
+    "text_encoder_URLs": [
+     "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors",
+     "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-32B-Instruct",
+    "text_prompt_enhancer_max_tokens": 2048,
+    "text_prompt_enhancer_max_tokens1": 1024,
+    "tiny_vae_architecture": "minimax_h3_ref2va",
+    "v2i_switch_supported": true,
+    "vae_block_size": 32,
+    "vae_upsamplers": {
+     "h3_vae": [
+      0,
+      1,
+      2
+     ]
+    },
+    "video_continuation": true,
+    "video_guide2_label": "Reference Video 2",
+    "video_guide3_label": "Reference Video 3",
+    "video_guide_label": "Reference / Control Video 1",
+    "video_length_not_limited_by_audio": true,
+    "video_prompt_enhancer_max_tokens": 2048,
+    "visible_phases": 0
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.3,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": {
+     "audio_refinement": "none",
+     "h3_audio_excerpt_positions": "",
+     "h3_mask_mode": "grouped_rows",
+     "h3_video_excerpt_positions": ""
+    },
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 12.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 100,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": null,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": "",
+    "num_inference_steps": 20,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "subject_definitions:\n<Subject 1> is the person in <Picture 1>, preserving their exact identity, facial features, skin tone, hairstyle, body proportions, clothing, footwear, and distinctive accessories.\nsummary:\n[reference generation] Place <Subject 1> on a deserted midnight railway platform where a paper bird awakens the station clock during one five-second shot.\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - their identity, face, hair, proportions, clothing, footwear, and visible accessories remain recognizable and unchanged; only the location, lighting, action, and paper-bird prop are new.\ndetailed_description:\nThe target video is a five-second cinematic magical-realist single take on an abandoned railway platform before dawn. [Shot 1] <Subject 1> stands beneath a monumental stopped clock, framed in a steady medium close-up that keeps their recognizable face and exact appearance from <Picture 1> clearly visible. Cold blue light outlines the iron platform while a warm lamp illuminates their natural skin texture, hair, clothing, and accessories without changing them. A tiny folded paper bird rests on their raised palm. As its paper wings open, the camera gently pushes closer and <Subject 1> watches it with quiet resolve, saying clearly (S1) <d>[English] Some journeys begin when the map runs out.</d> During the final words, the bird lifts a few inches, lands on the clock's minute hand, and the mechanism advances with one solid click. <Subject 1> follows it with their eyes and gives a small hopeful smile. The spoken line and simple transformation complete naturally within the five-second shot; identity, lip motion, gaze, hand position, posture, and paper movement remain stable and physically coherent.\noverall_soundscape: Spacious nighttime station ambience, faint wind through ironwork, a soft paper-wing flutter crossing the stereo field, the synchronized spoken line, one heavy clockwork click, and a distant rail hum.\nnon_diegetic_music: A minimal celesta phrase of three notes, resolving softly as the clock moves.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 0,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "euler",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 0.08,
+    "skip_steps_start_step_perc": 25,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 18,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 362,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0.9035,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 124,
+    "video_mask": null,
+    "video_prompt_type": "",
+    "video_source": null
+   }
+  },
+  "minimax_h3_control": {
+   "architecture": "minimax_h3_control",
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "definition": {
+    "URLs": "minimax_h3_fl2va",
+    "_profile_roots": [
+     "profiles"
+    ],
+    "any_audio_prompt": true,
+    "architecture": "minimax_h3_control",
+    "attention": null,
+    "attention_sparsity": {
+     "end": 4.0,
+     "inc": 0.05,
+     "label": "Start Tau (higher = more sparse/faster; lower = more faithful; End Tau = 0.8)",
+     "start": 0.0
+    },
+    "audio_guide_label": "Source Audio / Soundtrack",
+    "audio_guide_window_slicing": true,
+    "audio_overlap_repair_ms": 25,
+    "audio_prompt_choices": true,
+    "audio_prompt_type_sources": {
+     "default": "",
+     "label": "Audio Source",
+     "labels": {
+      "": "Generate Video and Audio from Text Prompt",
+      "2": "Generate Audio based on Control Video and Text Prompt",
+      "A": "Generate Video based on Soundtrack and Text Prompt (Soundtrack Kept)",
+      "K": "Generate Video based on Control Video + its Audio Track and Text Prompt (Soundtrack Kept)"
+     },
+     "letters_filter": "AK",
+     "selection": [
+      "",
+      "A",
+      "K"
+     ],
+     "show_label": true
+    },
+    "audio_window_alignment": true,
+    "block_size": 32,
+    "control_net_weight_name": "Control",
+    "control_net_weight_size": 1,
+    "control_video_trim_disabled": true,
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_attention_modes": {
+     "sol": {
+      "label": "Sol sparse attention, requires Triton and RTX 30xx or newer",
+      "supports_sparsity": true
+     }
+    },
+    "custom_settings": [
+     {
+      "audio_prompt_type_not": "AK",
+      "choices": [
+       [
+        "None",
+        "none"
+       ],
+       [
+        "Enabled (6 extra steps, denoising 0.5)",
+        "enabled"
+       ]
+      ],
+      "default": "none",
+      "id": "audio_refinement",
+      "label": "Audio Refinement Extra Phase",
+      "name": "Audio Refinement",
+      "type": "dropdown"
+     }
+    ],
+    "default_attention_modes_supported": true,
+    "description": "FL2VA with the VideoX-Fun ControlNet-Union 2.0 branch: generate synchronized video and stereo audio that follow the pose, depth, edges, shapes or gray levels of a control video, or inpaint a masked area.",
+    "device_explicit": true,
+    "dtype": "bf16",
+    "end_frames_always_enabled": true,
+    "extract_guide_from_window_start": true,
+    "finetune_custom_urls": [
+     "video_vae_file",
+     "audio_vae_file"
+    ],
+    "finetunes_infos": "### H3 finetune QKV layout\n\nMost H3 checkpoints use the official **Interleaved** QKV layout. Select **Grouped** only when the checkpoint stores all Q rows, then K rows, then V rows. INT8 ConvRot uses its own layout metadata.\n",
+    "finetunes_params": {
+     "qkv_layout": {
+      "choices": [
+       [
+        "Interleaved (official H3)",
+        "interleaved"
+       ],
+       [
+        "Grouped Q / K / V",
+        "grouped"
+       ]
+      ],
+      "default": "interleaved",
+      "description": "Physical row order of fused QKV tensors in the finetune checkpoint. This does not enable or disable QKV splitting.",
+      "label": "QKV Layout"
+     }
+    },
+    "first_block_cache": true,
+    "first_block_cache_thresholds": [
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14
+    ],
+    "flow_shift": true,
+    "fps": 24,
+    "frames_minimum": 107,
+    "frames_offset": 5,
+    "frames_steps": 17,
+    "guidance_max_phases": 1,
+    "guide_preprocessing": {
+     "label": "Control Video",
+     "labels": {
+      "V": "Use Control Video as is"
+     },
+     "selection": [
+      "",
+      "PV",
+      "DV",
+      "EV",
+      "SV",
+      "CV",
+      "V",
+      "MV"
+     ]
+    },
+    "image_batch_size_max": 1,
+    "image_end_frame_position": true,
+    "image_outputs": false,
+    "image_prompt_enhancer_max_tokens1": 1024,
+    "image_prompt_types_allowed": "TSEVL",
+    "inference_steps": true,
+    "inference_steps2": false,
+    "keep_frames_video_guide_not_supported": true,
+    "lock_guidance_phases": true,
+    "lock_inference_steps": false,
+    "lora_multiplier_phases": 1,
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A",
+      "NA"
+     ]
+    },
+    "minimax_h3_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_fl2v_turbo_4step_alpha16_v0.1.safetensors",
+    "minimax_h3_ref_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+    "modules": [
+     [
+      "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/MiniMax-H3-Fun-Control-Union-2.0_bf16.safetensors",
+      "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/MiniMax-H3-Fun-Control-Union-2.0_int8_convrot.safetensors"
+     ]
+    ],
+    "multimedia_generation": true,
+    "name": "MiniMax H3 FL2VA ControlNet-Union 33B",
+    "no_background_removal": true,
+    "no_negative_prompt": true,
+    "outpainting_quantize_margins": 32,
+    "output_audio_is_input_audio": true,
+    "phase_2_spatial_tiling": false,
+    "profiles_dir": [
+     "minimax_h3",
+     "minimax_h3_fl2va",
+     "minimax_h3_control"
+    ],
+    "prompt_enhancer_button_label": "Write",
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T1P": "An H3 Image Prompt from Text",
+      "TI1P": "An H3 Image Prompt from Text + {image_inputs}",
+      "TIV": "An H3 Prompt from Text + {image_inputs}",
+      "TV": "An H3 Prompt from Text"
+     },
+     "selection": [
+      "T",
+      "TI",
+      "T1",
+      "TI1"
+     ]
+    },
+    "prompt_enhancer_picture_labels": true,
+    "prompt_enhancer_video_duration": true,
+    "qkv_layout": "interleaved",
+    "qkv_splitting": true,
+    "resolution_budget": "2048x2048",
+    "returns_audio": true,
+    "sample_solvers": [
+     [
+      "Euler",
+      "euler"
+     ],
+     [
+      "RES Multistep",
+      "res_multistep"
+     ],
+     [
+      "Ralston 2S (~2x slower)",
+      "ralston_2s"
+     ]
+    ],
+    "settings": {
+     "prompt": "integrated_multimodal_description: [Shot 1] A five-second sunny single take on a bright sandy beach, with an endless turquoise sea and a cloudless sky behind. A young woman in a navy strap swimsuit and a light white skirt that flutters in the breeze dances playfully toward the camera, her long softly curled hair catching the sunlight and small pearl earrings swaying. She smiles warmly, looks straight into the lens and laughs with carefree joy. The camera stays steady at medium-full framing.\noverall_soundscape: Gentle waves rolling onto the sand, a light sea breeze, distant seagulls, and her soft laughter.\nnon_diegetic_music: A breezy acoustic guitar summer groove."
+    },
+    "size": "large",
+    "skip_steps_multiplier_choices": [
+     [
+      "Low (0.06)",
+      0.06
+     ],
+     [
+      "Balanced (0.08, upstream default)",
+      0.08
+     ],
+     [
+      "High (0.10)",
+      0.1
+     ],
+     [
+      "Very High (0.12)",
+      0.12
+     ],
+     [
+      "Maximum (0.14)",
+      0.14
+     ]
+    ],
+    "skip_steps_multiplier_label": "First Block Cache Threshold",
+    "sliding_window": true,
+    "sliding_window_defaults": {
+     "overlap_default": 18,
+     "overlap_max": 120,
+     "overlap_min": 1,
+     "overlap_offset": 1,
+     "overlap_step": 17,
+     "window_default": 362,
+     "window_max": 362,
+     "window_min": 124,
+     "window_step": 17
+    },
+    "specialities": [
+     {
+      "aliases": [
+       "video structure control",
+       "video ControlNet",
+       "pose transfer",
+       "depth control",
+       "canny control",
+       "controlnet"
+      ],
+      "description": "Drive motion and structure with a pose, depth, edge, shape or grayscale control video.",
+      "name": "control video"
+     },
+     {
+      "aliases": [
+       "masked video editing"
+      ],
+      "description": "Regenerate a masked area of a video.",
+      "name": "video inpainting"
+     },
+     {
+      "aliases": [
+       "extend video canvas"
+      ],
+      "description": "Extend the video canvas using ControlNet's visible-source and border-mask conditioning.",
+      "name": "video outpainting"
+     }
+    ],
+    "spectrum_cache": true,
+    "system_configs": {
+     "_name": "Text Encoder",
+     "bf16": {
+      "name": "Qwen3-VL BF16",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors"
+      ]
+     },
+     "gguf_q2_k": {
+      "name": "Qwen3-VL GGUF Q2_K",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q2_K.gguf"
+      ]
+     },
+     "gguf_q4_k_m": {
+      "name": "Qwen3-VL GGUF Q4_K_M",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf"
+      ]
+     },
+     "int8": {
+      "name": "Qwen3-VL Quanto INT8",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+      ]
+     },
+     "nvfp4_awq": {
+      "name": "Qwen3-VL NVFP4 AWQ",
+      "text_encoder_URLs": [
+       "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      ]
+     }
+    },
+    "system_configs2": {
+     "_default_label": "Auto",
+     "_name": "Video VAE",
+     "bf16": {
+      "name": "BF16",
+      "video_vae_file": "MiniMax-H3-video_vae_fp16.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "fp8mix": {
+      "name": "FP8 Mixed Precision",
+      "video_vae_file": "minimax_h3_video_vae_fp8mix.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "int8_convrot": {
+      "name": "INT8 ConvRot Decoder",
+      "video_vae_file": "minimax_h3/minimax_h3_video_vae_int8_convrot.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1_int8_convrot.safetensors"
+     }
+    },
+    "system_configs3": {
+     "_default_label": "Lower VRAM",
+     "_name": "DiT Denoising Priority",
+     "lower_ram": {
+      "name": "Lower RAM",
+      "qkv_splitting": false
+     }
+    },
+    "text_encoder_URLs": [
+     "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors",
+     "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-32B-Instruct",
+    "text_prompt_enhancer_max_tokens": 1024,
+    "text_prompt_enhancer_max_tokens1": 1024,
+    "tiny_vae_architecture": "minimax_h3_ref2va",
+    "v2i_switch_supported": false,
+    "vae_block_size": 32,
+    "vae_upsamplers": {
+     "h3_vae": [
+      0,
+      1,
+      2
+     ]
+    },
+    "video_continuation": true,
+    "video_guide_label": "Control Video",
+    "video_guide_outpainting": [
+     0
+    ],
+    "video_guide_outpainting_label": "Enable Spatial Outpainting on the H3 Control Video",
+    "video_length_not_limited_by_audio": true,
+    "video_prompt_enhancer_max_tokens": 1024,
+    "visible_phases": 0
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.3,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1.0,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": {
+     "audio_refinement": "none"
+    },
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 12.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 50,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": null,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": "",
+    "num_inference_steps": 20,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "integrated_multimodal_description: [Shot 1] A five-second sunny single take on a bright sandy beach, with an endless turquoise sea and a cloudless sky behind. A young woman in a navy strap swimsuit and a light white skirt that flutters in the breeze dances playfully toward the camera, her long softly curled hair catching the sunlight and small pearl earrings swaying. She smiles warmly, looks straight into the lens and laughs with carefree joy. The camera stays steady at medium-full framing.\noverall_soundscape: Gentle waves rolling onto the sand, a light sea breeze, distant seagulls, and her soft laughter.\nnon_diegetic_music: A breezy acoustic guitar summer groove.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 1,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "euler",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 0.08,
+    "skip_steps_start_step_perc": 25,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 18,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 362,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0.9035,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 124,
+    "video_mask": null,
+    "video_prompt_type": "PV",
+    "video_source": null
+   }
+  },
+  "minimax_h3_control_pruned": {
+   "architecture": "minimax_h3_control_pruned",
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "definition": {
+    "URLs": "minimax_h3_fl2va_pruned",
+    "_profile_roots": [
+     "profiles"
+    ],
+    "any_audio_prompt": true,
+    "architecture": "minimax_h3_control_pruned",
+    "attention": null,
+    "attention_sparsity": {
+     "end": 4.0,
+     "inc": 0.05,
+     "label": "Start Tau (higher = more sparse/faster; lower = more faithful; End Tau = 0.8)",
+     "start": 0.0
+    },
+    "audio_guide_label": "Source Audio / Soundtrack",
+    "audio_guide_window_slicing": true,
+    "audio_overlap_repair_ms": 25,
+    "audio_prompt_choices": true,
+    "audio_prompt_type_sources": {
+     "default": "",
+     "label": "Audio Source",
+     "labels": {
+      "": "Generate Video and Audio from Text Prompt",
+      "2": "Generate Audio based on Control Video and Text Prompt",
+      "A": "Generate Video based on Soundtrack and Text Prompt (Soundtrack Kept)",
+      "K": "Generate Video based on Control Video + its Audio Track and Text Prompt (Soundtrack Kept)"
+     },
+     "letters_filter": "AK",
+     "selection": [
+      "",
+      "A",
+      "K"
+     ],
+     "show_label": true
+    },
+    "audio_window_alignment": true,
+    "block_size": 32,
+    "control_net_weight_name": "Control",
+    "control_net_weight_size": 1,
+    "control_video_trim_disabled": true,
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_attention_modes": {
+     "sol": {
+      "label": "Sol sparse attention, requires Triton and RTX 30xx or newer",
+      "supports_sparsity": true
+     }
+    },
+    "custom_settings": [
+     {
+      "audio_prompt_type_not": "AK",
+      "choices": [
+       [
+        "None",
+        "none"
+       ],
+       [
+        "Enabled (6 extra steps, denoising 0.5)",
+        "enabled"
+       ]
+      ],
+      "default": "none",
+      "id": "audio_refinement",
+      "label": "Audio Refinement Extra Phase",
+      "name": "Audio Refinement",
+      "type": "dropdown"
+     }
+    ],
+    "default_attention_modes_supported": true,
+    "description": "Pruned FL2VA with the VideoX-Fun ControlNet-Union 2.0 branch: generate synchronized video and stereo audio that follow the pose, depth, edges, shapes or gray levels of a control video, or inpaint a masked area.",
+    "device_explicit": true,
+    "dtype": "bf16",
+    "end_frames_always_enabled": true,
+    "extract_guide_from_window_start": true,
+    "finetune_custom_urls": [
+     "video_vae_file",
+     "audio_vae_file"
+    ],
+    "finetunes_infos": "### H3 finetune QKV layout\n\nMost H3 checkpoints use the official **Interleaved** QKV layout. Select **Grouped** only when the checkpoint stores all Q rows, then K rows, then V rows. INT8 ConvRot uses its own layout metadata.\n",
+    "finetunes_params": {
+     "qkv_layout": {
+      "choices": [
+       [
+        "Interleaved (official H3)",
+        "interleaved"
+       ],
+       [
+        "Grouped Q / K / V",
+        "grouped"
+       ]
+      ],
+      "default": "interleaved",
+      "description": "Physical row order of fused QKV tensors in the finetune checkpoint. This does not enable or disable QKV splitting.",
+      "label": "QKV Layout"
+     }
+    },
+    "first_block_cache": true,
+    "first_block_cache_thresholds": [
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14
+    ],
+    "flow_shift": true,
+    "fps": 24,
+    "frames_minimum": 107,
+    "frames_offset": 5,
+    "frames_steps": 17,
+    "guidance_max_phases": 1,
+    "guide_preprocessing": {
+     "label": "Control Video",
+     "labels": {
+      "V": "Use Control Video as is"
+     },
+     "selection": [
+      "",
+      "PV",
+      "DV",
+      "EV",
+      "SV",
+      "CV",
+      "V",
+      "MV"
+     ]
+    },
+    "image_batch_size_max": 1,
+    "image_end_frame_position": true,
+    "image_outputs": false,
+    "image_prompt_enhancer_max_tokens1": 1024,
+    "image_prompt_types_allowed": "TSEVL",
+    "inference_steps": true,
+    "inference_steps2": false,
+    "keep_frames_video_guide_not_supported": true,
+    "lock_guidance_phases": true,
+    "lock_inference_steps": false,
+    "lora_multiplier_phases": 1,
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A",
+      "NA"
+     ]
+    },
+    "minimax_h3_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_fl2v_turbo_4step_alpha16_v0.1.safetensors",
+    "minimax_h3_ref_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+    "modules": [
+     [
+      "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/MiniMax-H3-Fun-Control-Union-2.0-pruned_rank8_bf16.safetensors",
+      "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/MiniMax-H3-Fun-Control-Union-2.0-pruned_rank8_int8_convrot.safetensors"
+     ]
+    ],
+    "multimedia_generation": true,
+    "name": "MiniMax H3 FL2VA ControlNet-Union Pruned 20B",
+    "no_background_removal": true,
+    "no_negative_prompt": true,
+    "outpainting_quantize_margins": 32,
+    "output_audio_is_input_audio": true,
+    "phase_2_spatial_tiling": false,
+    "profiles_dir": [
+     "minimax_h3",
+     "minimax_h3_fl2va",
+     "minimax_h3_control"
+    ],
+    "prompt_enhancer_button_label": "Write",
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T1P": "An H3 Image Prompt from Text",
+      "TI1P": "An H3 Image Prompt from Text + {image_inputs}",
+      "TIV": "An H3 Prompt from Text + {image_inputs}",
+      "TV": "An H3 Prompt from Text"
+     },
+     "selection": [
+      "T",
+      "TI",
+      "T1",
+      "TI1"
+     ]
+    },
+    "prompt_enhancer_picture_labels": true,
+    "prompt_enhancer_video_duration": true,
+    "qkv_layout": "interleaved",
+    "qkv_splitting": true,
+    "resolution_budget": "2048x2048",
+    "returns_audio": true,
+    "sample_solvers": [
+     [
+      "Euler",
+      "euler"
+     ],
+     [
+      "RES Multistep",
+      "res_multistep"
+     ],
+     [
+      "Ralston 2S (~2x slower)",
+      "ralston_2s"
+     ]
+    ],
+    "settings": {
+     "prompt": "integrated_multimodal_description: [Shot 1] A five-second sunny single take on a bright sandy beach, with an endless turquoise sea and a cloudless sky behind. A young woman in a navy strap swimsuit and a light white skirt that flutters in the breeze dances playfully toward the camera, her long softly curled hair catching the sunlight and small pearl earrings swaying. She smiles warmly, looks straight into the lens and laughs with carefree joy. The camera stays steady at medium-full framing.\noverall_soundscape: Gentle waves rolling onto the sand, a light sea breeze, distant seagulls, and her soft laughter.\nnon_diegetic_music: A breezy acoustic guitar summer groove."
+    },
+    "size": "lighter",
+    "skip_steps_multiplier_choices": [
+     [
+      "Low (0.06)",
+      0.06
+     ],
+     [
+      "Balanced (0.08, upstream default)",
+      0.08
+     ],
+     [
+      "High (0.10)",
+      0.1
+     ],
+     [
+      "Very High (0.12)",
+      0.12
+     ],
+     [
+      "Maximum (0.14)",
+      0.14
+     ]
+    ],
+    "skip_steps_multiplier_label": "First Block Cache Threshold",
+    "sliding_window": true,
+    "sliding_window_defaults": {
+     "overlap_default": 18,
+     "overlap_max": 120,
+     "overlap_min": 1,
+     "overlap_offset": 1,
+     "overlap_step": 17,
+     "window_default": 362,
+     "window_max": 362,
+     "window_min": 124,
+     "window_step": 17
+    },
+    "specialities": [
+     {
+      "aliases": [
+       "video structure control",
+       "video ControlNet",
+       "pose transfer",
+       "depth control",
+       "canny control",
+       "controlnet"
+      ],
+      "description": "Drive motion and structure with a pose, depth, edge, shape or grayscale control video.",
+      "name": "control video"
+     },
+     {
+      "aliases": [
+       "masked video editing"
+      ],
+      "description": "Regenerate a masked area of a video.",
+      "name": "video inpainting"
+     },
+     {
+      "aliases": [
+       "extend video canvas"
+      ],
+      "description": "Extend the video canvas using ControlNet's visible-source and border-mask conditioning.",
+      "name": "video outpainting"
+     }
+    ],
+    "spectrum_cache": true,
+    "system_configs": {
+     "_name": "Text Encoder",
+     "bf16": {
+      "name": "Qwen3-VL BF16",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors"
+      ]
+     },
+     "gguf_q2_k": {
+      "name": "Qwen3-VL GGUF Q2_K",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q2_K.gguf"
+      ]
+     },
+     "gguf_q4_k_m": {
+      "name": "Qwen3-VL GGUF Q4_K_M",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf"
+      ]
+     },
+     "int8": {
+      "name": "Qwen3-VL Quanto INT8",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+      ]
+     },
+     "nvfp4_awq": {
+      "name": "Qwen3-VL NVFP4 AWQ",
+      "text_encoder_URLs": [
+       "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      ]
+     }
+    },
+    "system_configs2": {
+     "_default_label": "Auto",
+     "_name": "Video VAE",
+     "bf16": {
+      "name": "BF16",
+      "video_vae_file": "MiniMax-H3-video_vae_fp16.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "fp8mix": {
+      "name": "FP8 Mixed Precision",
+      "video_vae_file": "minimax_h3_video_vae_fp8mix.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "int8_convrot": {
+      "name": "INT8 ConvRot Decoder",
+      "video_vae_file": "minimax_h3/minimax_h3_video_vae_int8_convrot.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1_int8_convrot.safetensors"
+     }
+    },
+    "system_configs3": {
+     "_default_label": "Lower VRAM",
+     "_name": "DiT Denoising Priority",
+     "lower_ram": {
+      "name": "Lower RAM",
+      "qkv_splitting": false
+     }
+    },
+    "text_encoder_URLs": [
+     "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors",
+     "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-32B-Instruct",
+    "text_prompt_enhancer_max_tokens": 1024,
+    "text_prompt_enhancer_max_tokens1": 1024,
+    "tiny_vae_architecture": "minimax_h3_ref2va",
+    "v2i_switch_supported": false,
+    "vae_block_size": 32,
+    "vae_upsamplers": {
+     "h3_vae": [
+      0,
+      1,
+      2
+     ]
+    },
+    "video_continuation": true,
+    "video_guide_label": "Control Video",
+    "video_guide_outpainting": [
+     0
+    ],
+    "video_guide_outpainting_label": "Enable Spatial Outpainting on the H3 Control Video",
+    "video_length_not_limited_by_audio": true,
+    "video_prompt_enhancer_max_tokens": 1024,
+    "visible_phases": 0
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.3,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1.0,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": {
+     "audio_refinement": "none"
+    },
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 12.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 50,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": null,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": "",
+    "num_inference_steps": 20,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "integrated_multimodal_description: [Shot 1] A five-second sunny single take on a bright sandy beach, with an endless turquoise sea and a cloudless sky behind. A young woman in a navy strap swimsuit and a light white skirt that flutters in the breeze dances playfully toward the camera, her long softly curled hair catching the sunlight and small pearl earrings swaying. She smiles warmly, looks straight into the lens and laughs with carefree joy. The camera stays steady at medium-full framing.\noverall_soundscape: Gentle waves rolling onto the sand, a light sea breeze, distant seagulls, and her soft laughter.\nnon_diegetic_music: A breezy acoustic guitar summer groove.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 1,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "euler",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 0.08,
+    "skip_steps_start_step_perc": 25,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 18,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 362,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0.9035,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 124,
+    "video_mask": null,
+    "video_prompt_type": "PV",
+    "video_source": null
+   }
+  },
+  "viggle_animate": {
+   "architecture": "viggle_animate",
+   "family": "minimax_h3",
+   "lora_key": "minimax_h3",
+   "definition": {
+    "URLs": [
+     "Viggle-Animate-pruned_rank8_bf16.safetensors",
+     "Viggle-Animate-pruned_rank8_int8_convrot.safetensors"
+    ],
+    "_profile_roots": [
+     "profiles"
+    ],
+    "any_audio_prompt": true,
+    "any_image_refs_relative_size": false,
+    "architecture": "viggle_animate",
+    "attention": null,
+    "attention_sparsity": {
+     "end": 4.0,
+     "inc": 0.05,
+     "label": "Start Tau (higher = more sparse/faster; lower = more faithful; End Tau = 0.8)",
+     "start": 0.0
+    },
+    "audio_guide2_label": "Audio Reference 2",
+    "audio_guide3_label": "Audio Reference 3",
+    "audio_guide_label": "Custom Audio",
+    "audio_guide_window_slicing": true,
+    "audio_overlap_repair_ms": 25,
+    "audio_prompt_choices": true,
+    "audio_prompt_type_sources": {
+     "default": "",
+     "label": "Control Audio",
+     "labels": {
+      "": "No Input Audio",
+      "A": "Use Custom Audio",
+      "K": "Reuse Control Video Audio"
+     },
+     "letters_filter": "AK",
+     "selection": [
+      "",
+      "A",
+      "K"
+     ],
+     "show_label": true
+    },
+    "audio_reference_max_total_duration": 15,
+    "audio_window_alignment": true,
+    "block_size": 32,
+    "control_video_trim": false,
+    "control_video_trim_disabled": false,
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_attention_modes": {
+     "sol": {
+      "label": "Sol sparse attention, requires Triton and RTX 30xx or newer",
+      "supports_sparsity": true
+     }
+    },
+    "custom_frames_injection": true,
+    "custom_settings": [],
+    "deepy_prompt_infos": "Express the replacement through the Edited Reference Frame. Viggle uses a fixed built-in prompt; generation text is ignored.",
+    "default_attention_modes_supported": true,
+    "description": "Replace in only 3 denoising steps a character using an original control video and one edited frame from that video. The latter is the Reference Image, it must absolutely contain one frame of the Control Video where the main character will be replaced with you want to put instead. It is recommended to use a Generative Image Editor Model for this task.",
+    "device_explicit": true,
+    "dtype": "bf16",
+    "end_frames_always_enabled": false,
+    "extract_guide_from_window_start": true,
+    "finetune_custom_urls": [
+     "video_vae_file",
+     "audio_vae_file"
+    ],
+    "finetunes_infos": "### H3 finetune QKV layout\n\nMost H3 checkpoints use the official **Interleaved** QKV layout. Select **Grouped** only when the checkpoint stores all Q rows, then K rows, then V rows. INT8 ConvRot uses its own layout metadata.\n",
+    "finetunes_params": {
+     "qkv_layout": {
+      "choices": [
+       [
+        "Interleaved (official H3)",
+        "interleaved"
+       ],
+       [
+        "Grouped Q / K / V",
+        "grouped"
+       ]
+      ],
+      "default": "interleaved",
+      "description": "Physical row order of fused QKV tensors in the finetune checkpoint. This does not enable or disable QKV splitting.",
+      "label": "QKV Layout"
+     }
+    },
+    "first_block_cache": false,
+    "first_block_cache_thresholds": [
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14
+    ],
+    "fit_into_canvas_image_refs": 1,
+    "flow_shift": true,
+    "fps": 24,
+    "frames_minimum": 107,
+    "frames_offset": 5,
+    "frames_selection_maximum": 737,
+    "frames_steps": 17,
+    "guidance_max_phases": 1,
+    "guide_custom_choices": {
+     "choices": [
+      [
+       "Use Control Video",
+       "VU"
+      ]
+     ],
+     "default": "VU",
+     "label": "Control Video",
+     "letters_filter": "V-U"
+    },
+    "image_batch_size_max": 1,
+    "image_end_frame_position": false,
+    "image_outputs": false,
+    "image_prompt_enhancer_max_tokens1": 1024,
+    "image_prompt_types_allowed": "T",
+    "image_ref_choices": {
+     "choices": [
+      [
+       "Use Edited Reference Frame",
+       "I"
+      ]
+     ],
+     "default": "I",
+     "label": "Edited Reference Frame",
+     "letters_filter": "I"
+    },
+    "image_refs_relative_size": {
+     "max": 400,
+     "min": 50,
+     "step": 1
+    },
+    "inference_steps": true,
+    "inference_steps2": false,
+    "keep_frames_video_guide_not_supported": true,
+    "lock_guidance_phases": true,
+    "lock_inference_steps": false,
+    "lora_multiplier_phases": 1,
+    "loras": [
+     "viggle_animate_distillation_bf16.safetensors"
+    ],
+    "loras_multipliers": [
+     "1"
+    ],
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A",
+      "NA"
+     ]
+    },
+    "minimax_h3_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_fl2v_turbo_4step_alpha16_v0.1.safetensors",
+    "minimax_h3_ref_lora_turbo": "https://huggingface.co/DeepBeepMeep/MiniMax-H3/resolve/main/loras/minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+    "multimedia_generation": true,
+    "name": "Viggle-Animate Pruned 20B",
+    "no_background_removal": true,
+    "no_negative_prompt": true,
+    "one_image_ref_needed": true,
+    "output_audio_is_input_audio": true,
+    "phase_2_spatial_tiling": false,
+    "preprocess_video_guide2": false,
+    "profiles_dir": [
+     "viggle_animate"
+    ],
+    "prompt_enhancer_button_label": "Write",
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {},
+     "selection": []
+    },
+    "prompt_enhancer_picture_labels": true,
+    "prompt_enhancer_video_duration": true,
+    "prompt_infos": "Viggle uses a fixed prompt. Prepare the character replacement in the Edited Reference Frame; generation prompt text is ignored.",
+    "qkv_layout": "interleaved",
+    "qkv_splitting": true,
+    "reference_audio_enabled": true,
+    "reference_image_enabled": true,
+    "reference_video_enabled": false,
+    "reference_video_max_frames": 362,
+    "reference_video_max_size": [
+     768,
+     1344
+    ],
+    "resolution_budget": "2048x2048",
+    "return_image_refs_tensor": false,
+    "returns_audio": true,
+    "sample_solvers": [
+     [
+      "Euler",
+      "euler"
+     ]
+    ],
+    "settings": {
+     "audio_prompt_type": "",
+     "flow_shift": 3.0,
+     "guidance_phases": 1,
+     "guidance_scale": 1.0,
+     "image_refs_relative_size": 100,
+     "num_inference_steps": 3,
+     "prompt": "Prompt ignored. Don't write anything here.",
+     "prompt_enhancer": "",
+     "remove_background_images_ref": 0,
+     "sample_solver": "euler",
+     "sliding_window_overlap": 18,
+     "sliding_window_size": 124,
+     "video_length": 124,
+     "video_prompt_type": "IVU"
+    },
+    "size": "lighter",
+    "skip_steps_multiplier_choices": [
+     [
+      "Low (0.06)",
+      0.06
+     ],
+     [
+      "Balanced (0.08, upstream default)",
+      0.08
+     ],
+     [
+      "High (0.10)",
+      0.1
+     ],
+     [
+      "Very High (0.12)",
+      0.12
+     ],
+     [
+      "Maximum (0.14)",
+      0.14
+     ]
+    ],
+    "skip_steps_multiplier_label": "First Block Cache Threshold",
+    "skip_video_guide_preprocess": "1",
+    "sliding_window": true,
+    "sliding_window_defaults": {
+     "overlap_default": 18,
+     "overlap_max": 120,
+     "overlap_min": 1,
+     "overlap_offset": 1,
+     "overlap_step": 17,
+     "window_default": 124,
+     "window_max": 124,
+     "window_min": 124,
+     "window_step": 17
+    },
+    "sliding_window_size_locked": true,
+    "specialities": [
+     {
+      "aliases": [
+       "replace a person",
+       "character swap"
+      ],
+      "name": "character replacement"
+     },
+     {
+      "aliases": [
+       "pose transfer",
+       "dance animation",
+       "human animation"
+      ],
+      "name": "motion transfer"
+     }
+    ],
+    "spectrum_cache": false,
+    "switch_threshold": {
+     "label": "Phase 2 Noise Level Start",
+     "max": 1.0,
+     "min": 0.7,
+     "step": 0.0001,
+     "type": "number"
+    },
+    "system_configs": {},
+    "system_configs2": {
+     "_default_label": "Auto",
+     "_name": "Video VAE",
+     "bf16": {
+      "name": "BF16",
+      "video_vae_file": "MiniMax-H3-video_vae_fp16.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "fp8mix": {
+      "name": "FP8 Mixed Precision",
+      "video_vae_file": "minimax_h3_video_vae_fp8mix.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1.safetensors"
+     },
+     "int8_convrot": {
+      "name": "INT8 ConvRot Decoder",
+      "video_vae_file": "minimax_h3/minimax_h3_video_vae_int8_convrot.safetensors",
+      "x2_vae_file": "minimax_h3/MiniMax-H3-X2-Detail-v1_int8_convrot.safetensors"
+     }
+    },
+    "system_configs3": {
+     "_default_label": "Lower VRAM",
+     "_name": "DiT Denoising Priority",
+     "lower_ram": {
+      "name": "Lower RAM",
+      "qkv_splitting": false
+     }
+    },
+    "text_encoder_URLs": [],
+    "text_encoder_folder": null,
+    "text_prompt_enhancer_max_tokens": 2048,
+    "text_prompt_enhancer_max_tokens1": 1024,
+    "tiny_vae_architecture": "minimax_h3_ref2va",
+    "v2i_switch_supported": false,
+    "vae_block_size": 32,
+    "vae_upsamplers": {
+     "h3_vae": [
+      0,
+      1,
+      2
+     ]
+    },
+    "video_continuation": false,
+    "video_guide2_label": "Reference Video 2",
+    "video_guide3_label": "Reference Video 3",
+    "video_guide_label": "Control Video",
+    "video_length_not_limited_by_audio": true,
+    "video_prompt_enhancer_max_tokens": 2048,
+    "visible_phases": 0
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.3,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": null,
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 3.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 100,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": null,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": "",
+    "num_inference_steps": 3,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "Prompt ignored. Don't write anything here.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 0,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "euler",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 0.08,
+    "skip_steps_start_step_perc": 25,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 18,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 124,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0.9035,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 124,
+    "video_mask": null,
+    "video_prompt_type": "IVU",
+    "video_source": null
+   }
+  },
+  "minimax_h3_tts_ref2va_pruned": {
+   "architecture": "minimax_h3_tts_ref2va_pruned",
+   "family": "tts",
+   "lora_key": "minimax_h3",
+   "definition": {
+    "URLs": [
+     "MiniMax-H3-Ref2VA-pruned_rank8_bf16.safetensors",
+     "MiniMax-H3-Ref2VA-pruned_rank8_int8_convrot.safetensors"
+    ],
+    "_profile_roots": [
+     "profiles"
+    ],
+    "any_audio_prompt": true,
+    "architecture": "minimax_h3_tts_ref2va_pruned",
+    "attention_sparsity": {
+     "end": 4.0,
+     "inc": 0.05,
+     "label": "Start Tau (higher = more sparse/faster; lower = more faithful; End Tau = 0.8)",
+     "start": 0.0
+    },
+    "audio_guide2_label": "Voice / Audio Reference 2",
+    "audio_guide3_label": "Voice / Audio Reference 3",
+    "audio_guide_label": "Voice / Audio Reference 1",
+    "audio_only": true,
+    "audio_prompt_choices": true,
+    "audio_prompt_type_sources": {
+     "default": "A",
+     "label": "Voice / Audio References",
+     "labels": {
+      "": "Generate without an Audio Reference",
+      "A": "Use One Voice / Audio Reference",
+      "AB": "Use Two Voice / Audio References",
+      "ABD": "Use Three Voice / Audio References"
+     },
+     "letters_filter": "ABD",
+     "selection": [
+      "",
+      "A",
+      "AB",
+      "ABD"
+     ],
+     "show_label": true
+    },
+    "audio_reference_max_total_duration": 15,
+    "custom_attention_modes": {
+     "sol": {
+      "label": "Sol sparse attention, requires Triton and RTX 30xx or newer",
+      "supports_sparsity": true
+     }
+    },
+    "custom_settings": [],
+    "default_attention_modes_supported": true,
+    "description": "Experimental 32 kHz stereo dialogue generation with one segment per speaker turn, one or two cloned voices, and Whisper boundary cleanup. Reuses the pruned H3 Ref2VA checkpoint, jointly denoises a hidden 32x32 video, and saves only audio.",
+    "device_explicit": true,
+    "dtype": "bf16",
+    "duration_slider": {
+     "default": 15,
+     "increment": 1,
+     "label": "Maximum Total Audio Duration (seconds)",
+     "max": 300,
+     "min": 4,
+     "name": "Maximum Total Audio Duration"
+    },
+    "enabled_audio_lora": true,
+    "first_block_cache": true,
+    "first_block_cache_thresholds": [
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14
+    ],
+    "flow_shift": true,
+    "fps": 24,
+    "group": "tts",
+    "guidance_max_phases": 1,
+    "image_outputs": false,
+    "inference_steps": true,
+    "lora_multiplier_phases": 1,
+    "name": "TTS MiniMax H3 Voice Clone 20B",
+    "no_negative_prompt": true,
+    "preserve_empty_prompt_lines": true,
+    "profile_type": "video",
+    "profiles_dir": [
+     "minimax_h3_tts"
+    ],
+    "prompt_enhancer_button_label": "Write",
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T": "A Monologue from Text",
+      "T1": "A Dialogue from Text"
+     },
+     "selection": [
+      "T",
+      "T1"
+     ]
+    },
+    "qkv_layout": "interleaved",
+    "qkv_splitting": true,
+    "reference_audio_enabled": true,
+    "sample_solvers": [
+     [
+      "Euler",
+      "euler"
+     ],
+     [
+      "RES Multistep",
+      "res_multistep"
+     ],
+     [
+      "Ralston 2S (~2x slower)",
+      "ralston_2s"
+     ]
+    ],
+    "settings": {
+     "audio_prompt_type": "AB",
+     "duration_seconds": 15,
+     "guidance_phases": 1,
+     "multi_prompts_gen_type": "FG",
+     "num_inference_steps": 20,
+     "prompt": "Speaker 1:\n[English, thoughtful and close to the microphone] I thought the hardest part would be finding the right words.\n\nSpeaker 2:\n[English, warm and reassuring] Sometimes the right voice is what helps the words arrive.",
+     "sample_solver": "euler",
+     "video_length": 0
+    },
+    "skip_steps_multiplier_choices": [
+     [
+      "Low (0.06)",
+      0.06
+     ],
+     [
+      "Balanced (0.08, upstream default)",
+      0.08
+     ],
+     [
+      "High (0.10)",
+      0.1
+     ],
+     [
+      "Very High (0.12)",
+      0.12
+     ],
+     [
+      "Maximum (0.14)",
+      0.14
+     ]
+    ],
+    "skip_steps_multiplier_label": "First Block Cache Threshold",
+    "sliding_window": false,
+    "spectrum_cache": true,
+    "supports_early_stop": true,
+    "system_configs": {
+     "_name": "Text Encoder",
+     "bf16": {
+      "name": "Qwen3-VL BF16",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors"
+      ]
+     },
+     "gguf_q2_k": {
+      "name": "Qwen3-VL GGUF Q2_K",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q2_K.gguf"
+      ]
+     },
+     "gguf_q4_k_m": {
+      "name": "Qwen3-VL GGUF Q4_K_M",
+      "text_encoder_URLs": [
+       "qwen3vl-32B-MiniMax-H3-Q4_K_M.gguf"
+      ]
+     },
+     "int8": {
+      "name": "Qwen3-VL Quanto INT8",
+      "text_encoder_URLs": [
+       "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+      ]
+     },
+     "nvfp4_awq": {
+      "name": "Qwen3-VL NVFP4 AWQ",
+      "text_encoder_URLs": [
+       "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      ]
+     }
+    },
+    "system_configs2": {
+     "_default_label": "Lower VRAM",
+     "_name": "DiT Denoising Priority",
+     "lower_ram": {
+      "name": "Lower RAM",
+      "qkv_splitting": false
+     }
+    },
+    "temperature": false,
+    "text_encoder_URLs": [
+     "Qwen3-VL-32B-Instruct-layer50_bf16.safetensors",
+     "Qwen3-VL-32B-Instruct-layer50_quanto_bf16_int8.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-32B-Instruct",
+    "text_prompt_enhancer_max_tokens": 1024,
+    "text_prompt_enhancer_max_tokens1": 2048,
+    "visible_phases": 0
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.3,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "AB",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": null,
+    "denoising_strength": 1.0,
+    "duration_seconds": 15,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 12.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 0,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 50,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": null,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "FG",
+    "negative_prompt": "",
+    "num_inference_steps": 20,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "Speaker 1:\n[English, thoughtful and close to the microphone] I thought the hardest part would be finding the right words.\n\nSpeaker 2:\n[English, warm and reassuring] Sometimes the right voice is what helps the words arrive.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 1,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "euler",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 0.08,
+    "skip_steps_start_step_perc": 25,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 5,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 129,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 0,
+    "video_mask": null,
+    "video_prompt_type": "",
+    "video_source": null
+   }
+  },
+  "qwen_image_21_7B": {
+   "architecture": "qwen_image_21_7B",
+   "family": "qwen_image_2",
+   "lora_key": "qwen21",
+   "definition": {
+    "NAG": false,
+    "URLs": [
+     "qwen_image_21_7B_bf16.safetensors",
+     "qwen_image_21_7B_int8_convrot.safetensors"
+    ],
+    "_profile_roots": [
+     "profiles"
+    ],
+    "architecture": "qwen_image_21_7B",
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_settings": [
+     {
+      "choices": [
+       [
+        "Disabled (Slower but lower VRAM/RAM)",
+        "Disabled"
+       ],
+       [
+        "Enabled (Faster but requires more VRAM/RAM)",
+        "Enabled"
+       ]
+      ],
+      "default": "Disabled",
+      "id": "qwen21_kv_cache",
+      "info": "Disabled recomputes conditioning each denoising step without retaining per-layer K/V. Enabled caches conditioning K/V on the GPU for faster denoising. The CPU text-embedding cache remains active in both modes.",
+      "label": "KV Cache",
+      "name": "KV Cache",
+      "type": "dropdown"
+     },
+     {
+      "choices": [
+       [
+        "Disabled",
+        "Disabled"
+       ],
+       [
+        "Enabled",
+        "Enabled"
+       ]
+      ],
+      "default": "Disabled",
+      "id": "rgba",
+      "info": "Disabled saves RGB in your selected image format. Enabled preserves the generated alpha channel and saves RGBA PNG. Request transparency in the prompt when needed.",
+      "label": "RGBA",
+      "name": "RGBA",
+      "type": "dropdown"
+     }
+    ],
+    "device_explicit": true,
+    "embedded_guidance": false,
+    "fit_into_canvas_image_refs": 0,
+    "group": "qwen_image_2",
+    "guidance_max_phases": 1,
+    "guide_inpaint_color": "FF0000",
+    "guide_preprocessing": {
+     "labels": {
+      "V": "Control Image"
+     },
+     "selection": [
+      "",
+      "PV",
+      "DV",
+      "SV",
+      "CV",
+      "V"
+     ]
+    },
+    "image_outputs": true,
+    "image_prompt_enhancer_max_tokens": 768,
+    "image_prompt_enhancer_max_tokens1": 768,
+    "image_ref_choices": {
+     "choices": [
+      [
+       "None",
+       ""
+      ],
+      [
+       "First Image Is the Main Subject or Landscape",
+       "KI"
+      ],
+      [
+       "Reference Images Are People or Objects",
+       "I"
+      ]
+     ],
+     "letters_filter": "KI"
+    },
+    "image_ref_inpaint": true,
+    "inpaint_color": "FF0000",
+    "inpaint_support": true,
+    "inpaint_video_prompt_type": "VAG",
+    "inpaint_with_image_ref": true,
+    "lock_resolutions": false,
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A"
+     ],
+     "visible": true
+    },
+    "mask_strength_always_enabled": true,
+    "model_modes": {
+     "choices": [
+      [
+       "Masked Denoising",
+       0
+      ],
+      [
+       "LanPaint (2 steps)",
+       2
+      ],
+      [
+       "LanPaint (5 steps)",
+       3
+      ],
+      [
+       "LanPaint (10 steps)",
+       4
+      ],
+      [
+       "LanPaint (15 steps)",
+       5
+      ]
+     ],
+     "default": 0,
+     "image_modes": [
+      2
+     ],
+     "label": "Inpainting Method"
+    },
+    "name": "Qwen Image 2.1 TextImage2Image 7B",
+    "outpainting_quantize_margins": 32,
+    "profiles_dir": [
+     "qwen21"
+    ],
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T": "A New Image Description using existing Text Prompt",
+      "T1": "An Editing Instruction using existing Text Prompt",
+      "TI": "An Image Edit using existing Text Prompt and {image_inputs}",
+      "TI1": "A New Composition using existing Text Prompt and {image_inputs}"
+     },
+     "selection": [
+      "T",
+      "TI",
+      "T1",
+      "TI1"
+     ]
+    },
+    "resolutions": [
+     [
+      "4096x4096 (1:1)",
+      "4096x4096"
+     ],
+     [
+      "5440x3072 (16:9)",
+      "5440x3072"
+     ],
+     [
+      "3072x5440 (9:16)",
+      "3072x5440"
+     ],
+     [
+      "3840x2176 (16:9)",
+      "3840x2176"
+     ],
+     [
+      "2176x3840 (9:16)",
+      "2176x3840"
+     ],
+     [
+      "2880x2880 (1:1)",
+      "2880x2880"
+     ],
+     [
+      "3840x1664 (21:9)",
+      "3840x1664"
+     ],
+     [
+      "1664x3840 (9:21)",
+      "1664x3840"
+     ],
+     [
+      "2048x2048 (1:1)",
+      "2048x2048"
+     ],
+     [
+      "1920x1920 (1:1)",
+      "1920x1920"
+     ],
+     [
+      "2560x1440 (16:9)",
+      "2560x1440"
+     ],
+     [
+      "1440x2560 (9:16)",
+      "1440x2560"
+     ],
+     [
+      "1920x1440 (4:3)",
+      "1920x1440"
+     ],
+     [
+      "1440x1920 (3:4)",
+      "1440x1920"
+     ],
+     [
+      "2160x1440 (3:2)",
+      "2160x1440"
+     ],
+     [
+      "1440x2160 (2:3)",
+      "1440x2160"
+     ],
+     [
+      "1456x1456 (1:1)",
+      "1456x1456"
+     ],
+     [
+      "2688x1152 (21:9)",
+      "2688x1152"
+     ],
+     [
+      "1152x2688 (9:21)",
+      "1152x2688"
+     ],
+     [
+      "1920x1088 (16:9)",
+      "1920x1088"
+     ],
+     [
+      "1088x1920 (9:16)",
+      "1088x1920"
+     ],
+     [
+      "1440x1440 (1:1)",
+      "1440x1440"
+     ],
+     [
+      "1536x1024 (3:2)",
+      "1536x1024"
+     ],
+     [
+      "1024x1536 (2:3)",
+      "1024x1536"
+     ],
+     [
+      "1920x832 (21:9)",
+      "1920x832"
+     ],
+     [
+      "832x1920 (9:21)",
+      "832x1920"
+     ],
+     [
+      "2048x768 (8:3)",
+      "2048x768"
+     ],
+     [
+      "1024x1792 (4:7)",
+      "1024x1792"
+     ],
+     [
+      "1088x1088 (1:1)",
+      "1088x1088"
+     ],
+     [
+      "1024x1024 (1:1)",
+      "1024x1024"
+     ],
+     [
+      "1280x720 (16:9)",
+      "1280x720"
+     ],
+     [
+      "720x1280 (9:16)",
+      "720x1280"
+     ],
+     [
+      "1600x400 (4:1)",
+      "1600x400"
+     ],
+     [
+      "1280x544 (21:9)",
+      "1280x544"
+     ],
+     [
+      "544x1280 (9:21)",
+      "544x1280"
+     ],
+     [
+      "1104x832 (4:3)",
+      "1104x832"
+     ],
+     [
+      "832x1104 (3:4)",
+      "832x1104"
+     ],
+     [
+      "960x960 (1:1)",
+      "960x960"
+     ],
+     [
+      "960x544 (16:9)",
+      "960x544"
+     ],
+     [
+      "544x960 (9:16)",
+      "544x960"
+     ],
+     [
+      "832x624 (4:3)",
+      "832x624"
+     ],
+     [
+      "624x832 (3:4)",
+      "624x832"
+     ],
+     [
+      "720x720 (1:1)",
+      "720x720"
+     ],
+     [
+      "832x480 (16:9)",
+      "832x480"
+     ],
+     [
+      "480x832 (9:16)",
+      "480x832"
+     ],
+     [
+      "672x384 (16:9)",
+      "672x384"
+     ],
+     [
+      "384x672 (9:16)",
+      "384x672"
+     ],
+     [
+      "512x512 (1:1)",
+      "512x512"
+     ],
+     [
+      "576x320 (16:9)",
+      "576x320"
+     ],
+     [
+      "320x576 (9:16)",
+      "320x576"
+     ],
+     [
+      "448x448 (1:1)",
+      "448x448"
+     ],
+     [
+      "448x256 (7:4)",
+      "448x256"
+     ],
+     [
+      "256x448 (4:7)",
+      "256x448"
+     ],
+     [
+      "320x320 (1:1)",
+      "320x320"
+     ]
+    ],
+    "sample_solvers": [
+     [
+      "FlowMatch Euler",
+      "default"
+     ],
+     [
+      "Qwen Image 2.1 Turbo",
+      "qwen21_turbo"
+     ],
+     [
+      "Viggle Turbo",
+      "viggle_v02"
+     ],
+     [
+      "Pruna",
+      "pruna"
+     ]
+    ],
+    "settings": {
+     "batch_size": 1,
+     "custom_settings": {
+      "qwen21_kv_cache": "Disabled",
+      "rgba": "Disabled"
+     },
+     "guidance_scale": 4.0,
+     "image_mode": 1,
+     "negative_prompt": " ",
+     "num_inference_steps": 40,
+     "prompt": "A red ceramic teapot on a wooden table, soft window light, detailed product photograph.",
+     "prompt_enhancer": "",
+     "remove_background_images_ref": 0
+    },
+    "specialities": [
+     {
+      "aliases": [
+       "RGBA",
+       "transparent background"
+      ],
+      "description": "Set custom_settings.rgba to Enabled and request an RGBA image with transparent background to preserve generated alpha in PNG. Turbo adapter RGBA quality is not validated.",
+      "name": "alpha output"
+     }
+    ],
+    "text_encoder_URLs": [
+     "Qwen3-VL-8B-Instruct_bf16.safetensors",
+     "Qwen3-VL-8B-Instruct_int8_convrot.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-8B-Instruct",
+    "text_prompt_enhancer_max_tokens": 768,
+    "text_prompt_enhancer_max_tokens1": 768,
+    "vae_block_size": 32,
+    "video_guide_outpainting": [
+     1,
+     2
+    ]
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.0,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": {
+     "qwen21_kv_cache": "Disabled",
+     "rgba": "Disabled"
+    },
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 5.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 4.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 1,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 50,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": 0,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": " ",
+    "num_inference_steps": 40,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "A red ceramic teapot on a wooden table, soft window light, detailed product photograph.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 0,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "832x480",
+    "sample_solver": "default",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 1.75,
+    "skip_steps_start_step_perc": 0,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 5,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 129,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 81,
+    "video_mask": null,
+    "video_prompt_type": "",
+    "video_source": null
+   }
+  },
+  "qwen_image_21_turbo_7B": {
+   "architecture": "qwen_image_21_7B",
+   "family": "qwen_image_2",
+   "lora_key": "qwen21",
+   "definition": {
+    "NAG": false,
+    "URLs": [
+     "qwen_image_21_turbo_7B_bf16.safetensors",
+     "qwen_image_21_turbo_7B_int8_convrot.safetensors"
+    ],
+    "_profile_roots": [
+     "profiles"
+    ],
+    "accelerated": "native",
+    "architecture": "qwen_image_21_7B",
+    "cuda_graphs": [
+     "transformer"
+    ],
+    "custom_settings": [
+     {
+      "choices": [
+       [
+        "Disabled (Slower but lower VRAM/RAM)",
+        "Disabled"
+       ],
+       [
+        "Enabled (Faster but requires more VRAM/RAM)",
+        "Enabled"
+       ]
+      ],
+      "default": "Disabled",
+      "id": "qwen21_kv_cache",
+      "info": "Disabled recomputes conditioning each denoising step without retaining per-layer K/V. Enabled caches conditioning K/V on the GPU for faster denoising. The CPU text-embedding cache remains active in both modes.",
+      "label": "KV Cache",
+      "name": "KV Cache",
+      "type": "dropdown"
+     },
+     {
+      "choices": [
+       [
+        "Disabled",
+        "Disabled"
+       ],
+       [
+        "Enabled",
+        "Enabled"
+       ]
+      ],
+      "default": "Disabled",
+      "id": "rgba",
+      "info": "Disabled saves RGB in your selected image format. Enabled preserves the generated alpha channel and saves RGBA PNG. Request transparency in the prompt when needed.",
+      "label": "RGBA",
+      "name": "RGBA",
+      "type": "dropdown"
+     }
+    ],
+    "description": "Qwen's full eight-step distilled checkpoint for image generation and reference editing. Uses the Qwen Image 2.1 Turbo scheduler at guidance 1, without an acceleration LoRA. Shares the Qwen Image 2.1 text encoder and VAE. Vanilla sampling schedules are experimental for this checkpoint.",
+    "device_explicit": true,
+    "embedded_guidance": false,
+    "fit_into_canvas_image_refs": 0,
+    "group": "qwen_image_2",
+    "guidance_max_phases": 1,
+    "guide_inpaint_color": "FF0000",
+    "guide_preprocessing": {
+     "labels": {
+      "V": "Control Image"
+     },
+     "selection": [
+      "",
+      "PV",
+      "DV",
+      "SV",
+      "CV",
+      "V"
+     ]
+    },
+    "image_outputs": true,
+    "image_prompt_enhancer_max_tokens": 768,
+    "image_prompt_enhancer_max_tokens1": 768,
+    "image_ref_choices": {
+     "choices": [
+      [
+       "None",
+       ""
+      ],
+      [
+       "First Image Is the Main Subject or Landscape",
+       "KI"
+      ],
+      [
+       "Reference Images Are People or Objects",
+       "I"
+      ]
+     ],
+     "letters_filter": "KI"
+    },
+    "image_ref_inpaint": true,
+    "inpaint_color": "FF0000",
+    "inpaint_support": true,
+    "inpaint_video_prompt_type": "VAG",
+    "inpaint_with_image_ref": true,
+    "lock_resolutions": false,
+    "mask_preprocessing": {
+     "selection": [
+      "",
+      "A"
+     ],
+     "visible": true
+    },
+    "mask_strength_always_enabled": true,
+    "model_modes": {
+     "choices": [
+      [
+       "Masked Denoising",
+       0
+      ],
+      [
+       "LanPaint (2 steps)",
+       2
+      ],
+      [
+       "LanPaint (5 steps)",
+       3
+      ],
+      [
+       "LanPaint (10 steps)",
+       4
+      ],
+      [
+       "LanPaint (15 steps)",
+       5
+      ]
+     ],
+     "default": 0,
+     "image_modes": [
+      2
+     ],
+     "label": "Inpainting Method"
+    },
+    "name": "Qwen Image 2.1 TextImage2Image Turbo 7B",
+    "outpainting_quantize_margins": 32,
+    "profiles_dir": [],
+    "prompt_enhancer_def": {
+     "default": "",
+     "labels": {
+      "T": "A New Image Description using existing Text Prompt",
+      "T1": "An Editing Instruction using existing Text Prompt",
+      "TI": "An Image Edit using existing Text Prompt and {image_inputs}",
+      "TI1": "A New Composition using existing Text Prompt and {image_inputs}"
+     },
+     "selection": [
+      "T",
+      "TI",
+      "T1",
+      "TI1"
+     ]
+    },
+    "qwen21_variant": "turbo",
+    "resolutions": [
+     [
+      "4096x4096 (1:1)",
+      "4096x4096"
+     ],
+     [
+      "5440x3072 (16:9)",
+      "5440x3072"
+     ],
+     [
+      "3072x5440 (9:16)",
+      "3072x5440"
+     ],
+     [
+      "3840x2176 (16:9)",
+      "3840x2176"
+     ],
+     [
+      "2176x3840 (9:16)",
+      "2176x3840"
+     ],
+     [
+      "2880x2880 (1:1)",
+      "2880x2880"
+     ],
+     [
+      "3840x1664 (21:9)",
+      "3840x1664"
+     ],
+     [
+      "1664x3840 (9:21)",
+      "1664x3840"
+     ],
+     [
+      "2048x2048 (1:1)",
+      "2048x2048"
+     ],
+     [
+      "1920x1920 (1:1)",
+      "1920x1920"
+     ],
+     [
+      "2560x1440 (16:9)",
+      "2560x1440"
+     ],
+     [
+      "1440x2560 (9:16)",
+      "1440x2560"
+     ],
+     [
+      "1920x1440 (4:3)",
+      "1920x1440"
+     ],
+     [
+      "1440x1920 (3:4)",
+      "1440x1920"
+     ],
+     [
+      "2160x1440 (3:2)",
+      "2160x1440"
+     ],
+     [
+      "1440x2160 (2:3)",
+      "1440x2160"
+     ],
+     [
+      "1456x1456 (1:1)",
+      "1456x1456"
+     ],
+     [
+      "2688x1152 (21:9)",
+      "2688x1152"
+     ],
+     [
+      "1152x2688 (9:21)",
+      "1152x2688"
+     ],
+     [
+      "1920x1088 (16:9)",
+      "1920x1088"
+     ],
+     [
+      "1088x1920 (9:16)",
+      "1088x1920"
+     ],
+     [
+      "1440x1440 (1:1)",
+      "1440x1440"
+     ],
+     [
+      "1536x1024 (3:2)",
+      "1536x1024"
+     ],
+     [
+      "1024x1536 (2:3)",
+      "1024x1536"
+     ],
+     [
+      "1920x832 (21:9)",
+      "1920x832"
+     ],
+     [
+      "832x1920 (9:21)",
+      "832x1920"
+     ],
+     [
+      "2048x768 (8:3)",
+      "2048x768"
+     ],
+     [
+      "1024x1792 (4:7)",
+      "1024x1792"
+     ],
+     [
+      "1088x1088 (1:1)",
+      "1088x1088"
+     ],
+     [
+      "1024x1024 (1:1)",
+      "1024x1024"
+     ],
+     [
+      "1280x720 (16:9)",
+      "1280x720"
+     ],
+     [
+      "720x1280 (9:16)",
+      "720x1280"
+     ],
+     [
+      "1600x400 (4:1)",
+      "1600x400"
+     ],
+     [
+      "1280x544 (21:9)",
+      "1280x544"
+     ],
+     [
+      "544x1280 (9:21)",
+      "544x1280"
+     ],
+     [
+      "1104x832 (4:3)",
+      "1104x832"
+     ],
+     [
+      "832x1104 (3:4)",
+      "832x1104"
+     ],
+     [
+      "960x960 (1:1)",
+      "960x960"
+     ],
+     [
+      "960x544 (16:9)",
+      "960x544"
+     ],
+     [
+      "544x960 (9:16)",
+      "544x960"
+     ],
+     [
+      "832x624 (4:3)",
+      "832x624"
+     ],
+     [
+      "624x832 (3:4)",
+      "624x832"
+     ],
+     [
+      "720x720 (1:1)",
+      "720x720"
+     ],
+     [
+      "832x480 (16:9)",
+      "832x480"
+     ],
+     [
+      "480x832 (9:16)",
+      "480x832"
+     ],
+     [
+      "672x384 (16:9)",
+      "672x384"
+     ],
+     [
+      "384x672 (9:16)",
+      "384x672"
+     ],
+     [
+      "512x512 (1:1)",
+      "512x512"
+     ],
+     [
+      "576x320 (16:9)",
+      "576x320"
+     ],
+     [
+      "320x576 (9:16)",
+      "320x576"
+     ],
+     [
+      "448x448 (1:1)",
+      "448x448"
+     ],
+     [
+      "448x256 (7:4)",
+      "448x256"
+     ],
+     [
+      "256x448 (4:7)",
+      "256x448"
+     ],
+     [
+      "320x320 (1:1)",
+      "320x320"
+     ]
+    ],
+    "sample_solvers": [
+     [
+      "Qwen Image 2.1 Turbo",
+      "qwen21_turbo"
+     ],
+     [
+      "FlowMatch Euler",
+      "default"
+     ]
+    ],
+    "settings": {
+     "batch_size": 1,
+     "custom_settings": {
+      "qwen21_kv_cache": "Disabled",
+      "rgba": "Disabled"
+     },
+     "guidance_scale": 1.0,
+     "image_mode": 1,
+     "negative_prompt": " ",
+     "num_inference_steps": 8,
+     "prompt": "A red ceramic teapot on a wooden table, soft window light, detailed product photograph.",
+     "prompt_enhancer": "",
+     "remove_background_images_ref": 0,
+     "resolution": "1024x1024",
+     "sample_solver": "qwen21_turbo"
+    },
+    "specialities": [
+     {
+      "aliases": [
+       "RGBA",
+       "transparent background"
+      ],
+      "description": "Set custom_settings.rgba to Enabled and request an RGBA image with transparent background to preserve generated alpha in PNG. Turbo adapter RGBA quality is not validated.",
+      "name": "alpha output"
+     }
+    ],
+    "text_encoder_URLs": [
+     "Qwen3-VL-8B-Instruct_bf16.safetensors",
+     "Qwen3-VL-8B-Instruct_int8_convrot.safetensors"
+    ],
+    "text_encoder_folder": "Qwen3-VL-8B-Instruct",
+    "text_prompt_enhancer_max_tokens": 768,
+    "text_prompt_enhancer_max_tokens1": 768,
+    "vae_block_size": 32,
+    "video_guide_outpainting": [
+     1,
+     2
+    ]
+   },
+   "factory": {
+    "NAG_alpha": 0.5,
+    "NAG_scale": 1,
+    "NAG_tau": 3.5,
+    "RIFLEx_setting": 0,
+    "activated_loras": [],
+    "alt_guidance_scale": 1.0,
+    "alt_prompt": "",
+    "alt_scale": 0.0,
+    "apg_switch": 0,
+    "attention_sparsity": 1.0,
+    "audio_guidance_scale": 1,
+    "audio_guide": null,
+    "audio_guide2": null,
+    "audio_guide3": null,
+    "audio_prompt_type": "",
+    "audio_scale": 1,
+    "audio_source": null,
+    "batch_size": 1,
+    "cfg_star_switch": 0,
+    "cfg_zero_step": -1,
+    "client_id": "",
+    "config": "",
+    "control_net_weight": 1,
+    "control_net_weight2": 1,
+    "control_net_weight_alt": 1,
+    "custom_guide": null,
+    "custom_settings": {
+     "qwen21_kv_cache": "Disabled",
+     "rgba": "Disabled"
+    },
+    "denoising_strength": 1.0,
+    "duration_seconds": 0,
+    "embedded_guidance_scale": 6.0,
+    "film_grain_intensity": 0,
+    "film_grain_saturation": 0.5,
+    "flow_shift": 5.0,
+    "force_fps": "",
+    "frames_positions": "",
+    "guidance2_scale": 5,
+    "guidance3_scale": 5,
+    "guidance_phases": 1,
+    "guidance_scale": 1.0,
+    "image_end": null,
+    "image_guide": null,
+    "image_mask": null,
+    "image_mode": 1,
+    "image_prompt_type": "",
+    "image_refs": null,
+    "image_refs_relative_size": 50,
+    "image_start": null,
+    "input_video_strength": 1.0,
+    "keep_frames_video_guide": "",
+    "keep_frames_video_source": "",
+    "loras_multipliers": "",
+    "mask_expand": 0,
+    "masking_strength": 1,
+    "min_frames_if_references": 1,
+    "model_mode": 0,
+    "model_switch_phase": 1,
+    "motion_amplitude": 1.0,
+    "multi_images_gen_type": 0,
+    "multi_prompts_gen_type": "PG",
+    "negative_prompt": " ",
+    "num_inference_steps": 8,
+    "num_inference_steps2": 3,
+    "output_filename": "",
+    "override_attention": "",
+    "override_compile": "",
+    "override_profile": -1,
+    "pause_seconds": 0,
+    "perturbation_end_perc": 90,
+    "perturbation_layers": [
+     9
+    ],
+    "perturbation_start_perc": 10,
+    "perturbation_switch": 0,
+    "postprocess_audio": "",
+    "postprocess_audio_neg_prompt": "",
+    "postprocess_audio_prompt": "",
+    "prompt": "A red ceramic teapot on a wooden table, soft window light, detailed product photograph.",
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 0,
+    "repeat_generation": 1,
+    "replace_voice_method": "",
+    "replace_voice_sample": null,
+    "replace_voice_sample2": null,
+    "resolution": "1024x1024",
+    "sample_solver": "qwen21_turbo",
+    "seed": -1,
+    "self_refiner_certain_percentage": 0.999,
+    "self_refiner_f_uncertainty": 0.0,
+    "self_refiner_plan": "",
+    "self_refiner_setting": 0,
+    "settings_version": 2.8,
+    "skip_steps_cache_type": "",
+    "skip_steps_multiplier": 1.75,
+    "skip_steps_start_step_perc": 0,
+    "sliding_window_color_correction_strength": 0,
+    "sliding_window_discard_last_frames": 0,
+    "sliding_window_overlap": 5,
+    "sliding_window_overlap_noise": 0,
+    "sliding_window_size": 129,
+    "sliding_window_trim_first_frames": 0,
+    "spatial_upsampler_param": null,
+    "spatial_upsampler_param2": null,
+    "spatial_upsampler_prompt": "",
+    "spatial_upsampler_reference_images": null,
+    "spatial_upsampling": "",
+    "speakers_locations": "0:45 55:100",
+    "sub_parallel_window_overlap": 17,
+    "sub_parallel_window_size": 0,
+    "switch_threshold": 0,
+    "switch_threshold2": 0,
+    "temperature": 0.8,
+    "temporal_upsampling": "",
+    "top_k": 50,
+    "top_p": 0.9,
+    "video_guide": null,
+    "video_guide2": null,
+    "video_guide3": null,
+    "video_guide_outpainting": "#",
+    "video_guide_outpainting_ratio": "",
+    "video_length": 81,
+    "video_mask": null,
+    "video_prompt_type": "",
+    "video_source": null
+   }
+  }
+ }
+}

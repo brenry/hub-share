@@ -1,0 +1,72 @@
+@layer screen {
+  /* The tab, top to bottom: the player, the two tracks, the bar. Only the tracks scroll (sideways). */
+  .seq { display: grid; grid-template-rows: minmax(0, 1fr) 11rem auto; min-height: 0; min-width: 0; background: var(--panel); overflow: clip; }
+  .seq > * { min-width: 0; min-height: 0; }
+
+  /* The player: the screen at its computed size, centred on the stage's dark; both players fill it, one showing. */
+  .player { display: grid; place-items: center; background: var(--stage); overflow: clip; }
+  .screen { position: relative; box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, .9); outline: 1px solid var(--line); }
+  .screen[hidden] { display: none; }
+  .video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: contain; background: var(--stage); opacity: 0; }
+  .video[data-on] { opacity: 1; }
+
+  /* The tracks: their numbers, the two rows in one scroller on one time line, the zoom beside them. */
+  .strip { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; column-gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); border-top: 1px solid var(--line); background: var(--panel); }
+  .labels { display: grid; grid-template-rows: 1fr 1fr; row-gap: var(--sp-2); align-items: center; color: var(--text-3); font-size: var(--fs-ctl); }
+  .scroll { position: relative; min-width: 0; }
+  .canvas { position: relative; display: grid; grid-template-rows: 1fr 1fr; row-gap: var(--sp-2); height: 100%; min-width: 100%; }
+  .row { position: relative; min-height: 0; border-radius: .3125rem; background: var(--raise); }
+  .tile {
+    position: absolute; top: 0; bottom: 0; border-radius: .3125rem; overflow: clip; background: var(--hi); cursor: grab;
+    outline: var(--rule) solid transparent; outline-offset: calc(var(--rule) * -1); transition: outline-color .1s;
+  }
+  .tile:hover { outline-color: var(--line-strong); }
+  .tile img, .tile [data-wait] { width: 100%; height: 100%; display: block; object-fit: cover; pointer-events: none; }
+  .tileOn, .tileOn:hover { outline-color: var(--accent); }
+  .soundTile { width: 100%; height: 100%; display: grid; place-items: center; color: var(--text-3); background: var(--hi); pointer-events: none; }
+  /* A tile's edges: pressed and dragged, they trim it. */
+  .edge { position: absolute; top: 0; bottom: 0; width: .5rem; cursor: ew-resize; z-index: 1; }
+  .edgeIn { left: 0; }
+  .edgeOut { right: 0; }
+  .edge:hover { background: var(--accent); opacity: .5; }
+  /* Past the end of what Save makes: shaded, what lies there is cut. */
+  .past { position: absolute; top: 0; bottom: 0; right: 0; background: var(--shade); pointer-events: none; }
+  .cap {
+    position: absolute; left: var(--sp-1); bottom: var(--sp-1); padding: 0 var(--sp-1); border-radius: var(--r-1);
+    background: var(--shade); color: var(--text-1); font-size: var(--fs-ctl); white-space: nowrap; pointer-events: none;
+  }
+  .head { position: absolute; top: 0; bottom: 0; width: var(--rule); margin-left: calc(var(--rule) / -2); background: var(--text-1); pointer-events: none; z-index: 1; }
+  .mark { position: absolute; top: 0; bottom: 0; width: var(--rule); margin-left: calc(var(--rule) / -2); background: var(--accent); pointer-events: none; z-index: 1; }
+  .empty { position: absolute; inset: 0; display: grid; place-items: center; color: var(--text-dis); font-size: var(--fs-cap); pointer-events: none; }
+  .zoom { align-self: start; width: 8rem; }
+
+  /* The bar: low and quiet, one line, as on Media; the colour is Join's softened cyan. */
+  .bar {
+    --seq-ctl: 1.375rem;
+    display: flex; align-items: center; gap: var(--sp-2); min-width: 0; height: 2rem; padding: 0 var(--sp-3);
+    border-top: 1px solid var(--line); background: var(--panel); color: var(--text-3); font-size: var(--fs-ctl); white-space: nowrap;
+  }
+  .bar > * { flex: none; }
+  .name {
+    display: inline-flex; align-items: center; gap: var(--sp-1); max-width: 16rem; min-width: 0; height: var(--seq-ctl); padding: 0 var(--sp-2);
+    border-radius: var(--r-1); color: var(--text-2);
+  }
+  .name:hover { background: var(--raise); color: var(--text-1); }
+  .barBtn, .go {
+    display: inline-flex; align-items: center; justify-content: center; width: var(--seq-ctl); height: var(--seq-ctl);
+    padding: 0; border-radius: var(--r-1); color: var(--text-3);
+  }
+  .barBtn:hover:not(:disabled) { background: var(--raise); color: var(--text-2); }
+  .barBtn:disabled { color: var(--text-dis); }
+  .go { color: var(--accent); opacity: .62; }
+  .go:hover { opacity: 1; background: var(--raise); }
+  .go[aria-disabled='true'] { opacity: .25; }
+  .time { color: var(--text-2); font-variant-numeric: tabular-nums; }
+  .trim { display: inline-flex; align-items: center; gap: var(--sp-1); }
+  .lab { color: var(--text-3); }
+  .drag { height: var(--seq-ctl); font-size: var(--fs-ctl); }
+  .grow { flex: 1 1 0; min-width: 0; display: flex; align-items: center; }
+  .progress { flex: 1 1 auto; max-width: 16rem; }
+  .liveFlat, .liveFlat:hover { height: var(--seq-ctl); border-color: transparent; background: none; box-shadow: none; padding: 0 var(--sp-1); font-size: var(--fs-ctl); color: var(--text-3); }
+  .ask { padding: var(--sp-2); min-width: 16rem; }
+}

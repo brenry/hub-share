@@ -1,0 +1,8 @@
+@layer screen {
+  .list { display: grid; }
+  .error { color: var(--err); padding-bottom: var(--sp-3); }
+  .minutes { width: 6.5rem; flex: none; }
+  .profile { flex: none; max-width: 20rem; }
+  .tiers { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); }
+  .tier { display: inline-flex; align-items: center; gap: var(--sp-2); }
+}

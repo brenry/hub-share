@@ -1,0 +1,10 @@
+@layer screen {
+  /* Tools only. The first tab starts on the window's left margin; the active one carries a rule under its label. */
+  .bar { container: bar / inline-size; height: 100%; display: flex; align-items: stretch; padding-left: var(--sp-6); font-size: var(--fs-body); }
+  .tabs { display: flex; height: 100%; gap: var(--sp-6); overflow: clip; }
+  .tab { display: flex; align-items: center; height: 100%; padding: 0; font-weight: 500; color: var(--text-3); position: relative; white-space: nowrap; }
+  .tab:hover { color: var(--text-1); }
+  .tab:focus-visible { outline-offset: calc(var(--rule) * -2); }
+  .on { color: var(--text-1); }
+  .on::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: var(--rule); background: var(--accent); }
+}

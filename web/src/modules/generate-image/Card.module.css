@@ -1,0 +1,7 @@
+@layer screen {
+  .number { width: 8rem; height: var(--ctl-h); padding: 0 var(--sp-2); border-radius: var(--r-2); border: 1px solid var(--line); background: var(--well); text-align: right; }
+  .number:focus { border-color: var(--accent-line); }
+  /* "Not set" has no family heading. */
+  .pick { display: contents; }
+  .pick [role='group'][aria-label=''] > :first-child { display: none; }
+}

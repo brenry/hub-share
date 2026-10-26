@@ -1,0 +1,5 @@
+@layer ui {
+  .num { height: var(--ctl-h-sm); padding: 0 var(--sp-1); border-radius: var(--r-1); color: var(--text-2); font-size: var(--fs-body); cursor: ew-resize; user-select: none; touch-action: none; white-space: nowrap; }
+  .num:hover { color: var(--text-1); }
+  .drag, .drag:hover { background: var(--raise); color: var(--text-1); }
+}

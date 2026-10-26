@@ -1,0 +1,18 @@
+{
+ "guidance_scale": 1.0,
+ "image_prompt_type": "",
+ "model": {
+  "URLs": [
+   "https://huggingface.co/fake/resolve/main/minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
+  ],
+  "architecture": "minimax_h3",
+  "description": "Text or first/last frame to video with sound.",
+  "inference_steps_max": 50,
+  "inference_steps_min": 1,
+  "name": "H3 First / Last — Pruned"
+ },
+ "num_inference_steps": 20,
+ "resolution": "864x480",
+ "sliding_window_size": 345,
+ "video_length": 124
+}

@@ -1,0 +1,250 @@
+// Settings: the standard list and the card panels call the hub's routes.
+import { expect, test, type Page } from '@playwright/test'
+import { FakeHub } from './fixtures/controller'
+import { apiState, type ApiState } from './fixtures/api'
+import { open, openSettings } from './helpers'
+
+async function settings(page: Page, card?: string, over: Partial<ApiState> = {}): Promise<ApiState> {
+  const { st } = await open(page, '/', new FakeHub(), apiState(over))
+  await openSettings(page)
+  if (card) await page.locator(`[data-card="${card}"]`).click()
+  return st
+}
+const REFUSED = { ok: false, text: 'Open WebUI refused the key (Settings -> Account -> API keys)' }
+const calls = (st: ApiState, method: string, path: string) => st.calls.filter(c => c.method === method && c.path.startsWith(path)).map(c => c.body)
+
+test('the standard list shows paths and hardware and saves idle unload', async ({ page }) => {
+  const st = await settings(page)
+  await expect(page.getByRole('button', { name: /^Edit (Outputs|Inputs|Archive)$/ })).toHaveCount(0)
+  await expect(page.getByRole('button', { name: 'Edit Drive' })).toHaveText('/srv/models/ComfyUI')
+  await expect(page.getByText('GPU 1 · 32 GB')).toBeVisible()
+  await expect(page.getByText('Hub 0.1.0')).toBeVisible()
+  await page.getByRole('combobox', { name: 'Idle minutes' }).selectOption('30')
+  await page.getByRole('switch', { name: 'Unload when idle' }).click()
+  await expect.poll(() => calls(st, 'PATCH', '/api/settings')).toEqual([{ vram: { idle_unload: true, idle_minutes: 30 } }, { vram: { idle_unload: false, idle_minutes: 30 } }])
+  await expect(page.locator('[data-card]')).toHaveCount(3)
+  await page.getByRole('button', { name: 'Restart', exact: true }).click()
+  await expect.poll(() => calls(st, 'POST', '/api/settings/restart')).toEqual([{}])
+  await expect(page.getByText('Back in a few seconds; the page reconnects itself.')).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Image models' })).toHaveCount(1)
+})
+
+test('a folder path is edited in place: click, type, Enter saves', async ({ page }) => {
+  const st = await settings(page)
+  await page.getByRole('button', { name: 'Edit Drive' }).click()
+  const box = page.getByRole('textbox', { name: 'Drive' })
+  await expect(box).toHaveValue('/srv/models/ComfyUI')
+  await expect(box).toBeFocused()
+  await box.fill('/srv/Pictures')
+  await box.press('Enter')
+  await expect(page.getByRole('button', { name: 'Edit Drive' })).toHaveText('/srv/Pictures')
+  expect(calls(st, 'PATCH', '/api/settings')).toEqual([{ paths: { drive: '/srv/Pictures' } }])
+  await page.getByRole('button', { name: 'Edit Engine folder' }).click()
+  await page.getByRole('textbox', { name: 'Engine folder' }).fill('/srv/Wan2GP')
+  await page.getByRole('heading', { name: 'Hardware' }).click()
+  await expect.poll(() => calls(st, 'PATCH', '/api/settings')).toEqual([{ paths: { drive: '/srv/Pictures' } }, { engine: { root: '/srv/Wan2GP' } }])
+  await expect(page.getByRole('button', { name: 'Edit Engine folder' })).toContainText('/srv/Wan2GP')
+})
+
+test('Esc cancels an edit and sends nothing', async ({ page }) => {
+  const st = await settings(page)
+  await page.getByRole('button', { name: 'Edit Drive' }).click()
+  await page.getByRole('textbox', { name: 'Drive' }).fill('/somewhere/else')
+  await page.getByRole('textbox', { name: 'Drive' }).press('Escape')
+  await expect(page.getByRole('textbox', { name: 'Drive' })).toHaveCount(0)
+  await expect(page.getByRole('button', { name: 'Edit Drive' })).toHaveText('/srv/models/ComfyUI')
+  expect(calls(st, 'PATCH', '/api/settings')).toEqual([])
+})
+
+test('a refused path shows the server\'s line inline and keeps the old value', async ({ page }) => {
+  const st = await settings(page)
+  await page.getByRole('button', { name: 'Edit Engine Python' }).click()
+  await page.getByRole('textbox', { name: 'Engine Python' }).fill('/missing/python')
+  await page.getByRole('textbox', { name: 'Engine Python' }).press('Enter')
+  await expect(page.getByRole('alert')).toHaveText('Not a Python')
+  expect(st.settings.engine.python).toBe('/srv/engine/app/env/bin/python')
+  await page.getByRole('textbox', { name: 'Engine Python' }).press('Escape')
+  await expect(page.getByRole('alert')).toHaveCount(0)
+  await expect(page.getByRole('button', { name: 'Edit Engine Python' })).toHaveText('/srv/engine/app/env/bin/python')
+})
+
+test('Network: rename, confirmed remove, and a one-time pairing link', async ({ page }) => {
+  const st = await settings(page, 'network')
+  await expect(page.getByText('192.168.0.10:42010')).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Remove Desk', exact: true })).toBeDisabled()
+  await page.getByRole('button', { name: 'Rename' }).nth(1).click()
+  await page.getByRole('textbox', { name: 'Device name' }).first().fill('Loft')
+  await page.getByRole('textbox', { name: 'Device name' }).first().press('Enter')
+  await expect.poll(() => calls(st, 'PATCH', '/api/network/devices/d_local')).toEqual([{ name: 'Loft' }])
+  await page.getByRole('button', { name: 'Remove This server' }).click()
+  await page.getByRole('button', { name: 'Remove This server' }).click()
+  await expect.poll(() => st.calls.filter(c => c.method === 'DELETE').map(c => c.path)).toEqual(['/api/network/devices/d_local'])
+  await page.getByRole('textbox', { name: 'Device name' }).last().fill('Laptop')
+  await page.getByRole('button', { name: 'Create link' }).click()
+  await expect(page.getByRole('textbox', { name: 'Pairing link' })).toHaveValue('http://192.168.0.10:42010/pair#c=Qm7tX2c9VbL4nR8w')
+  expect(calls(st, 'POST', '/api/network/pair')).toEqual([{ name: 'Laptop' }])
+})
+
+test('Assistant: access switch, endpoint, MCP key (New key posts, shows the new one), Remove key', async ({ page }) => {
+  const st = await settings(page, 'assistant')
+  await expect(page.getByRole('textbox', { name: 'Endpoint' })).toHaveValue('http://192.168.0.10:42010/mcp')
+  await page.getByRole('switch', { name: 'Assistant access' }).click()
+  await expect.poll(() => calls(st, 'PATCH', '/api/assistant')).toEqual([{ on: false }])
+  const key = page.getByRole('textbox', { name: 'MCP key' })
+  await expect(key).toHaveValue('')                          // a view never carries the key: it is shown once, when made
+  await page.getByRole('button', { name: 'New key' }).click()
+  await expect.poll(() => calls(st, 'POST', '/api/assistant/mcp-key')).toEqual([{}])
+  await expect(key).toHaveValue('hub_mcp_Zr8vN1y5WqT6hJ2dLx9c')
+  await page.getByRole('button', { name: 'Remove key' }).click()
+  await expect.poll(() => calls(st, 'PATCH', '/api/assistant/openwebui')).toEqual([{ key: '' }])
+})
+
+test('Assistant: Open WebUI address and key save to the hub; the key is only sent when typed', async ({ page }) => {
+  const st = await settings(page, 'assistant')
+  const url = page.getByRole('textbox', { name: 'Address' })
+  const key = page.getByLabel('API key')
+  await expect(url).toHaveValue('http://127.0.0.1:3000')
+  await expect(key).toHaveAttribute('type', 'password')
+  await expect(key).toHaveValue('')
+  await expect(page.getByText('Key saved')).toBeVisible()
+  await url.fill('http://127.0.0.1:3001')
+  await page.getByRole('button', { name: 'Save' }).first().click()
+  await expect.poll(() => calls(st, 'PATCH', '/api/assistant/openwebui')).toEqual([{ url: 'http://127.0.0.1:3001' }])
+  await key.fill('sk-secret')
+  await key.press('Enter')
+  await expect.poll(() => calls(st, 'PATCH', '/api/assistant/openwebui').length).toBe(2)
+  expect(calls(st, 'PATCH', '/api/assistant/openwebui')[1]).toEqual({ url: 'http://127.0.0.1:3000', key: 'sk-secret' })
+})
+
+test('Assistant: with a key saved the models are listed on load and picking one sends only the model', async ({ page }) => {
+  const st = await settings(page, 'assistant')
+  const model = page.getByRole('combobox', { name: 'Model', exact: true })
+  await expect(page.getByText('Connected · 3 models')).toBeVisible()
+  await expect.poll(() => calls(st, 'GET', '/api/assistant/openwebui/models').length).toBeGreaterThan(0)
+  await expect(model.locator('option')).toHaveText(['qwen3.5:9b', 'gemma3:12b', 'llama3.2:3b'])
+  await expect(model).toHaveValue('qwen3.5:9b')
+  await model.selectOption('gemma3:12b')
+  await expect.poll(() => calls(st, 'PATCH', '/api/assistant/openwebui')).toEqual([{ model: 'gemma3:12b' }])
+})
+
+test('Assistant: the tool server list comes with the models; picking one sends only {tools}', async ({ page }) => {
+  const st = await settings(page, 'assistant')
+  const tools = page.getByRole('combobox', { name: 'Tool server' })
+  await expect(tools.locator('option')).toHaveText(['None', 'Hub', 'HocusPocus'])
+  await tools.selectOption('hub')
+  await expect.poll(() => calls(st, 'PATCH', '/api/assistant/openwebui')).toEqual([{ tools: 'hub' }])
+  await expect(tools).toHaveValue('hub')
+  await expect(page.getByText('With the Hub tool server picked, the model can make images through the Hub.')).toBeVisible()
+})
+
+test('Assistant: a refused key shows the reason and no model or tool server list', async ({ page }) => {
+  const st = await settings(page, 'assistant', { owuiModels: { ...REFUSED, models: [] }, owuiServers: { ...REFUSED, servers: [] } })
+  await expect(page.getByText('Open WebUI refused the key (Settings -> Account -> API keys)')).toHaveCount(2)
+  await expect(page.getByRole('combobox', { name: 'Model' })).toHaveCount(0)
+  await expect(page.getByRole('combobox', { name: 'Tool server' })).toHaveCount(1)   // stays, so None can be picked
+  await expect(page.getByText('the list comes from Open WebUI once the key works')).toContainText('qwen3.5:9b')
+  expect(calls(st, 'GET', '/api/assistant/openwebui/models')).toHaveLength(1)
+})
+
+test('Assistant: an address that is not on this computer is refused with the server\'s line', async ({ page }) => {
+  const st = await settings(page, 'assistant')
+  await page.getByRole('textbox', { name: 'Address' }).fill('http://192.168.0.50:3000')
+  await page.getByRole('button', { name: 'Save' }).first().click()
+  await expect(page.getByRole('alert')).toHaveText('Open WebUI must be on this computer: use 127.0.0.1')
+  expect(calls(st, 'PATCH', '/api/assistant/openwebui')).toEqual([{ url: 'http://192.168.0.50:3000' }])
+})
+
+test('Assistant: Replies kept shows 6, saves a whole number, and shows the server\'s line for a bad one', async ({ page }) => {
+  const st = await settings(page, 'assistant')
+  const keep = page.getByRole('textbox', { name: 'Replies kept' })
+  await expect(keep).toHaveValue('6')
+  await keep.fill('8x')
+  await expect(keep).toHaveValue('8')
+  await keep.press('Enter')
+  await expect.poll(() => calls(st, 'PATCH', '/api/assistant/openwebui')).toEqual([{ keep: 8 }])
+  await expect(keep).toHaveValue('8')
+  await keep.fill('25')
+  await page.getByRole('button', { name: 'Save' }).nth(1).click()
+  await expect(page.getByRole('alert')).toHaveText('Replies kept must be a whole number from 1 to 20')
+  expect(calls(st, 'PATCH', '/api/assistant/openwebui')).toEqual([{ keep: 8 }, { keep: 25 }])
+  expect(st.owuiKeep).toBe(8)
+})
+
+test('Assistant: Context length shows 8192, saves 0 or a number, and shows the server\'s line for a bad one', async ({ page }) => {
+  const st = await settings(page, 'assistant')
+  const ctx = page.getByRole('textbox', { name: 'Context length' })
+  await expect(ctx).toHaveValue('8192')
+  await expect(page.getByText('Tokens the model may read; 0 leaves it to Open WebUI.')).toBeVisible()
+  await ctx.fill('16k384')
+  await expect(ctx).toHaveValue('16384')
+  await ctx.press('Enter')
+  await expect.poll(() => calls(st, 'PATCH', '/api/assistant/openwebui')).toEqual([{ context: 16384 }])
+  await expect(page.getByRole('button', { name: 'Save' }).nth(2)).toBeDisabled()
+  await expect(ctx).toHaveValue('16384')
+  await ctx.fill('1000')
+  await page.getByRole('button', { name: 'Save' }).nth(2).click()
+  await expect(page.getByRole('alert')).toHaveText('Context length must be 0 or a whole number from 2048 to 131072')
+  await ctx.fill('0')
+  await ctx.press('Enter')
+  await expect.poll(() => st.owuiContext).toBe(0)
+  await expect(ctx).toHaveValue('0')
+  expect(calls(st, 'PATCH', '/api/assistant/openwebui')).toEqual([{ context: 16384 }, { context: 1000 }, { context: 0 }])
+})
+
+test('Assistant: the port can be changed in Settings', async ({ page }) => {
+  const st = await settings(page, 'assistant')
+  const port = page.getByRole('textbox', { name: 'Port' })
+  await expect(port).toHaveAttribute('placeholder', '42010')
+  await port.fill('42011x')
+  await expect(port).toHaveValue('42011')
+  await page.getByRole('button', { name: 'Save' }).last().click()
+  await expect.poll(() => calls(st, 'PATCH', '/api/assistant/port')).toEqual([{ port: 42011 }])
+  await expect(page.getByText('Restarting on the new port.')).toContainText('http://192.168.0.10:42011/mcp')
+})
+
+test('Generate Image card: default models, then seed and guidance for the current model, saved in the draft', async ({ page }) => {
+  const { st } = await open(page, '/', new FakeHub(), apiState({ draft: { model: 'flux2_klein_9b', prompt: 'x', lorasByModel: {}, aspect: '1:1', size: 1, images: 1,
+    advancedByModel: {}, references: [{ id: 'out/2026-10-09/a.png', w: 800, h: 600 }], selected: null } }))
+  await page.locator('[data-lora]').first().waitFor()
+  await openSettings(page)
+  await page.locator('[data-card="generate-image"]').click()
+  await expect(page.getByRole('radio', { name: 'Random' })).toHaveAttribute('aria-checked', 'true')
+  await page.getByRole('radio', { name: 'Fixed' }).click()
+  await page.getByRole('spinbutton', { name: 'Seed value' }).fill('1234')
+  await expect.poll(() => (st.draft as { advancedByModel: Record<string, { seed: unknown }> } | null)?.advancedByModel?.flux2_klein_9b?.seed, { timeout: 4000 })
+    .toEqual({ mode: 'fixed', value: 1234 })
+  await page.getByRole('button', { name: 'Reset to model defaults' }).click()
+  await expect(page.getByRole('radio', { name: 'Random' })).toHaveAttribute('aria-checked', 'true')
+
+  const pickers = page.locator('[data-region="settings"] [data-region="model-picker"]')
+  await expect(pickers).toHaveText(['Not set', 'Not set'])
+  await pickers.nth(0).click()
+  await page.getByRole('option', { name: 'Z-Image Turbo' }).click()
+  await pickers.nth(1).click()
+  await page.getByRole('option', { name: 'Qwen Image Edit Plus' }).click()
+  await pickers.nth(1).click()
+  await page.getByRole('listbox', { name: 'Models' }).getByRole('option', { name: 'Not set' }).click()
+  await expect(pickers).toHaveText(['Z-Image Turbo', 'Not set'])
+  await expect.poll(() => calls(st, 'PUT', '/api/generate-image/defaults')).toEqual([
+    { text: 'z_image_turbo', refs: null, video: null }, { text: 'z_image_turbo', refs: 'qwen_image_edit_plus', video: null }, { text: 'z_image_turbo', refs: null, video: null }])
+
+  await page.getByRole('tab', { name: 'Generate Image' }).click()
+  await page.getByRole('button', { name: 'Remove reference 1' }).click()
+  await expect(page.locator('[data-region="model-picker"]').first()).toHaveText('Flux 2 Klein 9B')   // a box change keeps the pulldown's pick
+})
+
+test('Settings round trip: utilities opens Settings, Close Settings returns to Generate', async ({ page }) => {
+  await open(page, '/', new FakeHub(), apiState())
+  const bar = page.locator('footer[data-region="bar"]')
+  await expect(bar).toBeVisible()
+  await page.getByRole('button', { name: 'Settings, cache and seed' }).click()
+  await expect(page.getByRole('menu')).toBeVisible()
+  await page.getByRole('menuitem', { name: 'Settings' }).click()
+  await expect(page.locator('[data-region="settings"]')).toBeVisible()
+  const close = page.locator('[data-region="settings-close"]')
+  await expect(close).toHaveAttribute('aria-label', 'Close Settings')
+  await close.click()
+  await expect(page.locator('[data-region="settings"]')).toHaveCount(0)
+  await expect(close).toHaveCount(0)
+  await expect(bar).toBeVisible()
+})

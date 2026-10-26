@@ -1,0 +1,8 @@
+@layer ui {
+  .select {
+    height: var(--ctl-h); padding: 0 var(--sp-2); border-radius: var(--r-2); border: 1px solid var(--line);
+    background: var(--well); color: var(--text-1); min-width: 0;
+  }
+  .select:disabled { color: var(--text-dis); }
+  .select option { background: var(--panel-2); color: var(--text-1); }
+}

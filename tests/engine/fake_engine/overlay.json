@@ -1,0 +1,58 @@
+{
+ "available": [
+  "flux2_klein_9b",
+  "flux2_klein_base_9b",
+  "z_image",
+  "qwen_image_21_7B",
+  "t2v",
+  "minimax_h3",
+  "minimax_h3_fused_turbo",
+  "minimax_h3_ref2va",
+  "minimax_h3_legacy"
+ ],
+ "edits": {
+  "krea2_hidden": {
+   "model": {
+    "visible": false
+   },
+   "why": "a hidden model that borrows another's weights: the catalog must leave it out"
+  },
+  "minimax_h3_legacy": {
+   "model": {
+    "minimax_h3_legacy_sidecar": true
+   },
+   "why": "a clip model that runs in another runtime: the catalog must leave it out"
+  }
+ },
+ "flavour": "upstream",
+ "keep": {
+  "flux2_klein_9b": "flux2_klein_9b",
+  "flux2_klein_base_9b": "flux2_klein_base_9b",
+  "krea2_hidden": "krea2_hidden",
+  "krea2_turbo_edit": "krea2_turbo_edit",
+  "minimax_h3": "minimax_h3",
+  "minimax_h3_fused_turbo": "minimax_h3_fused_turbo",
+  "minimax_h3_legacy": "minimax_h3_legacy",
+  "minimax_h3_ref2va": "minimax_h3_ref2va",
+  "qwen_image_21_7B": "qwen_image_21_7B",
+  "t2v": "t2v",
+  "z_image": "z_image"
+ },
+ "primary_settings": {
+  "activated_loras": [],
+  "batch_size": 1,
+  "embedded_guidance_scale": 6.0,
+  "flow_shift": 3,
+  "guidance_scale": 5,
+  "image_mode": 0,
+  "image_refs": null,
+  "loras_multipliers": "",
+  "multi_prompts_gen_type": 0,
+  "num_inference_steps": 30,
+  "prompt": "",
+  "remove_background_images_ref": 1,
+  "resolution": "832x480",
+  "seed": -1,
+  "video_prompt_type": ""
+ }
+}

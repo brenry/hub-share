@@ -1,0 +1,41 @@
+{
+ "why": "What the fork (the Wan2GP line HocusPocus carries) does not publish: how it names a key per model family, and what it fetches at start and at model load (`ffmpeg`, `companions`). The shared helpers apply these rules and name no family themselves. The only file, with upstream.facts.json, where an engine key family or a model name may appear.",
+ "families": {
+  "manifest": "omni_reference",
+  "manifest_limits": "omni_reference_limits",
+  "detail_choices": "omni_reference_detail_choices",
+  "detail_default": "omni_reference_detail_default",
+  "references": "_references",
+  "detail": "_reference_detail",
+  "one_pass": "_multi_window",
+  "sidecar": "_sidecar",
+  "encoder": "_text_encoder",
+  "encoder_default": "_default",
+  "encoder_variants": "_variants"
+ },
+ "models": {},
+ "ffmpeg": {
+  "why": "shared/ffmpeg_setup.py download_ffmpeg (run at session start, shared/api.py:878) returns at once when ffmpeg and ffprobe resolve in <root>/ffmpeg_bins, <root> or on PATH and a copy in ffmpeg_bins has its libavdevice beside it; else it tries a download.",
+  "fetcher": "shared/ffmpeg_setup.py", "folder": "ffmpeg_bins", "libs": "libavdevice.so*",
+  "programs": {"ffmpeg": "FFMPEG_BINARY", "ffprobe": "FFPROBE_BINARY"}
+ },
+ "companions": {
+  "why": "wgp.py download_models(file_type=0), run at every model load (wgp.py:4326): its shared list (wgp.py:3912-3924, `shared` + `by_config`), the mask tool's (`calls.mask`, wgp.py:3927) and download_mmaudio's set (`audio` + the weight `calls.audio` names) when the config enables it, each [folder, files] under a checkpoint folder.",
+  "shared": [
+   ["pose", ["dw-ll_ucoco_384.onnx", "yolox_l.onnx"]], ["scribble", ["netG_A_latest.pth"]], ["flow", ["raft-things.pth"]],
+   ["depth", ["depth_anything_v2_vitl.pth", "depth_anything_v2_vitb.pth"]],
+   ["wav2vec", ["config.json", "feature_extractor_config.json", "model.safetensors", "preprocessor_config.json", "special_tokens_map.json", "tokenizer_config.json", "vocab.json"]],
+   ["chinese-wav2vec2-base", ["config.json", "pytorch_model.bin", "preprocessor_config.json"]],
+   ["roformer", ["model_bs_roformer_ep_317_sdr_12.9755.ckpt", "model_bs_roformer_ep_317_sdr_12.9755.yaml", "download_checks.json"]],
+   ["pyannote", ["pyannote_model_wespeaker-voxceleb-resnet34-LM.bin", "pytorch_model_segmentation-3.0.bin"]],
+   ["det_align", ["detface.pt"]]
+  ],
+  "by_config": {"key": "rife_version", "default": "v3", "when_default": "flownet.pkl", "otherwise": "rife4.26.pkl"},
+  "calls": {"audio": "get_mmaudio_settings", "mask": "query_matanyone_download_def"},
+  "audio": [
+   ["mmaudio", ["synchformer_state_dict.pth", "v1-44.pth"]],
+   ["DFN5B-CLIP-ViT-H-14-378", ["open_clip_config.json", "open_clip_pytorch_model.bin"]],
+   ["bigvgan_v2_44khz_128band_512x", ["config.json", "bigvgan_generator.pt"]]
+  ]
+ }
+}

@@ -1,0 +1,5 @@
+@layer screen {
+  .error { color: var(--err); padding-bottom: var(--sp-3); }
+  .addr { display: inline-flex; align-items: center; gap: var(--sp-2); height: var(--ctl-h-sm); padding: 0 var(--sp-2); border-radius: var(--r-1); background: var(--raise); color: var(--text-1); }
+  .addr svg { color: var(--text-3); }
+}

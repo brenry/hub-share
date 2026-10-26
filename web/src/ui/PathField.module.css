@@ -1,0 +1,8 @@
+@layer ui {
+  .path { display: flex; flex: 1 1 0; min-width: 0; border-radius: var(--r-2); cursor: text; }
+  .path:hover > div { border-color: var(--line-strong); background: var(--well); }
+  .path:focus-visible > div { border-color: var(--accent-line); }
+  .edit { display: flex; flex: 1 1 0; min-width: 0; }
+  .rowError { color: var(--err); padding-left: calc(10rem + var(--sp-4)); }
+  @container sheet (width < 48rem) { .rowError { padding-left: 0; } }
+}

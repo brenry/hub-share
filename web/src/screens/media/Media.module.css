@@ -1,0 +1,75 @@
+@layer screen {
+  /* The Stage owns the left; the right is a fixed column: one bar over two thumbnails per row. The tree is not a
+     column: it rolls out from the thumbnails' left edge over the Stage, so opening or folding it never moves the
+     picture or the thumbnails. */
+  .body { display: grid; grid-template-columns: minmax(0, 1fr) clamp(19.5rem, 21%, 25.5rem); min-height: 0; overflow: clip; background: var(--panel); }
+  .body > * { min-width: 0; min-height: 0; }
+  /* The Stage runs the full width under the right column, which lies over it. */
+  .stageBox { grid-column: 1 / -1; grid-row: 1; position: relative; background: var(--stage); overflow: clip; }
+  .board { position: absolute; inset: 0; overflow: clip; touch-action: none; user-select: none; }
+  .grab { cursor: grab; }
+  .grabbing { cursor: grabbing; }
+  .stageImg { position: absolute; left: 0; top: 0; max-width: none; transform-origin: 0 0; box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, .9); outline: 1px solid var(--line); }
+  /* A clip: the player at its fitted size (no zoom, no pan), so its own controls keep their size. */
+  .stageClip { position: absolute; left: 0; top: 0; display: block; background: var(--stage); box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, .9); outline: 1px solid var(--line); }
+  .board:focus-visible { outline: none; }
+  .clipPoster { padding: 0; border: 0; cursor: pointer; display: grid; place-items: center; overflow: clip; }
+  .clipPoster > img, .clipPoster > span[data-wait] { grid-area: 1 / 1; }
+  .clipPlay { grid-area: 1 / 1; display: grid; place-items: center; width: 4.5rem; height: 4.5rem; border-radius: 50%;
+    background: rgba(0, 0, 0, .6); color: #fff; outline: 1px solid var(--line); }
+  .clipPlay svg { width: 2rem; height: 2rem; }
+  .zoom { position: absolute; left: var(--sp-4); top: var(--sp-3); padding: var(--sp-1) var(--sp-2); border-radius: var(--r-2); background: var(--shade); font-size: var(--fs-ctl); color: var(--text-2); opacity: 0; transition: opacity .3s; pointer-events: none; }
+  .zoomOn { opacity: 1; }
+  .verdict { top: auto; bottom: var(--sp-3); width: max-content; max-width: calc(100% - 2 * var(--sp-4)); overflow: clip; text-overflow: ellipsis; white-space: nowrap; pointer-events: auto; }
+
+  /* The right column: the thumbnails over one bar in the bottom right corner. The thumbnails roll down into the
+     bar (the column then shows the Stage's dark); the tree hangs off the column's left edge, over the Stage. */
+  .side { grid-column: 2; grid-row: 1; z-index: 1; position: relative; display: grid; grid-template-rows: minmax(0, 1fr) auto; border-left: 1px solid var(--line); background: var(--panel); transition: background-color .18s; }
+  /* Thumbnails rolled away: the column is see-through and lets the pointer through to the Stage; the bar and the tree stay. */
+  .sideShut { background: transparent; border-left-color: transparent; pointer-events: none; }
+  .sideShut > .bar, .sideShut > .tree { pointer-events: auto; }
+  .side > * { min-width: 0; min-height: 0; }
+  .gridBox { position: relative; overflow: clip; }
+  .gridBox > * { height: 100%; transition: transform .18s ease-out; }
+  .gridShut > * { transform: translateY(100%); }
+  /* The bar: low and quiet. Three equal parts of its height: the controls take the middle third and half of each
+     margin, so the margins above and below them are equal. Everything is the light's grey, never bold; the only
+     colour is a softened cyan on previous / next and Generate. */
+  .bar { --bar-h: 1.875rem; --bar-ctl: 1.25rem; display: flex; align-items: center; gap: var(--sp-1); min-width: 0; height: var(--bar-h); align-self: end; padding: 0 var(--sp-3); border-top: 1px solid var(--line); background: var(--panel); }
+  .barBtn, .stepBtn, .go { display: inline-flex; align-items: center; justify-content: center; width: var(--bar-ctl); height: var(--bar-ctl); flex: none; padding: 0; border: 0; border-radius: var(--r-1); background: none; }
+  .barBtn { color: var(--text-3); }
+  .barBtn:hover { background: var(--raise); color: var(--text-2); }
+  .step { flex: 1 1 0; min-width: 0; display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2); }
+  .stepBtn, .go { color: var(--accent); opacity: .62; }
+  .stepBtn:hover:not(:disabled), .go:hover:not(:disabled) { opacity: 1; background: var(--raise); }
+  .stepBtn:disabled, .go:disabled { opacity: .25; }
+  .count { font-size: var(--fs-ctl); font-weight: 400; color: var(--text-3); white-space: nowrap; }
+
+  /* The rolling tree: a fixed-width sheet whose visible width runs from 0 to --tree-w, anchored to the right. */
+  .tree { --tree-w: 21rem; position: absolute; top: 0; bottom: 0; right: 100%; width: var(--tree-w); z-index: 2; overflow: clip; border-left: 1px solid var(--line); background: var(--panel); box-shadow: -1.125rem 0 2.5rem rgba(0, 0, 0, .45); transition: width .18s ease-out, box-shadow .18s; }
+  .treeShut { width: 0; border-left-color: transparent; box-shadow: none; visibility: hidden; transition: width .18s ease-out, box-shadow .18s, visibility 0s .18s; }
+  .treeScroll { position: absolute; top: 0; bottom: 0; right: 0; width: var(--tree-w); }
+
+  /* Thumbnails, as the original drew them: small corners, a hairline-doubled outline that turns cyan on the selected ones. */
+  /* The scrollbar's room is always kept: the tiles are square, so a bar that came and went would change their width,
+     their height, and so whether the bar is needed, every frame (the thumbnails jittered at some window heights). */
+  .grid { padding: var(--sp-5); position: relative; scrollbar-gutter: stable; }
+  .grid:focus-visible { outline: none; }
+  .canvas { position: relative; }
+  .empty { padding-top: var(--sp-9); font-size: var(--fs-cap); color: var(--text-dis); text-align: center; }
+  .tile { position: absolute; left: 0; top: 0; border-radius: .3125rem; overflow: clip; background: var(--hi); outline: var(--rule) solid transparent; outline-offset: calc(var(--rule) * -1); transition: outline-color .1s; cursor: default; }
+  .tile:hover { outline-color: var(--line-strong); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tile [data-wait] { width: 100%; height: 100%; display: block; }
+  .tileOn, .tileOn:hover { outline-color: var(--accent); }
+  .tileMany::after { content: ''; position: absolute; inset: 0; background: var(--accent-soft); pointer-events: none; }
+  .tempDot { position: absolute; right: var(--sp-2); top: var(--sp-2); width: var(--dot); height: var(--dot); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 .125rem rgba(0, 0, 0, .55); }
+  .favMark { position: absolute; left: var(--sp-2); bottom: var(--sp-1); font-size: var(--fs-cap); color: var(--warn); text-shadow: 0 0 .25rem rgba(0, 0, 0, .9); }
+
+  /* A sound: the player in the middle of the Stage; its tile a mark and its length. */
+  .soundStage { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: var(--sp-3); }
+  .soundPlayer { width: min(32rem, 80%); }
+  .soundTile { width: 100%; height: 100%; display: grid; place-items: center; align-content: center; gap: var(--sp-1); color: var(--text-3); font-size: var(--fs-cap); }
+
+  .liveFlat, .liveFlat:hover { height: var(--bar-ctl); border-color: transparent; background: none; box-shadow: none; padding: 0 var(--sp-1); font-size: var(--fs-ctl); color: var(--text-3); }
+}

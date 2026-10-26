@@ -1,0 +1,9 @@
+@layer ui {
+  /* A fixed box so the word is never squeezed out by its neighbours. */
+  .live { height: var(--ctl-h-sm); flex: none; display: inline-flex; align-items: center; gap: var(--sp-2); padding: 0 var(--sp-2); border: 1px solid var(--line-strong); border-radius: var(--r-1); background: var(--panel-2); box-shadow: var(--edge-light-soft); color: var(--text-2); font-size: var(--fs-cap); white-space: nowrap; }
+  .live:hover { border-color: var(--line-strong); color: var(--text-1); }
+  .dim { color: var(--text-3); }
+}
+@layer ui {
+  .armed, .armed:hover { color: var(--warn); border-color: var(--warn); }
+}

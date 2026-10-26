@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="640" font-family="sans-serif" font-size="11">
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="60.0" y="388.0" width="400.0" height="220.0" fill="#eee" stroke="#999"/><text x="212.0" y="498.0">audience (6 rows)</text>
+<polygon points="80.0,208.0 440.0,208.0 440.0,28.0 80.0,28.0" fill="#f5f0e6" stroke="#555"/>
+<text x="83.99999999999999" y="200.0" fill="#555">stage platform 0.30 m</text>
+<polygon points="60.0,28.0 460.0,28.0 460.0,20.0 60.0,20.0" fill="none" stroke="#555"/>
+<text x="263.0" y="21.00000000000002" fill="#555">back_flats</text>
+<polygon points="260.8,131.4 283.4,123.2 275.2,100.6 252.6,108.8" fill="none" stroke="#555"/>
+<text x="271.0" y="113.00000000000001" fill="#555">chair_1</text>
+<polygon points="314.2,123.9 335.9,113.8 325.8,92.1 304.1,102.2" fill="none" stroke="#555"/>
+<text x="323.0" y="105.0" fill="#555">chair_2</text>
+<polygon points="276.0,153.0 312.0,153.0 312.0,135.0 276.0,135.0" fill="none" stroke="#555"/>
+<text x="297.0" y="141.0" fill="#555">low_table</text>
+<circle cx="396.0" cy="64.0" r="12.0" fill="none" stroke="#393"/>
+<text x="399.0" y="61.0" fill="#555">plant</text>
+<line x1="88.0" y1="212.0" x2="388.0" y2="52.00000000000003" stroke="#c00" stroke-dasharray="6 4"/><text x="364.0" y="48.00000000000001" fill="#c00">line Character 1-Character 2</text>
+<circle cx="208.0" cy="148.0" r="7" fill="#36c"/><line x1="208.0" y1="148.0" x2="228.0" y2="148.0" stroke="#36c" stroke-width="2"/><text x="196.0" y="166.0">Character 1</text>
+<circle cx="268.0" cy="116.00000000000001" r="7" fill="#36c"/><line x1="268.0" y1="116.00000000000001" x2="249.20614758428184" y2="122.84040286651339" stroke="#36c" stroke-width="2"/><text x="256.0" y="134.0">Character 2</text>
+<circle cx="320.0" cy="108.0" r="7" fill="#36c"/><line x1="320.0" y1="108.0" x2="301.873844259267" y2="116.452365234814" stroke="#36c" stroke-width="2"/><text x="308.0" y="126.0">Character 3</text>
+<line x1="132.0" y1="296.0" x2="311.94429984462664" y2="81.47715983274165" stroke="#888" stroke-width="0.8"/>
+<line x1="132.0" y1="296.0" x2="283.7180493692161" y2="60.666973215402464" stroke="#888" stroke-width="0.8"/>
+<rect x="124.0" y="288.0" width="16" height="16" fill="#222"/><text x="118.0" y="318.0" font-weight="bold">cam 1 102mm h1.5</text>
+<line x1="260.0" y1="352.0" x2="369.43744598607304" y2="9.037253603185995" stroke="#888" stroke-width="0.8"/>
+<line x1="260.0" y1="352.0" x2="146.97712269834506" y2="10.202063776776065" stroke="#888" stroke-width="0.8"/>
+<rect x="252.0" y="344.0" width="16" height="16" fill="#222"/><text x="246.0" y="374.0" font-weight="bold">cam 2 20mm h1.6</text>
+<line x1="390.0" y1="268.0" x2="168.32465410270896" y2="96.94433355975498" stroke="#888" stroke-width="0.8"/>
+<line x1="390.0" y1="268.0" x2="148.85414470183673" y2="125.70215576995798" stroke="#888" stroke-width="0.8"/>
+<rect x="382.0" y="260.0" width="16" height="16" fill="#222"/><text x="376.0" y="290.0" font-weight="bold">cam 3 103mm h1.5</text>
+<line x1="412.0" y1="192.0" x2="141.83589615086984" y2="429.9314123679268" stroke="#888" stroke-width="0.8"/>
+<line x1="412.0" y1="192.0" x2="365.81976910086865" y2="549.0257501555075" stroke="#888" stroke-width="0.8"/>
+<rect x="404.0" y="184.0" width="16" height="16" fill="#222"/><text x="398.0" y="214.0" font-weight="bold">cam rev 17mm h2.0</text>
+<rect x="178.0" y="182.0" width="12" height="12" fill="none" stroke="#222"/><text x="124.0" y="180.0">OTS place</text>
+<text x="10" y="630">1 square = 1 m; x right (camera-left to camera-right), y up = upstage; origin at the stage front centre</text>
+<line x1="20.0" y1="0.0" x2="20.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="60.0" y1="0.0" x2="60.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="100.0" y1="0.0" x2="100.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="140.0" y1="0.0" x2="140.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="180.0" y1="0.0" x2="180.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="220.0" y1="0.0" x2="220.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="260.0" y1="0.0" x2="260.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="300.0" y1="0.0" x2="300.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="340.0" y1="0.0" x2="340.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="380.0" y1="0.0" x2="380.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="420.0" y1="0.0" x2="420.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="460.0" y1="0.0" x2="460.0" y2="632.0" stroke="#f0f0f0"/>
+<line x1="500.0" y1="0.0" x2="500.0" y2="632.0" stroke="#f0f0f0"/>
+</svg>

@@ -1,0 +1,13 @@
+@layer screen {
+  .app { height: 100%; position: relative; display: grid; grid-template-rows: minmax(0, 1fr) auto; overflow: clip; }
+  .frame { min-height: 0; display: grid; grid-template-rows: var(--bar-h) minmax(0, 1fr); overflow: clip; transition: opacity .3s; }
+  .frame > * { min-width: 0; min-height: 0; }
+  .frame[data-bare] { grid-template-rows: minmax(0, 1fr); }
+  .frame[data-dim] { opacity: .35; }
+  .bar { background: var(--chrome); border-bottom: 1px solid var(--seam); overflow: clip; }
+  .body { display: grid; overflow: clip; }
+  .body > * { min-width: 0; min-height: 0; grid-area: 1 / 1; }
+  /* The foot: one row along the window's bottom, the same margins as the screens; above the cover (z 10). */
+  .foot { position: relative; z-index: 11; height: var(--bar-h); display: flex; align-items: center; gap: var(--sp-3); padding: 0 var(--sp-6); background: var(--panel); }
+  .foot > * { min-width: 0; }
+}

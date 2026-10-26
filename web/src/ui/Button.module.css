@@ -1,0 +1,17 @@
+@layer ui {
+  .btn {
+    height: var(--ctl-h); display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
+    padding: 0 var(--sp-3); border-radius: var(--r-2); border: 1px solid var(--line); background: var(--raise);
+    color: var(--text-1); font-weight: 500; white-space: nowrap; flex: none;
+  }
+  .btn:hover:not(:disabled) { background: var(--raise-hover); border-color: var(--line-strong); }
+  .btn:disabled { color: var(--text-dis); background: transparent; }
+  .btn > svg { color: var(--text-2); }
+  .btn:disabled > svg { color: inherit; }
+  .ghost { background: transparent; border-color: transparent; color: var(--text-2); padding: 0 var(--sp-2); }
+  .ghost:hover:not(:disabled) { background: var(--raise); border-color: transparent; color: var(--text-1); }
+  .danger:hover:not(:disabled) { color: var(--err); }
+  .small { height: var(--ctl-h-sm); padding: 0 var(--sp-2); font-size: var(--fs-cap); border-radius: var(--r-1); }
+  .square { width: var(--ctl-h); padding: 0; }
+  .small.square { width: var(--ctl-h-sm); }
+}

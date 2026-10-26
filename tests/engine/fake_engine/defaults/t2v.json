@@ -1,0 +1,11 @@
+{
+ "model": {
+  "URLs": [
+   "https://huggingface.co/fake/resolve/main/wan2.1_text2video_14B_bf16.safetensors"
+  ],
+  "architecture": "t2v",
+  "description": "Text to video model.",
+  "name": "Wan 2.1 Text2Video 14B"
+ },
+ "num_inference_steps": 30
+}

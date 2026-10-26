@@ -1,0 +1,536 @@
+{
+ "bus": [
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [],
+    "position": 1,
+    "progress": null,
+    "started": null,
+    "state": "queued",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [],
+    "position": null,
+    "progress": {
+     "count": 2,
+     "eta_s": null,
+     "index": 0,
+     "pct": 0,
+     "phase": null,
+     "step": 0,
+     "steps": 0,
+     "text": null
+    },
+    "started": 0,
+    "state": "running",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [],
+    "position": null,
+    "progress": {
+     "count": 2,
+     "eta_s": null,
+     "index": 1,
+     "pct": 0,
+     "phase": null,
+     "step": 0,
+     "steps": 0,
+     "text": null
+    },
+    "started": 0,
+    "state": "running",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [],
+    "position": null,
+    "progress": {
+     "count": 2,
+     "eta_s": null,
+     "index": 1,
+     "pct": 25,
+     "phase": "inference",
+     "step": 1,
+     "steps": 2,
+     "text": "x"
+    },
+    "started": 0,
+    "state": "running",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [],
+    "position": null,
+    "progress": {
+     "count": 2,
+     "eta_s": 2.0,
+     "index": 1,
+     "pct": 50,
+     "phase": "inference",
+     "step": 2,
+     "steps": 2,
+     "text": "x"
+    },
+    "started": 0,
+    "state": "running",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "media",
+   "generation",
+   {
+    "item": {
+     "created": 0,
+     "h": 544,
+     "id": "clips/ITEM1.mp4",
+     "job": "JOB",
+     "kind": "clip",
+     "seconds": 5.167,
+     "thumb": null,
+     "url": "/media/clips/ITEM1.mp4",
+     "w": 960
+    }
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [
+     "clips/ITEM1.mp4"
+    ],
+    "position": null,
+    "progress": {
+     "count": 2,
+     "eta_s": 2.0,
+     "index": 1,
+     "pct": 50,
+     "phase": "inference",
+     "step": 2,
+     "steps": 2,
+     "text": "x"
+    },
+    "started": 0,
+    "state": "running",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [
+     "clips/ITEM1.mp4"
+    ],
+    "position": null,
+    "progress": {
+     "count": 2,
+     "eta_s": 2.0,
+     "index": 2,
+     "pct": 50,
+     "phase": "inference",
+     "step": 0,
+     "steps": 2,
+     "text": "x"
+    },
+    "started": 0,
+    "state": "running",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [
+     "clips/ITEM1.mp4"
+    ],
+    "position": null,
+    "progress": {
+     "count": 2,
+     "eta_s": 1.0,
+     "index": 2,
+     "pct": 75,
+     "phase": "inference",
+     "step": 1,
+     "steps": 2,
+     "text": "x"
+    },
+    "started": 0,
+    "state": "running",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [
+     "clips/ITEM1.mp4"
+    ],
+    "position": null,
+    "progress": {
+     "count": 2,
+     "eta_s": 0.0,
+     "index": 2,
+     "pct": 100,
+     "phase": "inference",
+     "step": 2,
+     "steps": 2,
+     "text": "x"
+    },
+    "started": 0,
+    "state": "running",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "media",
+   "generation",
+   {
+    "item": {
+     "created": 0,
+     "h": 544,
+     "id": "clips/ITEM2.mp4",
+     "job": "JOB",
+     "kind": "clip",
+     "seconds": 5.167,
+     "thumb": null,
+     "url": "/media/clips/ITEM2.mp4",
+     "w": 960
+    }
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [
+     "clips/ITEM1.mp4",
+     "clips/ITEM2.mp4"
+    ],
+    "position": null,
+    "progress": {
+     "count": 2,
+     "eta_s": 0.0,
+     "index": 2,
+     "pct": 100,
+     "phase": "inference",
+     "step": 2,
+     "steps": 2,
+     "text": "x"
+    },
+    "started": 0,
+    "state": "running",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ],
+  [
+   "jobs",
+   "job",
+   {
+    "cancel_requested": false,
+    "created": 0,
+    "error": null,
+    "id": "JOB",
+    "kind": "gen.image",
+    "lane": "image.gpu0",
+    "notes": {},
+    "outputs": [
+     "clips/ITEM1.mp4",
+     "clips/ITEM2.mp4"
+    ],
+    "position": null,
+    "progress": null,
+    "started": 0,
+    "state": "done",
+    "summary": {
+     "kind": "clip",
+     "model": "H3"
+    },
+    "title": "2 images · H3",
+    "tool": "gen"
+   }
+  ]
+ ],
+ "core": [
+  [
+   "job.submitted",
+   {
+    "by": "screen",
+    "job": "JOB",
+    "kind": "gen.image",
+    "params": {},
+    "tool": "gen"
+   }
+  ],
+  [
+   "job.finished",
+   {
+    "job": "JOB",
+    "kind": "gen.image",
+    "notes": {},
+    "outputs": [
+     "clips/ITEM1.mp4",
+     "clips/ITEM2.mp4"
+    ],
+    "state": "done",
+    "tool": "gen"
+   }
+  ]
+ ],
+ "lane": [
+  [
+   "task",
+   {
+    "of": 2,
+    "task": 1
+   }
+  ],
+  [
+   "progress",
+   {
+    "of": 2,
+    "pct": 25,
+    "phase": "inference",
+    "step": 1,
+    "steps": 2,
+    "task": 1,
+    "text": "x"
+   }
+  ],
+  [
+   "progress",
+   {
+    "of": 2,
+    "pct": 50,
+    "phase": "inference",
+    "step": 2,
+    "steps": 2,
+    "task": 1,
+    "text": "x"
+   }
+  ],
+  [
+   "output",
+   {
+    "h": 544,
+    "item": "clips/ITEM1.mp4",
+    "kind": "clip",
+    "seconds": 5.167,
+    "task": 1,
+    "w": 960
+   }
+  ],
+  [
+   "task_done",
+   {
+    "model": "minimax_h3_ref2va",
+    "peak_rss_mb": null,
+    "peak_vram_mb": null,
+    "seconds": 1.0,
+    "task": 1
+   }
+  ],
+  [
+   "task",
+   {
+    "of": 2,
+    "task": 2
+   }
+  ],
+  [
+   "progress",
+   {
+    "of": 2,
+    "pct": 75,
+    "phase": "inference",
+    "step": 1,
+    "steps": 2,
+    "task": 2,
+    "text": "x"
+   }
+  ],
+  [
+   "progress",
+   {
+    "of": 2,
+    "pct": 100,
+    "phase": "inference",
+    "step": 2,
+    "steps": 2,
+    "task": 2,
+    "text": "x"
+   }
+  ],
+  [
+   "output",
+   {
+    "h": 544,
+    "item": "clips/ITEM2.mp4",
+    "kind": "clip",
+    "seconds": 5.167,
+    "task": 2,
+    "w": 960
+   }
+  ],
+  [
+   "task_done",
+   {
+    "model": "minimax_h3_ref2va",
+    "peak_rss_mb": null,
+    "peak_vram_mb": null,
+    "seconds": 1.0,
+    "task": 2
+   }
+  ],
+  [
+   "model",
+   {
+    "model": "minimax_h3_ref2va",
+    "state": "released"
+   }
+  ]
+ ]
+}

@@ -1,0 +1,27 @@
+@layer screen {
+  /* The page: the dark field, its text set in two columns with a gutter. The window clips; the flow is as tall as
+     the window and grows sideways, one page (two columns and a gutter) at a time; a page turn shifts it by one.
+     The text is the bottom line's type: small, grey, never glaring. The page count and Clear sit in the lower right
+     corner, --gen-edge from the right and from the bottom (the reply column's margin), one gutter apart. */
+  .field {
+    position: relative; display: grid; grid-template-rows: minmax(0, 1fr); min-height: 0; overflow: clip; outline: none;
+    padding: var(--sp-7) var(--sp-8) calc(var(--gen-edge) * 2 + var(--lh-cap)); border-radius: var(--r-1); background: var(--well);
+    box-shadow: var(--edge-light), var(--side-shade-l), var(--side-shade-r);
+  }
+  .window { min-height: 0; overflow: clip; }
+  .flow {
+    height: 100%; columns: 2; column-gap: var(--sp-9); column-fill: auto;
+    font-size: var(--fs-ctl); line-height: 1.65; color: var(--text-3); user-select: text;
+  }
+  .flow > p { margin: 0 0 1em; white-space: pre-wrap; overflow-wrap: break-word; }
+  .flow > p:last-child { margin-bottom: 0; }
+  .empty { color: var(--text-dis); font-style: italic; }
+  .foot {
+    position: absolute; right: var(--gen-edge); bottom: var(--gen-edge); display: flex; align-items: baseline; gap: var(--sp-4);
+    font-size: var(--fs-ctl); line-height: var(--lh-cap);
+  }
+  .pages { color: var(--text-3); }
+  .tag { position: absolute; top: var(--gen-edge); right: var(--gen-edge); font-size: var(--fs-ctl); line-height: var(--lh-cap); color: var(--text-dis); }
+  .link { padding: 0; border: 0; background: none; color: var(--text-3); font: inherit; line-height: inherit; }
+  .link:hover { color: var(--text-1); }
+}

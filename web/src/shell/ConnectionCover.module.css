@@ -1,0 +1,21 @@
+@layer screen {
+  .cover {
+    position: absolute; inset: 0; z-index: 10; display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 22vh; background: rgb(8 9 11 / .55); backdrop-filter: blur(.125rem);
+  }
+  .cover[data-cover='off'] { backdrop-filter: none; background: rgb(8 9 11 / .7); }
+  .card {
+    display: flex; align-items: center; gap: .75rem; padding: .875rem 1.25rem; border-radius: .75rem;
+    background: var(--chrome); border: 1px solid var(--line-strong);
+    font-weight: 500; color: rgb(255 255 255 / .88); white-space: nowrap;
+  }
+  .light { width: .5625rem; height: .5625rem; border-radius: 50%; background: var(--warn); animation: pulse 1.4s ease-in-out infinite; flex: none; }
+  .light[data-tone='off'], .light[data-tone='unpaired'] { background: rgb(255 255 255 / .45); }
+  .check {
+    margin-left: .25rem; padding: .125rem .625rem; border-radius: .5rem; border: 1px solid rgb(255 255 255 / .14);
+    background: transparent; color: inherit; font: inherit; font-weight: 500; cursor: pointer;
+  }
+  .check:hover { background: rgb(255 255 255 / .06); }
+  .code { font: 500 1em ui-monospace, monospace; padding: .125rem .5rem; border-radius: .375rem; background: rgb(255 255 255 / .06); }
+  @keyframes pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+}

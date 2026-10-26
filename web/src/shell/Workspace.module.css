@@ -1,0 +1,9 @@
+@layer screen {
+  .panel { display: grid; min-height: 0; min-width: 0; overflow: clip; }
+  .panel[hidden] { display: none; }
+  .panel > * { min-height: 0; min-width: 0; }
+  .grow { flex: 1 1 0; }
+  /* Settings' foot: the sliders that opened it, lit, close it. */
+  .close { width: 1.25rem; height: 1.25rem; flex: none; display: grid; place-items: center; border-radius: var(--r-1); color: var(--accent); background: transparent; }
+  .close:hover { background: var(--raise); }
+}

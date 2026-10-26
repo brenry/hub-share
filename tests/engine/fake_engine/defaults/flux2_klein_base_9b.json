@@ -1,0 +1,14 @@
+{
+ "guidance_scale": 4,
+ "model": {
+  "URLs": [
+   "https://huggingface.co/fake/resolve/main/flux-2-klein-base-9b.safetensors"
+  ],
+  "architecture": "flux2_klein_9b",
+  "description": "Undistilled 9B base image model with guidance.",
+  "guidance_max_phases": 1,
+  "name": "Flux 2 Klein Base 9B"
+ },
+ "num_inference_steps": 30,
+ "resolution": "1024x1024"
+}

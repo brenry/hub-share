@@ -1,0 +1,8 @@
+@layer screen {
+  .page { height: 100%; display: grid; place-items: center; background: var(--seam); overflow: clip; }
+  .card { display: grid; gap: var(--sp-3); justify-items: center; padding: var(--sp-6) var(--sp-8); background: var(--panel); border: 1px solid var(--line); border-radius: var(--r-3); }
+  .mark { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-title); font-weight: 650; }
+  .mark i { width: 1rem; height: 1rem; border-radius: .25rem; background: linear-gradient(135deg, var(--accent), var(--accent-hover)); }
+  .ok { color: var(--text-2); }
+  .bad { color: var(--err); }
+}

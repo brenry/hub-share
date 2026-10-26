@@ -1,0 +1,21 @@
+@layer screen {
+  /* The Media window's plan: the page on the left; on the right a fixed column, its bar in the bottom right corner.
+     The left keeps the same margin on every side as the space between it and the column. */
+  .work {
+    --gen-bar-h: 1.625rem; --gen-bar-ctl: 1rem; --gen-bar-fs: var(--fs-ctl);
+    --gen-edge: var(--sp-3);          /* the one inner margin: reply column → card → text, the draft's corner, the head */
+    display: grid; grid-template-columns: minmax(0, 1fr) clamp(25.75rem, 27%, 31rem);
+    background: var(--panel); min-height: 0; overflow: clip;
+  }
+  .work > * { min-height: 0; min-width: 0; overflow: clip; }
+  .main { container: compose / size; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: var(--sp-5); padding: var(--sp-6) var(--sp-6) 0; }
+  .main > * { min-width: 0; min-height: 0; }
+
+  /* The column: the conversation over one bar. The LoRA sheet rolls up from the bar over the conversation. */
+  .side { position: relative; display: grid; grid-template-rows: minmax(0, 1fr) auto; border-left: 1px solid var(--line); background: var(--panel); }
+  .side > * { min-width: 0; min-height: 0; }
+  .sheetBox { position: absolute; left: 0; right: 0; top: 0; bottom: var(--gen-bar-h); z-index: 2; overflow: clip; }
+  .sheet { height: 100%; display: grid; grid-template-rows: minmax(0, 1fr); background: var(--panel); box-shadow: 0 -1.125rem 2.5rem rgba(0, 0, 0, .45); transition: transform .18s ease-out; }
+  .sheetShut { pointer-events: none; }
+  .sheetShut > .sheet { transform: translateY(100%); box-shadow: none; }
+}

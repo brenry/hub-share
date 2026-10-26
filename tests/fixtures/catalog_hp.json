@@ -1,0 +1,1698 @@
+{
+ "engine": {
+  "api": "legacy",
+  "version": "10.9875",
+  "settings_version": 2.57,
+  "root": "/srv/engine/app",
+  "loras_root": "/srv/engine/app/loras",
+  "checkpoints": [
+   "/srv/engine/app/ckpts",
+   "/srv/engine/app"
+  ]
+ },
+ "models": [
+  {
+   "id": "flux",
+   "name": "Flux 1 Dev 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux2_dev",
+   "name": "Flux 2 Dev 32B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux2"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux2_dev_nvfp4",
+   "name": "Flux 2 Dev NVFP4 32B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux2"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux2_klein_4b",
+   "name": "Flux 2 Klein 4B",
+   "family": "Flux 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 1,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": null,
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux2_klein_4b"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux2_klein_9b",
+   "name": "Flux 2 Klein 9B",
+   "family": "Flux 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 1.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": null,
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux2_klein_9b"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux2_klein_base_4b",
+   "name": "Flux 2 Klein Base 4B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 1.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux2_klein_4b"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux2_klein_base_9b",
+   "name": "Flux 2 Klein Base 9B",
+   "family": "Flux 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 1.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux2_klein_9b"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_chroma",
+   "name": "Flux 1 Chroma 1 HD 8.9B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 20,
+    "guidance_scale": 3.0,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 20,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_chroma_radiance",
+   "name": "Flux 1 Chroma Radiance 8.9B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 20,
+    "guidance_scale": 3.0,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 20,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 3.0,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_dev_kontext",
+   "name": "Flux 1 Dev Kontext 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_dev_kontext_dreamomni2",
+   "name": "Flux 1 DreamOmni2 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_dev_umo",
+   "name": "Flux 1 UMO 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "768x768"
+   },
+   "steps": 30,
+   "size": [
+    768,
+    768
+   ],
+   "guidance": 4,
+   "modes": [
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_dev_uso",
+   "name": "Flux 1 USO Dev 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "KI",
+    "KIJ"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_krea",
+   "name": "Flux 1 Dev Krea 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_schnell",
+   "name": "Flux 1 Schnell 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 10,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1280x720"
+   },
+   "steps": 10,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_srpo",
+   "name": "Flux 1 Dev SRPO 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 2.5,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 2.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "flux_srpo_uso",
+   "name": "Flux 1 USO SRPO 12B",
+   "family": "Flux 1",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "KI",
+    "KIJ"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "krea2_raw",
+   "name": "Krea 2 RAW",
+   "family": "Krea 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 52,
+    "guidance_scale": 3.5,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 52,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 3.5,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/krea2"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "krea2_raw_edit",
+   "name": "Krea 2 RAW Identity Edit v1.2",
+   "family": "Krea 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 20,
+    "guidance_scale": 2,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 20,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 2,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/krea2"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "krea2_turbo",
+   "name": "Krea 2 Turbo",
+   "family": "Krea 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/krea2"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "krea2_turbo_edit",
+   "name": "Krea 2 Turbo Identity Edit v1.2",
+   "family": "Krea 2",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": null,
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/krea2"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "pi_flux2",
+   "name": "pi-FLUX.2 Dev 32B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux2"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "pi_flux2_nvfp4",
+   "name": "pi-FLUX.2 Dev NVFP4 32B",
+   "family": "Flux 2",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 5,
+    "embedded_guidance_scale": 4,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "embedded_guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/flux2"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_20B",
+   "name": "Qwen Image 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 4,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_21",
+   "name": "Qwen Image 2.1 INT8 ConvRot 7B",
+   "family": "Qwen",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 40,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 40,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 32,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_21_bf16",
+   "name": "Qwen Image 2.1 BF16 7B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 40,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "2048x2048"
+   },
+   "steps": 40,
+   "size": [
+    2048,
+    2048
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 32,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_21_gguf_q4_k",
+   "name": "Qwen Image 2.1 GGUF Q4_K 7B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 40,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 40,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 32,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_21_gguf_q5_0",
+   "name": "Qwen Image 2.1 GGUF Q5_0 7B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 40,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 40,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 32,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_21_gguf_q8_0",
+   "name": "Qwen Image 2.1 GGUF Q8_0 7B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 40,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 40,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 32,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_21_viggle_turbo",
+   "name": "Qwen Image 2.1 Viggle Turbo v0.2.1 \u00b7 6 Steps",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 6,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 6,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 32,
+   "lock_steps": true,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_2512_20B",
+   "name": "Qwen Image 2512 Release 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 4,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_20B",
+   "name": "Qwen Image Edit 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_20B_gguf_q4_k_m",
+   "name": "Qwen Image Edit GGUF Q4_K_M 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_20B_gguf_q6_k",
+   "name": "Qwen Image Edit GGUF Q6_K 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_20B_gguf_q8_0",
+   "name": "Qwen Image Edit GGUF Q8_0 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1280x720"
+   },
+   "steps": 30,
+   "size": [
+    1280,
+    720
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_2511_20B_fp8",
+   "name": "Qwen Image Edit (2511) FP8 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_2511_20B_fp8_lightning_4step",
+   "name": "Qwen Image Edit (2511) Lightning 4-Step FP8 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_2511_20B_fp8_lightning_8step",
+   "name": "Qwen Image Edit (2511) Lightning 8-Step FP8 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_plus2_20B",
+   "name": "Qwen Image Edit Plus (2511) 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_plus_20B",
+   "name": "Qwen Image Edit Plus (2509) 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_plus_20B_nunchaku_r128_fp4",
+   "name": "Qwen Image Edit Plus (2509) Nunchaku FP4 r128 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_edit_plus_20B_nunchaku_r128_int4",
+   "name": "Qwen Image Edit Plus (2509) Nunchaku INT4 r128 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 4,
+    "guidance_scale": 1,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 4,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 1,
+   "modes": [
+    "new",
+    "refs"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [
+    "",
+    "KI",
+    "I"
+   ],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "qwen_image_layered_20B",
+   "name": "Qwen Image Layered 20B",
+   "family": "Qwen",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/qwen"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "z_image",
+   "name": "Z-Image Turbo 6B",
+   "family": "Z-Image",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/z_image"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "z_image_base",
+   "name": "Z-Image Base 6B",
+   "family": "Z-Image",
+   "status": "available",
+   "defaults": {
+    "num_inference_steps": 30,
+    "guidance_scale": 4,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 30,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": 4,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": "guidance_scale",
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/z_image"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "z_image_control",
+   "name": "Z-Image Turbo Fun ControlNet v1 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 9,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 9,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/z_image"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "z_image_control2",
+   "name": "Z-Image Turbo Fun ControlNet v2 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 9,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 9,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/z_image"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "z_image_control2_1",
+   "name": "Z-Image Turbo Fun ControlNet v2.1 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 9,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1920x1088"
+   },
+   "steps": 9,
+   "size": [
+    1920,
+    1088
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/z_image"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "z_image_nunchaku_r128_fp4",
+   "name": "Z-Image Turbo Nunchaku FP4 (r128) 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/z_image"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "z_image_nunchaku_r256_int4",
+   "name": "Z-Image Turbo Nunchaku INT4 (r256) 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 8,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 8,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/z_image"
+   ],
+   "lora_recursive": false
+  },
+  {
+   "id": "z_image_twinflow_turbo",
+   "name": "TwinFlow Z-Image Turbo 6B",
+   "family": "Z-Image",
+   "status": "missing",
+   "defaults": {
+    "num_inference_steps": 2,
+    "guidance_scale": 0,
+    "embedded_guidance_scale": 6.0,
+    "resolution": "1024x1024"
+   },
+   "steps": 2,
+   "size": [
+    1024,
+    1024
+   ],
+   "guidance": null,
+   "modes": [
+    "new"
+   ],
+   "guidance_key": null,
+   "ref_choices": [],
+   "block": 16,
+   "lock_steps": false,
+   "loras": true,
+   "lora_dirs": [
+    "/srv/engine/app/loras/z_image"
+   ],
+   "lora_recursive": false
+  }
+ ]
+}

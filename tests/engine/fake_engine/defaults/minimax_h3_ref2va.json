@@ -1,0 +1,15 @@
+{
+ "minimax_h3_reference_detail": "match",
+ "minimax_h3_references": [],
+ "model": {
+  "URLs": [
+   "https://huggingface.co/fake/resolve/main/minimax_h3_ref2va_pruned_fp8_scaled.safetensors"
+  ],
+  "architecture": "minimax_h3_ref2va",
+  "description": "Ordered references to video with sound.",
+  "name": "H3 Omni — Pruned"
+ },
+ "num_inference_steps": 20,
+ "resolution": "864x480",
+ "video_length": 124
+}

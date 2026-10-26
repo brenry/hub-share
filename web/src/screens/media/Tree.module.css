@@ -1,0 +1,30 @@
+@layer screen {
+  /* The original's organizer: section labels in small caps, 2.5rem rows, the cyan bar on the active one. */
+  .tree { padding: var(--sp-5) var(--sp-3); }
+  .label { display: flex; align-items: center; justify-content: space-between; height: var(--ctl-h-sm); margin-bottom: var(--sp-2); padding: 0 var(--sp-3); font-size: var(--fs-ctl); font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); }
+  .drive { margin-top: var(--sp-7); }
+  .plus { display: inline-flex; padding: var(--sp-1); border: 0; border-radius: var(--r-1); background: none; color: var(--text-3); }
+  .plus:hover { background: var(--raise); color: var(--text-1); }
+
+  .row { position: relative; display: flex; align-items: center; gap: var(--sp-2); height: 2.5rem; padding-right: var(--sp-3); border-radius: var(--r-2); color: var(--text-2); cursor: default; user-select: none; }
+  .row:hover { background: var(--hi); color: var(--text-1); }
+  .on, .on:hover { background: var(--select); color: var(--text-1); }
+  .on::before { content: ''; position: absolute; left: 0; top: var(--sp-2); bottom: var(--sp-2); width: .1875rem; border-radius: var(--r-1); background: var(--accent); }
+  .drop { box-shadow: inset 0 0 0 1px var(--accent-line); }
+  .chev { display: flex; width: var(--icon); flex: none; justify-content: center; color: var(--text-3); }
+  .chevIcon { transition: transform .15s; }
+  .open { transform: rotate(90deg); }
+  .text { flex: 1 1 auto; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  .count { font-size: var(--fs-ctl); color: var(--text-dis); }
+  .dot { width: var(--dot); height: var(--dot); flex: none; border-radius: 50%; background: var(--accent); }
+  .dotOff { background: var(--line-strong); }
+  .star { color: var(--warn); }
+  .gone, .gone:hover { color: var(--text-dis); }
+  .unset { padding: 0 var(--sp-3); font-size: var(--fs-cap); color: var(--text-3); }
+  .sep { height: 1px; margin: var(--sp-3) var(--sp-3); background: var(--line); }
+  .edit { display: block; height: 2.5rem; width: calc(100% - var(--sp-6)); margin: .125rem 0; padding: 0 var(--sp-3); border: 1px solid var(--accent-line); border-radius: var(--r-2); background: var(--well); color: var(--text-1); font: inherit; outline: none; }
+  .notes { height: auto; min-height: 8rem; padding: var(--sp-2) var(--sp-3); line-height: 1.5; resize: vertical; font-size: var(--fs-ctl); }
+  .views { flex: none; margin-left: var(--sp-2); color: var(--text-3); }
+  .voiced { flex: none; margin-left: var(--sp-2); color: var(--text-3); }
+  .noted { flex: none; width: .375rem; height: .375rem; margin-left: var(--sp-2); border-radius: 50%; background: var(--text-3); }
+}

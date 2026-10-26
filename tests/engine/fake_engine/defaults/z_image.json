@@ -1,0 +1,13 @@
+{
+ "guidance_scale": 0,
+ "model": {
+  "URLs": [
+   "https://huggingface.co/fake/resolve/main/ZImageTurbo_bf16.safetensors"
+  ],
+  "architecture": "z_image",
+  "description": "Turbo 6B image model, 8 steps.",
+  "name": "Z-Image Turbo 6B"
+ },
+ "num_inference_steps": 8,
+ "resolution": "1024x1024"
+}

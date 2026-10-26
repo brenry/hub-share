@@ -1,0 +1,86 @@
+/* Hub base: layer order, one scalable root size, size tokens, reset, the lock contract, type roles.
+   Colours come from tokens.css (generated). Every size below is a rem token; only hairlines are px. */
+@layer base, ui, screen;
+
+@layer base {
+  /* Root size = --ui-base × --ui-scale. Every other size is rem, so the whole UI reflows with it.
+     --ui-base follows the window gently, in CSS px: base = 10.25 + 0.005375 × m, where m = min(width, height × 16/9),
+     so a short wide window sizes like the 16:9 window it fits in. As vw/vh: 0.5375vw and 0.5375 × 16/9 = 0.9556vh.
+     Fitted through a 2000×1130 window (→ 21, measured at a zoom that reads well there) and 2560×1440 → 24:
+       1366×768 → 17.6   1920×1080 → 20.6   2000×1130 → 21.0   2560×1440 → 24.0   bounded to 15–30.
+     Only px and viewport units: no rem/em inside, so it never feeds back on itself.
+     --ui-scale is fixed per screen: the Media window reads at about 14 px, like the original Media monitor. Nothing changes it at run time. */
+  html {
+    --ui-base: clamp(15px, 10.25px + min(0.5375vw, 0.9556vh), 30px);
+    --ui-scale: 1;
+    font-size: calc(var(--ui-base) * var(--ui-scale));
+  }
+  html[data-screen='media'] { --ui-scale: .68; }
+
+  :root {
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --fs-cap: .875rem;   --lh-cap: 1.25rem;
+    --fs-ctl: .86rem;    /* the small controls on a tool's bottom row, just above the readable floor (.85 of root) */
+    --fs-body: 1rem;     --lh-body: 1.5rem;
+    --fs-lead: 1.125rem; --lh-lead: 1.625rem;
+    --fs-title: 1.25rem;
+    --fs-head: 1.5rem;   --lh-head: 2rem;
+
+    --sp-1: .25rem; --sp-2: .5rem; --sp-3: .75rem; --sp-4: 1rem; --sp-5: 1.25rem;
+    --sp-6: 1.5rem; --sp-7: 2rem;  --sp-8: 2.5rem; --sp-9: 3rem;
+
+    --ctl-h: 2rem; --ctl-h-sm: 1.5rem;
+    --r-1: .125rem; --r-2: .125rem; --r-3: .125rem; --r-pill: .125rem;
+    --icon: 1rem; --icon-sm: .875rem;
+    --dot: .5rem; --ring: .1875rem; --rule: .125rem;
+    --bar-h: 2.5rem;
+
+    --hi: color-mix(in srgb, var(--text-1) 7%, transparent);
+    --shade: color-mix(in srgb, var(--seam) 70%, transparent);
+    --accent-edge: color-mix(in srgb, var(--accent) 36%, transparent);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* The lock: no box but a named scroller can ever scroll. */
+  html  { height: 100%; overflow: clip; overscroll-behavior: none; }
+  body  {
+    height: 100%; overflow: clip; background: var(--seam); color: var(--text-1);
+    font: 400 var(--fs-body)/var(--lh-body) var(--font);
+    -webkit-font-smoothing: antialiased;
+  }
+  #root { height: 100%; overflow: clip; }
+  [data-scroll] { overflow: auto; overscroll-behavior: contain; min-height: 0; }
+  /* Scrollers: a thin bar, no arrow buttons (Chromium draws those on Linux and they look like stray glyphs). The
+     WebKit pseudo-elements are used because setting scrollbar-width/color would make Chromium ignore them. */
+  [data-scroll]::-webkit-scrollbar { width: .375rem; height: .375rem; }
+  [data-scroll]::-webkit-scrollbar-track { background: transparent; }
+  [data-scroll]::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: var(--r-1); }
+  [data-scroll]::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+  [data-scroll]::-webkit-scrollbar-corner { background: transparent; }
+
+  button, input, textarea, select { font: inherit; color: inherit; }
+  button { background: none; border: 0; cursor: pointer; text-align: inherit; }
+  button:disabled { cursor: default; }
+  input, textarea { background: none; border: 0; outline: none; min-width: 0; }
+  textarea { resize: none; }
+  img { display: block; }
+  svg { overflow: visible; }
+  ul, ol { list-style: none; }
+  :focus { outline: none; }
+  :focus-visible { outline: var(--rule) solid var(--accent); outline-offset: var(--rule); }
+  [data-anchor] { anchor-name: var(--anchor); }
+  [popover] { inset: auto; border: 0; background: none; color: inherit; overflow: visible; }
+
+  .num { font-variant-numeric: tabular-nums; }
+  .ell { white-space: nowrap; overflow: clip; text-overflow: ellipsis; min-width: 0; }
+  .t-label { font-size: var(--fs-cap); line-height: var(--lh-cap); font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--text-2); }
+  .t-meta  { font-size: var(--fs-cap); line-height: var(--lh-cap); color: var(--text-2); }
+  .t-cap   { font-size: var(--fs-cap); line-height: var(--lh-cap); color: var(--text-3); }
+  .t-head  { font-size: var(--fs-head); line-height: var(--lh-head); font-weight: 600; letter-spacing: -.015em; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: clip; clip-path: inset(50%); white-space: nowrap; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+}

@@ -1,0 +1,6 @@
+@layer screen {
+  /* Seconds as a field like the selects beside it; continuing a clip, the seconds it adds after it. */
+  .seconds { display: flex; align-items: center; gap: var(--sp-2); min-width: 0; }
+  .number { width: 5rem; height: var(--ctl-h); padding: 0 var(--sp-2); border-radius: var(--r-2); border: 1px solid var(--line); background: var(--well); color: var(--text-1); text-align: right; }
+  .number:focus { border-color: var(--accent-line); }
+}

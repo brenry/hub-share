@@ -1,0 +1,45 @@
+@layer screen {
+  .model {
+    height: var(--ctl-h); flex: 0 1 20.5rem; min-width: min(13rem, 100%); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2);
+    padding: 0 var(--sp-2) 0 var(--sp-3); border-radius: var(--r-2); border: 1px solid var(--line); background: var(--well);
+  }
+  .model:hover { border-color: var(--line-strong); }
+  /* No model yet: the picker is step one, so it carries the accent. */
+  .modelNone, .modelNone:hover { border-color: var(--accent-line); background: var(--accent-soft); }
+  .modelNone b, .modelNone > svg { color: var(--accent); }
+  .model b { font-weight: 500; }
+  .model > svg { color: var(--text-2); }
+  .menu { max-height: 50vh; display: grid; gap: .0625rem; }
+  .menuGroup { padding: var(--sp-2) var(--sp-2) var(--sp-1); }
+  .menuEmpty { padding: var(--sp-2); color: var(--text-3); }
+  .option { width: 100%; height: var(--ctl-h); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); padding: 0 var(--sp-2); border-radius: var(--r-1); }
+  .option:hover:not(:disabled), .option:focus-visible { background: var(--raise); outline: none; }
+  .option[aria-selected='true'] { background: var(--select); }
+  .option:disabled { color: var(--text-dis); cursor: default; }
+
+  .promptBlock { position: relative; min-width: 0; }
+
+  /* Tab's tiles: the characters that match, over the top of the prompt box; the lit one ringed in cyan. */
+  .picker {
+    position: absolute; left: 0; bottom: calc(100% + var(--sp-2)); z-index: 5; display: flex; flex-wrap: wrap; gap: var(--sp-2);
+    max-width: 100%; padding: var(--sp-2); border: 1px solid var(--line-strong); border-radius: var(--r-2); background: var(--panel-2); box-shadow: 0 1rem 3rem rgba(0, 0, 0, .55), var(--edge-light-soft);
+  }
+  .tile { width: 4.5rem; display: grid; gap: var(--sp-1); padding: .1875rem; border: 1px solid var(--line); border-radius: var(--r-1); background: var(--well); color: var(--text-3); font-size: var(--fs-ctl); }
+  .tile img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: .125rem; background: var(--stage); }
+  .tile span { overflow: clip; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
+  .tile:hover { border-color: var(--line-strong); color: var(--text-2); }
+  .tileOn, .tileOn:hover { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); color: var(--text-2); }
+
+  /* The prompt field: dark like the page, the same light on top and shade on its sides; its type is the bottom
+     line's — small and grey — like the page and the replies. */
+  .prompt { position: relative; height: clamp(5rem, 26cqb, 11.25rem); border-radius: var(--r-1); background: var(--well); overflow: clip; font-size: var(--fs-ctl); line-height: 1.5; box-shadow: var(--edge-light), var(--side-shade-l), var(--side-shade-r); }
+  .prompt:focus-within { box-shadow: var(--edge-light), var(--side-shade-l), var(--side-shade-r), inset 0 0 0 1px var(--accent-line); }
+  .mirror { position: absolute; inset: 0; overflow: clip; pointer-events: none; }
+  .mirror > div, .prompt textarea { padding: var(--sp-2) var(--sp-3); white-space: pre-wrap; overflow-wrap: break-word; word-break: normal; }
+  .mirror > div { color: var(--text-3); }
+  .mirror mark { background: none; color: var(--accent); }
+  .prompt textarea { position: relative; display: block; width: 100%; height: 100%; color: transparent; caret-color: var(--text-2); }
+  .prompt textarea::placeholder { color: var(--text-3); }
+  .prompt textarea::selection { color: transparent; background: color-mix(in srgb, var(--accent) 30%, transparent); }
+
+}

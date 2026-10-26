@@ -1,0 +1,22 @@
+# Hub controller: a systemd user unit. install/install-hub.sh fills in @PREFIX@ and @DATA@.
+[Unit]
+Description=Hub controller
+# Keep retrying, e.g. when the drive holding the hub mounts late at boot.
+StartLimitIntervalSec=0
+
+[Service]
+ExecStart=@PREFIX@/venv/bin/python -I -m hub serve --data @DATA@
+Restart=on-failure
+RestartSec=5
+KillMode=control-group
+TimeoutStopSec=30
+# The engine runs as a child of the hub. When the kernel takes that child for memory, the hub stays up: the job
+# fails with one line and the engine is started again. (The default, stop, would take the whole hub down.)
+OOMPolicy=continue
+# The engine looks for ffmpeg and ffprobe on PATH before it tries to download them (which the hub blocks); a user
+# unit's PATH can miss the system binaries, so name the usual folders.
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+UMask=0077
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+@layer ui {
+  .field {
+    height: var(--ctl-h); display: flex; flex: 1 1 0; align-items: center; gap: var(--sp-2); padding: 0 var(--sp-2) 0 var(--sp-3); min-width: 0;
+    background: var(--well); border: 1px solid var(--line); border-radius: var(--r-2); color: var(--text-1);
+  }
+  .field:focus-within { border-color: var(--accent-line); }
+  .field > svg { color: var(--text-2); }
+  .field input, .v { flex: 1; min-width: 0; height: 100%; }
+  .field input::placeholder { color: var(--text-3); }
+  .ro { background: transparent; }
+  .clear { width: var(--ctl-h-sm); height: var(--ctl-h-sm); display: grid; place-items: center; border-radius: var(--r-1); color: var(--text-2); flex: none; }
+  .clear:hover { background: var(--raise); color: var(--text-1); }
+  .v { display: flex; align-items: center; }
+}

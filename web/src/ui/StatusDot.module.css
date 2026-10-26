@@ -1,0 +1,9 @@
+@layer ui {
+  .dot { width: var(--dot); height: var(--dot); flex: none; border-radius: 50%; display: inline-block; }
+  .ok { background: var(--ok); box-shadow: 0 0 0 var(--ring) var(--ok-soft); }
+  .warn { background: var(--warn); box-shadow: 0 0 0 var(--ring) var(--warn-soft); }
+  .cut { background: var(--warn); box-shadow: 0 0 0 var(--ring) var(--warn-soft); animation: pulse 1.6s ease-in-out infinite; }
+  .err { background: var(--err); box-shadow: 0 0 0 var(--ring) var(--err-soft); }
+  .idle { background: var(--text-dis); }
+  @keyframes pulse { 50% { opacity: .45; } }
+}

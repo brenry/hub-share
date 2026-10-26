@@ -1,0 +1,13 @@
+{
+ "guidance_scale": 4.0,
+ "image_mode": 1,
+ "model": {
+  "URLs": [
+   "https://huggingface.co/fake/resolve/main/qwen_image_21_7B_bf16.safetensors"
+  ],
+  "architecture": "qwen_image_21_7B",
+  "description": "7B image model.",
+  "name": "Qwen Image 2.1 7B"
+ },
+ "num_inference_steps": 40
+}

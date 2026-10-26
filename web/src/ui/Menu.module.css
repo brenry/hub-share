@@ -1,0 +1,22 @@
+@layer ui {
+  .menu { position: fixed; z-index: 30; min-width: 13rem; padding: var(--sp-1); border: 1px solid var(--line-strong); border-radius: var(--r-2); background: var(--panel-2); box-shadow: 0 1rem 3rem rgba(0, 0, 0, .55), var(--edge-light-soft); }
+  .item { display: flex; align-items: center; gap: var(--sp-2); width: 100%; height: var(--ctl-h); padding: 0 var(--sp-2); border: 0; border-radius: var(--r-1); background: none; color: var(--text-1); font-size: var(--fs-cap); text-align: left; white-space: nowrap; }
+  .item:hover:not(:disabled), .item:focus-visible { background: var(--raise); outline: none; }
+  .item:disabled { color: var(--text-dis); }
+  .icon { display: inline-flex; width: var(--icon); justify-content: center; color: var(--text-3); }
+  .icon > * { width: var(--icon); height: var(--icon); }
+  .text { flex: 1 1 auto; }
+  .key { font: inherit; font-size: var(--fs-ctl); color: var(--text-3); margin-left: var(--sp-4); }
+  .danger, .danger .icon { color: var(--err); }
+  .danger:hover:not(:disabled) { background: var(--err-soft); }
+  .slot { display: block; }
+  .hasSub { position: relative; }
+  .sub { display: none; position: absolute; top: calc(var(--sp-1) * -1 - 1px); right: calc(100% + var(--sp-1)); min-width: 10rem; }
+  .sub::after { content: ''; position: absolute; top: 0; bottom: 0; left: 100%; width: calc(var(--sp-1) * 2 + .125rem); }
+  .hasSub:hover > .sub, .hasSub:focus-within > .sub { display: block; }
+  .row { display: flex; gap: var(--sp-1); min-width: 0; }
+  .iconItem { display: inline-flex; align-items: center; justify-content: center; width: var(--ctl-h); height: var(--ctl-h); border: 0; border-radius: var(--r-1); background: none; color: var(--text-2); }
+  .iconItem:hover:not(:disabled), .iconItem:focus-visible { background: var(--raise); color: var(--text-1); outline: none; }
+  .iconItem:disabled { color: var(--text-dis); }
+  .sep { height: 1px; margin: var(--sp-1) var(--sp-1); border: 0; background: var(--line); }
+}

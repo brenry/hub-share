@@ -1,0 +1,13 @@
+{
+ "guidance_scale": 0,
+ "model": {
+  "URLs": [
+   "https://huggingface.co/fake/resolve/main/krea2_turbo_edit_bf16.safetensors"
+  ],
+  "architecture": "krea2_turbo_edit",
+  "description": "Few-step image editing model.",
+  "name": "Krea 2 Turbo Identity Edit"
+ },
+ "num_inference_steps": 8,
+ "video_prompt_type": "KI"
+}

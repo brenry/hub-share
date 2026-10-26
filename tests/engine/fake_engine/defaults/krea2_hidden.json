@@ -1,0 +1,9 @@
+{
+ "model": {
+  "URLs": "krea2_turbo_edit",
+  "architecture": "krea2_turbo_edit",
+  "description": "A hidden variant that borrows another model's weights.",
+  "name": "Krea 2 Hidden",
+  "visible": false
+ }
+}

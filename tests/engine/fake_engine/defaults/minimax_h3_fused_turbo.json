@@ -1,0 +1,20 @@
+{
+ "guidance_scale": 1.0,
+ "image_prompt_type": "",
+ "model": {
+  "URLs": [
+   "https://huggingface.co/fake/resolve/main/minimax_h3_fused_turbo_int8_convrot.safetensors"
+  ],
+  "architecture": "minimax_h3",
+  "description": "Fused turbo text or frames to video with sound.",
+  "inference_steps_max": 8,
+  "inference_steps_min": 4,
+  "loras_disabled": true,
+  "minimax_h3_fused_turbo": true,
+  "name": "H3 Fused 4-Step — Frames (Experimental)"
+ },
+ "num_inference_steps": 4,
+ "resolution": "1152x640",
+ "sliding_window_size": 243,
+ "video_length": 243
+}

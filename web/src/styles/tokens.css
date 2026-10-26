@@ -1,0 +1,74 @@
+/* The palette, from the approved layout (generate-layout-mockup-v14): one blue-slate family. The page is
+   the lighter tone (--panel); the fields people read and type in are the darker tone (--well); raised pieces
+   (rows, controls) a step above the page. Colour is kept for the primary action, the connection light, states and
+   the new-file dot. Every screen and module reads these; nothing defines its own colours. */
+
+/* Slate */
+:root {
+  color-scheme: dark;
+  --seam: #1C2225;
+  --chrome: #293134;
+  --well: #22292D;
+  --panel: #272F32;
+  --panel-2: #2D3538;
+  --raise: #363D40;
+  --raise-hover: #3D4447;
+  --select: #3D4346;
+  --line: #353C3F;
+  --line-strong: #4A5053;
+  --stage: #121415;
+  --text-1: #E6E8E8;
+  --text-2: #BFC4C5;
+  --text-3: #8E9497;
+  --text-dis: #666C6F;
+  --accent: #8A9D90;
+  --accent-hover: #98AB9E;
+  --accent-ink: #1B201D;
+  --ok: #79D28D;
+  --warn: #C9A06B;
+  --err: #C97A7A;
+  --new: #8BA293;
+  --accent-soft: rgba(138, 157, 144, .16);
+  --accent-line: rgba(138, 157, 144, .6);
+  --ok-soft: rgba(139, 162, 147, .16);
+  --warn-soft: rgba(201, 160, 107, .16);
+  --err-soft: rgba(201, 122, 122, .16);
+  /* finishing touches: the faint light on a field's top edge, the soft inner shadow on a dark field's sides */
+  --edge-light: inset 0 1px 0 rgba(255, 255, 255, .07);
+  --edge-light-soft: inset 0 1px 0 rgba(255, 255, 255, .06);
+  --side-shade-l: inset .3125rem 0 .375rem -.375rem rgba(0, 0, 0, .5);
+  --side-shade-r: inset -.3125rem 0 .375rem -.375rem rgba(0, 0, 0, .5);
+}
+
+/* Studio: the Media window's palette, taken from the HocusPocus Media monitor (`.hp-studio`, cyan-400)
+   and lifted one step from black. Lights are cyan too (no green). The Media window and the
+   workspace (Generate, Settings) read these in place of the Slate values above: one look across the Hub. */
+html[data-screen='media'], html[data-screen='workspace'] {
+  --seam: #121316;
+  --chrome: #17191d;
+  --well: #121316;
+  --panel: #17191d;
+  --panel-2: #1b1d21;
+  --raise: #22252a;
+  --raise-hover: #2a2d33;
+  --select: #272a2e;
+  --line: #25282c;
+  --line-strong: #34383e;
+  --stage: #0d0e10;
+  --text-1: #e6e7e8;
+  --text-2: #a5a7aa;
+  --text-3: #85888c;
+  --text-dis: #5f6368;
+  --accent: #00d3f2;
+  --accent-hover: #53eafd;
+  --accent-ink: #051316;
+  --ok: #00d3f2;
+  --warn: #fbbf24;
+  --err: #fca5a5;
+  --new: #00d3f2;
+  --accent-soft: rgba(0, 211, 242, .15);
+  --accent-line: rgba(0, 211, 242, .7);
+  --ok-soft: rgba(0, 211, 242, .15);
+  --warn-soft: rgba(251, 191, 36, .16);
+  --err-soft: rgba(252, 165, 165, .12);
+}

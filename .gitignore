@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+web/node_modules/
+wheels/
+.pytest_cache/
+.ruff_cache/
+dist/
+web/tsconfig.tsbuildinfo
+web/shots/
+.claude/worktrees

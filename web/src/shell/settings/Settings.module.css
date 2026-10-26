@@ -1,0 +1,24 @@
+@layer screen {
+  .settings { display: grid; grid-template-rows: minmax(0, 1fr) auto; background: var(--panel); min-height: 0; }
+  .page { padding: 0 var(--sp-8); }
+  .measure { container: sheet / inline-size; width: 100%; max-width: 64rem; margin: 0 auto; }
+  .head { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-6) 0 var(--sp-4); }
+  .tile { width: var(--ctl-h); height: var(--ctl-h); display: grid; place-items: center; border-radius: var(--r-2); border: 1px solid var(--line); background: var(--panel-2); color: var(--text-2); flex: none; }
+  button.tile:hover { background: var(--raise); color: var(--text-1); }
+  .crumb { display: flex; align-items: center; gap: var(--sp-2); white-space: nowrap; }
+  .crumb svg { color: var(--text-3); }
+  .up { color: var(--text-2); }
+  .up:hover { color: var(--text-1); }
+  .page > .measure { padding-bottom: var(--sp-7); }
+  .dock { background: var(--chrome); border-top: 1px solid var(--seam); padding: var(--sp-3) var(--sp-8) var(--sp-4); }
+  .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4); }
+  .card { display: grid; gap: .125rem; padding: var(--sp-2) var(--sp-3); border-radius: var(--r-3); min-width: 0; background: var(--panel); border: 1px solid var(--line); }
+  .card:hover { border-color: var(--line-strong); background: var(--panel-2); }
+  .cardOn { background: var(--panel-2); border-color: var(--accent-edge); }
+  .cardOn .cardHead > svg:first-child { color: var(--accent); }
+  .cardHead { display: flex; align-items: center; gap: var(--sp-2); min-width: 0; }
+  .cardHead > svg { color: var(--text-2); }
+  .cardHead b { font-weight: 600; }
+  .st { margin-left: auto; display: flex; align-items: center; padding: 0 var(--sp-1); }
+  .sum { font-size: var(--fs-cap); line-height: var(--lh-cap); color: var(--text-2); padding-left: calc(var(--icon) + var(--sp-2)); text-align: left; }
+}

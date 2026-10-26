@@ -1,0 +1,3 @@
+@layer screen {
+  .error { color: var(--err); padding-bottom: var(--sp-3); }
+}

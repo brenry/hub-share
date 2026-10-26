@@ -1,0 +1,96 @@
+@layer screen {
+  /* Under the page: the prompt box, then one line level with the bar on the right (the job line). */
+  .dock { display: grid; grid-template-rows: auto var(--gen-bar-h); gap: var(--sp-3); font-size: var(--fs-ctl); }
+  .status { position: relative; display: flex; align-items: center; gap: var(--sp-3); min-width: 0; overflow: clip; }
+
+  /* The bar, as on Media: low and quiet, one line. Everything is the light's grey, never bold; the only colour is
+     Auto's square and Generate in the corner, a softened cyan. */
+  .bar {
+    display: flex; align-items: center; gap: .125rem; min-width: 0; height: var(--gen-bar-h); padding: 0 var(--sp-3);
+    border-top: 1px solid var(--line); background: var(--panel); font-size: var(--gen-bar-fs); color: var(--text-3); white-space: nowrap;
+  }
+  .bar > * { flex: none; }
+  /* The settings give way when the column is short; the light, the folds and Generate never do. */
+  .bar > .controls { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: .125rem; overflow: clip; }
+  .controls > * { flex: none; }
+  .barIcon, .go, .barBtn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-1); height: var(--gen-bar-ctl); min-width: var(--gen-bar-ctl);
+    padding: 0; border: 0; border-radius: var(--r-1); background: none; color: var(--text-3); font-size: var(--gen-bar-fs);
+  }
+  .barBtn { padding: 0 var(--sp-1); }
+  .barIcon:hover, .barBtn:hover { background: var(--raise); color: var(--text-2); }
+  .square { width: var(--gen-bar-ctl); padding: 0; }
+  .go { color: var(--accent); opacity: .62; }
+  .go:hover { opacity: 1; background: var(--raise); }
+  .go[aria-disabled='true'] { opacity: .25; }
+  .liveFlat, .liveFlat:hover { height: var(--gen-bar-ctl); border-color: transparent; background: none; box-shadow: none; padding: 0 var(--sp-1); font-size: var(--gen-bar-fs); color: var(--text-3); }
+
+  /* Steps: the number, then two small arrows stacked; typed or nudged. */
+  .steps { display: inline-flex; align-items: center; height: var(--gen-bar-ctl); }
+  .number { width: 1.875rem; height: 100%; padding: 0; border: 0; border-radius: var(--r-1); background: transparent; color: var(--text-3); font-size: var(--gen-bar-fs); text-align: right; appearance: textfield; }
+  .number::-webkit-outer-spin-button, .number::-webkit-inner-spin-button { appearance: none; margin: 0; }
+  .number:hover { color: var(--text-2); }
+  .number:focus { color: var(--text-1); background: var(--raise); outline: none; }
+  .arrows { display: grid; grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); height: 100%; width: .75rem; }
+  .arrows > button { --icon-sm: .5625rem; display: grid; place-items: center; min-height: 0; padding: 0; line-height: 1; color: var(--text-3); }
+  .arrows > button:hover:not(:disabled) { color: var(--text-2); }
+  .arrows > button:disabled { color: var(--text-dis); }
+
+  /* The image count: − n +, small and grey. */
+  .count { display: inline-flex; align-items: center; height: var(--gen-bar-ctl); }
+  .count > button { --icon-sm: .625rem; width: .875rem; height: 100%; display: grid; place-items: center; padding: 0; color: var(--text-3); }
+  .count > button:hover:not(:disabled) { color: var(--text-2); }
+  .count > button:disabled { color: var(--text-dis); }
+  .count > output { min-width: .75rem; text-align: center; color: var(--text-3); }
+
+  /* Aspect: a fixed ratio is its numbers; Auto is the dashed square, lit cyan. */
+  .ar { display: block; flex: none; border: .09375rem solid currentColor; border-radius: .0625rem; color: var(--text-3); }
+  .arAuto { border-style: dashed; }
+  .arLit { color: var(--accent); }
+  .menuPop { padding: var(--sp-1); min-width: 8rem; }
+  .menu { display: grid; gap: .0625rem; }
+  .option { height: var(--ctl-h); display: flex; align-items: center; gap: var(--sp-3); padding: 0 var(--sp-3) 0 var(--sp-2); border-radius: var(--r-1); font-size: var(--fs-cap); }
+  .option > .ar { width: 1rem; }
+  .option:hover, .option:focus-visible { background: var(--raise); outline: none; }
+  .optionOn { background: var(--select); }
+
+  /* The three reference boxes, small and grey as on Media; a box past what the model takes is struck through. */
+  .slots { display: flex; align-items: center; gap: .1875rem; min-width: 0; margin: 0 .125rem; }
+  .slot {
+    position: relative; width: var(--gen-bar-ctl); height: var(--gen-bar-ctl); flex: none; display: block; border-radius: .1875rem; border: 1px dashed var(--line-strong);
+    background: transparent; color: var(--text-3); overflow: clip;
+  }
+  .shut { border-style: solid; border-color: var(--line); }
+  .shut::before, .shut::after { content: ''; position: absolute; left: -20%; right: -20%; top: 50%; height: 1px; background: var(--line-strong); }
+  .shut::before { transform: rotate(45deg); }
+  .shut::after { transform: rotate(-45deg); }
+  .filled { border: 0; box-shadow: inset 0 0 0 1px var(--line-strong); background: var(--stage); }
+  .filled img { width: 100%; height: 100%; object-fit: cover; }
+  .flash { outline: var(--rule) solid var(--text-2); animation: flash .6s ease-out; }
+  @keyframes flash { from { outline-color: var(--text-1); } to { outline-color: var(--text-2); } }
+  .badge { position: absolute; left: 0; bottom: 0; min-width: .625rem; height: .625rem; padding: 0 .0625rem; display: grid; place-items: center; border-radius: .125rem; background: var(--shade); color: var(--text-2); font-size: .5rem; line-height: 1; }
+  .remove { position: absolute; inset: 0; display: grid; place-items: center; background: var(--shade); color: var(--text-1); opacity: 0; }
+  .filled:hover .remove, .remove:focus-visible { opacity: 1; }
+  .cut { position: absolute; right: .0625rem; top: .0625rem; width: .3125rem; height: .3125rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px var(--shade); pointer-events: none; }
+  .note { color: var(--warn); max-width: 6rem; }
+  /* The Sound box: a box as the others, wide enough for the sound's name and length once filled. */
+  .sound { width: auto; min-width: var(--gen-bar-ctl); max-width: 8rem; display: flex; align-items: center; gap: .25rem; padding: 0 .25rem; }
+
+  /* The job line under the prompt box, and the running job's progress as a thin line along its top. */
+  .queue { display: flex; align-items: center; gap: var(--sp-3); min-width: 0; font-size: var(--fs-ctl); }
+  .queue > * { min-width: 0; }
+  .queue > button { flex: none; }
+  .queue > b { flex: 0 1 auto; }
+  .queue b { font-weight: 500; }
+  .line { position: absolute; left: 0; right: 0; top: 0; }
+  .line > * { height: .1875rem; border-radius: 0; background: transparent; }
+  .textBtn { color: var(--text-2); flex: none; }
+  .textBtn:hover:not(:disabled) { color: var(--text-1); }
+  .textBtn:disabled { color: var(--text-dis); }
+  .fail { color: var(--err); overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  .done { color: var(--ok); }
+  .seed { display: flex; align-items: center; gap: var(--sp-2); min-width: 0; color: var(--text-3); }
+  .seedNum { color: var(--text-2); }
+  .seedNum:hover { color: var(--text-1); }
+  .seedKept, .seedKept:hover { color: var(--accent); }
+}
